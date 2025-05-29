@@ -121,7 +121,7 @@ fetch('data/resume.json')
   .catch(error => {
     console.error('Error loading resume data:', error);
     const errorDiv = document.createElement('div');
-    errorDiv.textContent = 'Failed to load resume data. Please try refreshing the page or contact support.';
+    errorDiv.textContent = 'No se pudieron cargar los datos del CV. Intente actualizar la página o contacte con el servicio de asistencia.';
     errorDiv.style.color = 'red';
     errorDiv.style.padding = '20px';
     errorDiv.style.textAlign = 'center';
