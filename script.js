@@ -6,6 +6,7 @@ fetch('data/resume.json')
     document.getElementById("title").textContent = data.title;
     document.getElementById("summary").textContent = data.about.summary;
     document.getElementById("profile-image").src = data.about.image;
+    document.getElementById("profile-image").alt = "Foto de perfil de " + data.name;
 
     // Email link
     document.getElementById("email-link").href = "mailto:" + data.contact.email;
@@ -56,7 +57,12 @@ fetch('data/resume.json')
             <p class="text-white text-lg font-medium">${skill.name}</p>
             <p class="text-slate-300 text-sm">${skill.level}%</p>
           </div>
-          <div class="rounded-full h-3 bg-[#344d65] overflow-hidden">
+          <div class="rounded-full h-3 bg-[#344d65] overflow-hidden"
+               role="progressbar"
+               aria-valuenow="${skill.level}"
+               aria-valuemin="0"
+               aria-valuemax="100"
+               aria-label="Skill level for ${skill.name}">
             <div class="h-3 rounded-full progress-bar-fill" style="width: ${skill.level}%"></div>
           </div>
         `;
@@ -74,7 +80,12 @@ fetch('data/resume.json')
           <p class="text-white text-lg font-medium">${lang.language}</p>
           <p class="text-slate-300 text-sm">${lang.level}</p>
         </div>
-        <div class="rounded-full h-3 bg-[#344d65] overflow-hidden">
+        <div class="rounded-full h-3 bg-[#344d65] overflow-hidden"
+             role="progressbar"
+             aria-valuenow="${lang.progress}"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-label="Proficiency level for ${lang.language}">
           <div class="h-3 rounded-full progress-bar-fill" style="width: ${lang.progress}%"></div>
         </div>
       `;
@@ -106,4 +117,14 @@ fetch('data/resume.json')
       `;
       certificationList.appendChild(div);
     });
+  })
+  .catch(error => {
+    console.error('Error loading resume data:', error);
+    const errorDiv = document.createElement('div');
+    errorDiv.textContent = 'Failed to load resume data. Please try refreshing the page or contact support.';
+    errorDiv.style.color = 'red';
+    errorDiv.style.padding = '20px';
+    errorDiv.style.textAlign = 'center';
+    errorDiv.style.backgroundColor = '#fff0f0'; // Light red background
+    document.body.prepend(errorDiv); // Prepend to make it more visible
   });
