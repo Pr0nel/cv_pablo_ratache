@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pablo - Data Engineer & Software Developer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com ?plugins=forms,container-queries"></script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, #197fe5, #3b8dff);
+      transition: width 0.5s ease-in-out;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      body {
+        background-color: #fff !important;
+        color: #000 !important;
+        font-family: Arial, sans-serif;
+      }
+
+      header, footer, .no-print, svg, .btn-hover, .card-hover:hover {
+        display: none !important;
+      }
+
+      main section {
+        page-break-inside: avoid;
+        padding: 1em 0;
+        border-bottom: 1px solid #ccc;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+      }
+
+      p, span, li, ul, ol {
+        color: #000 !important;
+      }
+
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#0a1016] text-slate-100">
+
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+  <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a class="text-2xl font-bold text-white hover:text-[#197fe5] transition-colors" href="#">Alex's Portfolio</a>
+      <nav class="space-x-6 flex items-center no-print">
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#about">About</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#experience">Experience</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#projects">Projects</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#skills">Skills</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#languages">Languages</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#education">Education</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#certifications">Certifications</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#contact">Contact</a>
+        <button id="print-cv-button" onclick="window.print()" class="btn-hover ml-4 flex min-w-[84px] max-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg no-print">
+          Print CV
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section id="about" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+      <div class="layout-content-container flex flex-col max-w-6xl mx-auto">
+        <h1 id="name" class="text-white text-4xl sm:text-5xl font-black leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#197fe5] to-[#60a5fa]"></h1>
+        <p id="title" class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mt-4"></p>
+        <p id="summary" class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mt-4"></p>
+        <img id="profile-image" class="mt-6 w-32 h-32 rounded-full object-cover shadow-xl" />
+      </div>
+    </section>
+
+    <section id="experience" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Work Experience</h2>
+      <div id="experience-list" class="space-y-8"></div>
+    </section>
+
+    <section id="projects" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">My Projects</h2>
+      <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="skills" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Technical Skills</h2>
+      <div id="skills-section" class="grid grid-cols-1 lg:grid-cols-3 gap-10"></div>
+    </section>
+
+    <section id="languages" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Languages</h2>
+      <div id="language-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <section id="education" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Education</h2>
+      <div id="education-list" class="space-y-8"></div>
+    </section>
+
+    <section id="certifications" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Certifications</h2>
+      <div id="certification-list" class="space-y-8"></div>
+    </section>
+
+    <section id="contact" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-6">Get In Touch</h2>
+        <p class="text-slate-300 text-lg mb-8">
+          I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!
+        </p>
+        <a id="email-link" class="btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-[#197fe5] to-[#3b8dff] text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg hover:shadow-xl no-print" href="#">
+          Email Me
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#080d12] py-8 text-center no-print">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-slate-400 text-sm">© 2024 Alex. All rights reserved.</p>
+      <p class="text-slate-500 text-xs mt-1">Designed with passion and Tailwind CSS.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Script to load JSON data -->
+<script src="script.js"></script>
+</body>
+</html>

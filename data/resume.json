@@ -1,0 +1,93 @@
+{
+  "name": "Pablo Ratache",
+  "title": "Data Engineer & Junior Software Developer",
+  "about": {
+    "summary": "Soy Pablo, un ingeniero físico incurcionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
+    "image": "assets/profile.jpg"
+  },
+  "experience": [
+    {
+      "role": "Data Engineer Intern",
+      "company": "Innovatech Solutions",
+      "dates": "Mayo 2023 - Agosto 2023",
+      "description": "Ayudé en el desarrollo y mantenimiento de pipelines de datos. Contribuí a procesos de aseguramiento de calidad de datos. Gane experiencia práctica con herramientas ETL y plataformas en la nube."
+    },
+    {
+      "role": "Junior Software Developer (Tiempo Parcial)",
+      "company": "CodeCrafters Inc.",
+      "dates": "Enero 2022 - Abril 2023",
+      "description": "Desarrollé y probé módulos de software para diversos proyectos de clientes. Colaboré con desarrolladores senior en revisiones de código y depuración. Participé en metodologías ágiles de desarrollo."
+    },
+    {
+      "role": "Desarrollador Web Freelance",
+      "company": "Autónomo",
+      "dates": "Junio 2021 - Diciembre 2021",
+      "description": "Diseñé y desarrollé sitios web para pequeñas empresas. Gestioné la comunicación con los clientes y los plazos de entrega. Integré APIs y servicios de terceros."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Pipeline de datos para análisis e-commerce",
+      "description": "Desarrollé un pipeline robusto para recolectar, procesar y analizar datos de ventas, brindando insights sobre tendencias y comportamiento del cliente.",
+      "image": "assets/project1.png"
+    },
+    {
+      "title": "Análisis en tiempo real de datos bursátiles",
+      "description": "Construí un sistema de análisis en tiempo real de datos del mercado de valores, permitiendo decisiones de inversión rápidas y gestión de riesgos.",
+      "image": "assets/project2.png"
+    },
+    {
+      "title": "Segmentación de clientes usando Machine Learning",
+      "description": "Implementé algoritmos de machine learning para segmentar clientes basados en patrones de compra, mejorando estrategias de marketing dirigido.",
+      "image": "assets/project3.png"
+    }
+  ],
+  "skills": {
+    "languages": [
+      { "name": "Python", "level": 90 },
+      { "name": "SQL", "level": 85 },
+      { "name": "JavaScript", "level": 65 }
+    ],
+    "tools": [
+      { "name": "ETL Processes", "level": 75 },
+      { "name": "Cloud Computing (AWS/GCP)", "level": 70 }
+    ],
+    "concepts": [
+      { "name": "Data Warehousing", "level": 80 }
+    ]
+  },
+  "certifications": [
+    {
+      "title": "AWS Certified Data Analytics – Specialty",
+      "issuer": "Amazon Web Services",
+      "date": "Junio 2023"
+    },
+    {
+      "title": "Google Cloud Professional Data Engineer",
+      "issuer": "Google Cloud",
+      "date": "Diciembre 2022"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc. en Ciencias de la Computación",
+      "institution": "Tech University, Cityville",
+      "dates": "2020 - 2022",
+      "details": "Especializado en Ciencia de Datos y Machine Learning. Tesis sobre 'Optimización de pipelines ETL para Big Data'."
+    },
+    {
+      "degree": "B.Sc. en Ingeniería de Software",
+      "institution": "State College, Townsville",
+      "dates": "2016 - 2020",
+      "details": "Graduado con honores. Proyecto final consistió en el desarrollo de un sistema web de gestión de inventario."
+    }
+  ],
+  "languages": [
+    { "language": "Inglés", "level": "Nativo", "progress": 100 },
+    { "language": "Español", "level": "Avanzado (C1)", "progress": 85 },
+    { "language": "Alemán", "level": "Intermedio (B1)", "progress": 50 }
+  ],
+  "contact": {
+    "email": "alex.sample@email.com"
+  }
+}
