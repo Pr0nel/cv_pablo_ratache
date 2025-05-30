@@ -255,6 +255,18 @@ function loadResumeData(language) {
       const profileImg = document.getElementById("profile-image");
       if (profileImg) profileImg.alt = texts.profileImageAlt;
 
+      // Traducir enlaces de navegación en el menú lateral
+      const sideMenuNavLinks = document.querySelectorAll('#side-menu nav a[data-translate-key]');
+      sideMenuNavLinks.forEach(link => {
+        const key = link.dataset.translateKey; // e.g., "navAbout"
+        if (texts && texts[key]) { // 'texts' is from staticTextConfig[language]
+          link.textContent = texts[key];
+        } else {
+          console.warn(`Translation key "${key}" not found for language "${language}" in side menu static texts.`);
+          // Optionally, keep the original text or set a default: link.textContent = link.dataset.originalText || key;
+        }
+      });
+
     })
     .catch(error => {
       console.error(`Error in loadResumeData for ${language}:`, error.message);
