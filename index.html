@@ -37,7 +37,7 @@
         font-family: Arial, sans-serif;
       }
 
-      header, footer, .no-print, svg, .btn-hover, .card-hover:hover {
+      header, footer, .no-print, svg, .btn-hover, .card-hover:hover, #side-menu, #menu-overlay { /* Added side-menu & overlay to print:none */
         display: none !important;
       }
 
@@ -49,7 +49,8 @@
 
       #print-cv-button,
       #contact,
-      header, footer, nav, svg, img {
+      /* header, footer, nav, svg, img, */ /* nav is no longer a direct element to hide, covered by header */
+      #hamburger-button /* Hide hamburger for print */ {
         display: none !important;
       }
 
@@ -74,11 +75,16 @@
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
   <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Hamburger Icon Button (Visible on sm screens and up) -->
+      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4 no-print">
+        &#9776;
+      </button>
+      
       <!-- Group 1: Site Title/Logo -->
       <a class="text-2xl font-bold text-white hover:text-[#197fe5] transition-colors" href="#">Pablo's Portfolio</a>
 
-      <!-- Group 2: Main Navigation Links -->
-      <div class="flex items-center space-x-6 no-print flex-shrink min-w-0 overflow-hidden">
+      <!-- Group 2: Main Navigation Links (Now hidden) -->
+      <div class="flex items-center space-x-6 no-print flex-shrink min-w-0 overflow-hidden hidden">
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#about">About</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#experience">Experience</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#projects">Projects</a>
@@ -88,6 +94,11 @@
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#certifications">Certifications</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#contact">Contact</a>
       </div>
+
+      <!-- Spacer to push controls to the right if main nav links are hidden/gone -->
+      <!-- This might be needed if Group 2 is completely removed or if justify-between needs help with only two items -->
+      <div class="flex-grow sm:hidden"></div> <!-- Hidden on sm and up, provides space on xs -->
+
 
       <!-- Group 3: Controls (Language Switcher & Print Button) -->
       <div class="flex items-center space-x-4 no-print flex-shrink-0">
@@ -101,6 +112,24 @@
       </div>
     </div>
   </header>
+
+  <!-- Side Menu (Drawer) -->
+  <div id="side-menu" class="fixed top-0 left-0 h-full w-64 bg-[#111a22] text-slate-100 p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-[60] no-print shadow-xl">
+    <button id="close-menu-button" class="text-white text-3xl absolute top-4 right-6 hover:text-[#197fe5] transition-colors">&times;</button>
+    <nav class="mt-16 flex flex-col space-y-2"> <!-- Adjusted space-y for potentially denser links with more padding -->
+      <a href="#about" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">About</a>
+      <a href="#experience" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Experience</a>
+      <a href="#projects" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Projects</a>
+      <a href="#skills" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Skills</a>
+      <a href="#languages" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Languages</a>
+      <a href="#education" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Education</a>
+      <a href="#certifications" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Certifications</a>
+      <a href="#contact" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Menu Overlay -->
+  <div id="menu-overlay" class="fixed top-0 left-0 w-full h-full bg-black/50 z-[55] hidden no-print"></div>
 
   <main class="flex-1">
     <section id="about" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">

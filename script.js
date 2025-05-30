@@ -304,4 +304,44 @@ document.addEventListener('DOMContentLoaded', () => {
       languageSwitcher.value = 'es'; // Restablecer el selector a un valor por defecto válido
     }
   });
+
+  // --- Lógica para el menú hamburguesa ---
+  const hamburgerButton = document.getElementById('hamburger-button');
+  const sideMenu = document.getElementById('side-menu');
+  const closeMenuButton = document.getElementById('close-menu-button');
+  const menuOverlay = document.getElementById('menu-overlay');
+  
+  if (sideMenu) { // Solo proceder si el menú lateral existe
+    const sideMenuLinks = sideMenu.querySelectorAll('nav a');
+
+    const toggleSideMenu = () => {
+      if (sideMenu && menuOverlay) { // Asegurarse que sideMenu y menuOverlay no son null
+        sideMenu.classList.toggle('-translate-x-full');
+        sideMenu.classList.toggle('translate-x-0');
+        menuOverlay.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); // Bloquear/desbloquear scroll del body
+      } else {
+        console.error("Side menu or menu overlay element not found for toggleSideMenu.");
+      }
+    };
+
+    if (hamburgerButton && closeMenuButton && menuOverlay) {
+      hamburgerButton.addEventListener('click', toggleSideMenu);
+      closeMenuButton.addEventListener('click', toggleSideMenu);
+      menuOverlay.addEventListener('click', toggleSideMenu);
+
+      sideMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Solo cerrar si el menú está visible (translate-x-0)
+          if (sideMenu.classList.contains('translate-x-0')) {
+            toggleSideMenu();
+          }
+        });
+      });
+    } else {
+      console.error("One or more menu control elements (hamburger, close button, overlay) not found.");
+    }
+  } else {
+    console.error("Side menu element (#side-menu) not found. Hamburger functionality disabled.");
+  }
 });
