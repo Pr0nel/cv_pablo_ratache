@@ -56,7 +56,7 @@ function loadResumeData(language) {
   clearElementInnerHTML("language-list");
   clearElementInnerHTML("education-list");
   clearElementInnerHTML("certification-list");
-  
+
   let errorDisplay = document.getElementById('error-display-container');
   if (!errorDisplay) {
     errorDisplay = document.createElement('div');
@@ -88,7 +88,7 @@ function loadResumeData(language) {
         setImageAttributes("profile-image", data.about.image, "Profile picture of " + data.name);
       } else {
         setTextContent("summary", "About section summary is not available for this language.");
-        setImageAttributes("profile-image", "assets/profile_placeholder.png", "Placeholder profile image"); 
+        setImageAttributes("profile-image", "assets/profile_placeholder.png", "Placeholder profile image");
       }
 
       if (data.contact && data.contact.email) {
@@ -180,7 +180,7 @@ function loadResumeData(language) {
           languageProficiencyList.appendChild(div);
         });
       }
-      
+
       // Educación
       const educationList = document.getElementById("education-list");
       if (data.education && educationList) {
@@ -210,7 +210,7 @@ function loadResumeData(language) {
           certificationList.appendChild(div);
         });
       }
-      
+
       // 3. Traducir elementos de texto estático (Navegación, Títulos de Sección, Botones, etc.)
       const staticTextConfig = {
         es: {
@@ -229,7 +229,7 @@ function loadResumeData(language) {
       const texts = staticTextConfig[language] || staticTextConfig.en; // Por defecto a Inglés si no se encuentra el idioma
 
       const setQueryText = (selector, text) => { const el = document.querySelector(selector); if (el) el.textContent = text; else console.warn(`Static text element not found for selector: ${selector}`);};
-      
+
       setQueryText('a[href="#about"]', texts.navAbout);
       setQueryText('a[href="#experience"]', texts.navExperience);
       setQueryText('a[href="#projects"]', texts.navProjects);
@@ -246,11 +246,11 @@ function loadResumeData(language) {
       setQueryText('section#languages h2', texts.titleLanguages);
       setQueryText('section#education h2', texts.titleEducation);
       setQueryText('section#certifications h2', texts.titleCertifications);
-      
+
       setQueryText('#contact h2', texts.contactTitle);
       setQueryText('#contact p.text-slate-300', texts.contactIntro);
       setTextContent('email-link', texts.emailLinkText);
-      
+
       // Actualizar el texto alternativo de la imagen de perfil específicamente
       const profileImg = document.getElementById("profile-image");
       if (profileImg) profileImg.alt = texts.profileImageAlt;
@@ -285,12 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error("Language switcher element (#language-switcher) not found!");
     // Intentar cargar contenido por defecto de todos modos o mostrar un error más prominente
     loadResumeData('es'); // Por defecto a Español si falta el selector
-    return; 
+    return;
   }
-  
+
   const savedLanguage = localStorage.getItem('preferredLanguage');
   // Usar el valor actual del selector como respaldo si no hay nada en localStorage o si es inválido
-  let initialLanguage = languageSwitcher.value || 'es'; 
+  let initialLanguage = languageSwitcher.value || 'es';
 
   if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
     initialLanguage = savedLanguage;
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sideMenu = document.getElementById('side-menu');
   const closeMenuButton = document.getElementById('close-menu-button');
   const menuOverlay = document.getElementById('menu-overlay');
-  
+
   if (sideMenu) { // Solo proceder si el menú lateral existe
     const sideMenuLinks = sideMenu.querySelectorAll('nav a');
 
