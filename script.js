@@ -1,4 +1,4 @@
-fetch('data/resume.json')
+fetch('data/resume_es.json')
   .then(res => res.json())
   .then(data => {
     // About Section
