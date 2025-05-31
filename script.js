@@ -29,6 +29,9 @@ function setLinkHref(elementId, href) {
   }
 }
 
+// GitHub SVG Icon
+const GITHUB_ICON_SVG = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="w-5 h-5 mr-2"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>';
+
 // Función auxiliar para limpiar el innerHTML de un elemento
 function clearElementInnerHTML(elementId) {
   const element = document.getElementById(elementId);
@@ -48,7 +51,39 @@ function loadResumeData(language) {
   setTextContent("title", "");
   setTextContent("summary", "Loading content...");
   setImageAttributes("profile-image", "", "Loading profile image");
-  setLinkHref("email-link", "#");
+  setLinkHref("email-link", "#"); // Email link href is set/updated from data later
+
+  // Remove existing GitHub profile link (old ID from About Me)
+  const oldGitHubLink = document.getElementById("github-profile-link");
+  if (oldGitHubLink) {
+    oldGitHubLink.remove();
+  }
+  // Remove existing Copy Email button (old ID from About Me)
+  const oldCopyEmailButton = document.getElementById("copy-email-button");
+  if (oldCopyEmailButton) {
+    oldCopyEmailButton.remove();
+  }
+  // Remove contact-links-container from About me section if it exists
+  const oldContactLinksContainer = document.getElementById("contact-links-container");
+  if (oldContactLinksContainer && oldContactLinksContainer.parentNode.id === 'about-text-content') {
+      oldContactLinksContainer.remove();
+  }
+
+  // Cleanup for new buttons in Contact section
+  const githubContactLink = document.getElementById("github-contact-link");
+  if (githubContactLink) {
+    githubContactLink.remove();
+  }
+  const copyEmailContactButton = document.getElementById("copy-email-contact-button");
+  if (copyEmailContactButton) {
+    copyEmailContactButton.remove();
+  }
+  // Cleanup for the new container in the Contact section
+  const contactActionsContainer = document.getElementById("contact-actions-container");
+  if (contactActionsContainer) {
+    contactActionsContainer.innerHTML = ''; // Clear its content before repopulating
+  }
+
 
   clearElementInnerHTML("experience-list");
   clearElementInnerHTML("project-list");
@@ -94,7 +129,78 @@ function loadResumeData(language) {
       if (data.contact && data.contact.email) {
         setLinkHref("email-link", "mailto:" + data.contact.email);
       } else {
+        // If email is not in data, we might want to hide the email link or set a default
+        // For now, assume email-link element might exist and just needs its href updated or managed.
+        // If no email in data, the link with ID "email-link" will retain its default "#" href from initial clearing,
+        // or its text might be cleared/changed by static text translation if handled there.
+        // Current staticTextConfig sets its text content.
         setLinkHref("email-link", "mailto:contact-not-available@example.com");
+      }
+
+      // Create contact actions (Email, GitHub, Copy Email) in the Contact section
+      const contactSection = document.getElementById("contact");
+      const contactIntroP = contactSection ? contactSection.querySelector('p.text-slate-300') : null;
+
+      if (contactSection && contactIntroP) {
+        let actionsContainer = document.getElementById("contact-actions-container");
+        if (!actionsContainer) {
+          actionsContainer = document.createElement("div");
+          actionsContainer.id = "contact-actions-container";
+          actionsContainer.className = "mt-6 flex flex-wrap justify-center items-center gap-4";
+          contactIntroP.parentNode.insertBefore(actionsContainer, contactIntroP.nextSibling);
+        }
+        // The existing email-link in index.html is static, we'll make it part of this dynamic container.
+        // To avoid issues if script runs multiple times or if email-link is not found, clone or recreate.
+        // For simplicity, we assume email-link exists and move it.
+        const emailLink = document.getElementById("email-link");
+        if (emailLink) { // Check if it's not already in the container to prevent re-adding
+           if(emailLink.parentNode !== actionsContainer){
+                actionsContainer.appendChild(emailLink); // Moves the existing email link
+           }
+        }
+
+
+        // GitHub Profile Button (Contact Section)
+        if (data.githubProfileUrl) {
+          const githubContactButton = document.createElement("a");
+          githubContactButton.id = "github-contact-link"; // New ID
+          githubContactButton.href = data.githubProfileUrl;
+          githubContactButton.target = "_blank";
+          githubContactButton.rel = "noopener noreferrer";
+          githubContactButton.className = "inline-flex items-center bg-[#197fe5] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#156abc] transition-colors duration-300 btn-hover no-print";
+          // textContent will be set by translation logic using GITHUB_ICON_SVG
+          actionsContainer.appendChild(githubContactButton);
+        }
+
+        // Copy Email Button (Contact Section)
+        if (data.contact && data.contact.email) {
+          const copyEmailContactBtn = document.createElement("button");
+          copyEmailContactBtn.id = "copy-email-contact-button"; // New ID
+          copyEmailContactBtn.className = "inline-flex items-center bg-slate-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-slate-600 transition-colors duration-300 btn-hover no-print";
+          // textContent will be set by translation logic
+
+          copyEmailContactBtn.addEventListener('click', () => {
+            const texts = staticTextConfig[language] || staticTextConfig.en; // Ensure access to translations
+            navigator.clipboard.writeText(data.contact.email)
+              .then(() => {
+                copyEmailContactBtn.innerHTML = texts.copyEmailButtonSuccessText || "Email Copied!";
+                setTimeout(() => {
+                  copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email";
+                }, 2000);
+              })
+              .catch(err => {
+                console.error('Failed to copy email: ', err);
+                copyEmailContactBtn.innerHTML = texts.copyEmailButtonFailText || "Copy Failed";
+                setTimeout(() => {
+                  copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email";
+                }, 2000);
+              });
+          });
+          actionsContainer.appendChild(copyEmailContactBtn);
+        }
+      } else {
+        if (!contactSection) console.warn("Contact section not found.");
+        if (!contactIntroP) console.warn("Contact intro paragraph not found for placing actions container.");
       }
 
       // Experiencia
@@ -124,6 +230,7 @@ function loadResumeData(language) {
             <img src="${projectImage}" alt="${projectTitle}" class="w-full aspect-video rounded-lg object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400.png?text=Project+Image+Not+Found'; console.error('Error loading image for project: ${projectTitle} at ${projectImage}');">
             <h3 class="text-white text-xl font-semibold">${project.title || ''}</h3>
             <p class="text-slate-400 text-sm">${project.description || ''}</p>
+            ${project.repositoryUrl ? `<a href="${project.repositoryUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center text-[#197fe5] hover:text-[#3b8dff] transition-colors duration-300 no-print project-repo-link">View Code</a>` : ''}
           `;
           projectList.appendChild(div);
         });
@@ -217,16 +324,40 @@ function loadResumeData(language) {
           navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
           titleExperience: 'Experiencia Laboral', titleProjects: 'Mis Proyectos', titleSkills: 'Habilidades Técnicas', titleLanguages: 'Idiomas', titleEducation: 'Educación', titleCertifications: 'Certificaciones',
           contactTitle: 'Ponte en Contacto', contactIntro: 'Actualmente estoy buscando nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡no dudes en contactarme!', emailLinkText: 'Envíame un Correo',
+          copyEmailButtonText: 'Copiar Correo', copyEmailButtonSuccessText: '¡Correo Copiado!', copyEmailButtonFailText: 'Error al Copiar',
+          projectRepoLinkText: 'Ver Código', // Text for project repo links
+          githubProfileLinkText: 'Perfil de GitHub', // Text for the main GitHub profile button
           profileImageAlt: "Foto de perfil de " + (data.name || "el usuario")
         },
         en: {
           navAbout: 'About', navExperience: 'Experience', navProjects: 'Projects', navSkills: 'Skills', navLanguages: 'Languages', navEducation: 'Education', navCertifications: 'Certifications', navContact: 'Contact', printCV: 'Print CV',
           titleExperience: 'Work Experience', titleProjects: 'My Projects', titleSkills: 'Technical Skills', titleLanguages: 'Languages', titleEducation: 'Education', titleCertifications: 'Certifications',
           contactTitle: 'Get In Touch', contactIntro: "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!", emailLinkText: 'Email Me',
+          copyEmailButtonText: 'Copy Email', copyEmailButtonSuccessText: 'Email Copied!', copyEmailButtonFailText: 'Copy Failed',
+          projectRepoLinkText: 'View Code', // Text for project repo links
+          githubProfileLinkText: 'GitHub Profile', // Text for the main GitHub profile button
           profileImageAlt: "Profile picture of " + (data.name || "the user")
         }
       };
       const texts = staticTextConfig[language] || staticTextConfig.en; // Por defecto a Inglés si no se encuentra el idioma
+
+      // Set initial text for Copy Email button (new ID, new location)
+      const newCopyEmailButton = document.getElementById("copy-email-contact-button");
+      if (newCopyEmailButton) {
+        newCopyEmailButton.innerHTML = texts.copyEmailButtonText || "Copy Email"; // Use innerHTML if icon is planned, else textContent
+      }
+
+      // Set text for GitHub Profile link (new ID, new location)
+      const newGithubProfileLink = document.getElementById("github-contact-link");
+      if (newGithubProfileLink) {
+        newGithubProfileLink.innerHTML = GITHUB_ICON_SVG + (texts.githubProfileLinkText || "GitHub Profile");
+      }
+
+      // Update project repo link texts and prepend icon (no change here, already correct)
+      const projectRepoLinks = document.querySelectorAll(".project-repo-link");
+      projectRepoLinks.forEach(link => {
+        link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code");
+      });
 
       const setQueryText = (selector, text) => { const el = document.querySelector(selector); if (el) el.textContent = text; else console.warn(`Static text element not found for selector: ${selector}`);};
 
@@ -250,6 +381,12 @@ function loadResumeData(language) {
       setQueryText('#contact h2', texts.contactTitle);
       setQueryText('#contact p.text-slate-300', texts.contactIntro);
       setTextContent('email-link', texts.emailLinkText);
+
+
+      // Update copy email button text on language change (if button exists and text needs to change)
+      // This is slightly redundant if the button text is set when created using `texts.copyEmailButtonText`
+      // However, this ensures it's updated if it was somehow created with a default before `texts` was available.
+      // The main setting of text happens during button creation now.
 
       // Actualizar el texto alternativo de la imagen de perfil específicamente
       const profileImg = document.getElementById("profile-image");

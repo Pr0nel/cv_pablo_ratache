@@ -1,6 +1,7 @@
 {
   "name": "Pablo Ratache",
   "title": "Data Engineer & Junior Software Developer",
+  "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "Soy Pablo, un ingeniero físico incursionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
     "image": "assets/profile.png"
@@ -29,17 +30,20 @@
     {
       "title": "Pipeline de datos para análisis e-commerce",
       "description": "Desarrollé un pipeline robusto para recolectar, procesar y analizar datos de ventas, brindando insights sobre tendencias y comportamiento del cliente.",
-      "image": "assets/project1.png"
+      "image": "assets/project1.png",
+      "repositoryUrl": "https://github.com/Pr0nel/proyecto_ocr_vouchers"
     },
     {
       "title": "Análisis en tiempo real de datos bursátiles",
       "description": "Construí un sistema de análisis en tiempo real de datos del mercado de valores, permitiendo decisiones de inversión rápidas y gestión de riesgos.",
-      "image": "assets/project2.png"
+      "image": "assets/project2.png",
+      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
     },
     {
       "title": "Segmentación de clientes usando Machine Learning",
       "description": "Implementé algoritmos de machine learning para segmentar clientes basados en patrones de compra, mejorando estrategias de marketing dirigido.",
-      "image": "assets/project3.png"
+      "image": "assets/project3.png",
+      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
     }
   ],
   "skills": {
