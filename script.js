@@ -51,7 +51,7 @@ function loadResumeData(language) {
   setTextContent("title", "");
   setTextContent("summary", "Loading content...");
   setImageAttributes("profile-image", "", "Loading profile image");
-  setLinkHref("email-link", "#"); // Email link href is set/updated from data later
+  // setLinkHref("email-link", "#"); // No longer needed here, email-link is fully dynamic
 
   // Remove existing GitHub profile link (old ID from About Me)
   const oldGitHubLink = document.getElementById("github-profile-link");
@@ -126,16 +126,9 @@ function loadResumeData(language) {
         setImageAttributes("profile-image", "assets/profile_placeholder.png", "Placeholder profile image");
       }
 
-      if (data.contact && data.contact.email) {
-        setLinkHref("email-link", "mailto:" + data.contact.email);
-      } else {
-        // If email is not in data, we might want to hide the email link or set a default
-        // For now, assume email-link element might exist and just needs its href updated or managed.
-        // If no email in data, the link with ID "email-link" will retain its default "#" href from initial clearing,
-        // or its text might be cleared/changed by static text translation if handled there.
-        // Current staticTextConfig sets its text content.
-        setLinkHref("email-link", "mailto:contact-not-available@example.com");
-      }
+      // The primary setLinkHref for "email-link" is now handled during its dynamic creation below.
+      // However, if data.contact.email is missing, we need to ensure the link is either not created
+      // or handled gracefully. The creation logic below already checks for data.contact.email.
 
       // Create contact actions (Email, GitHub, Copy Email) in the Contact section
       const contactSection = document.getElementById("contact");
@@ -149,16 +142,22 @@ function loadResumeData(language) {
           actionsContainer.className = "mt-6 flex flex-wrap justify-center items-center gap-4";
           contactIntroP.parentNode.insertBefore(actionsContainer, contactIntroP.nextSibling);
         }
-        // The existing email-link in index.html is static, we'll make it part of this dynamic container.
-        // To avoid issues if script runs multiple times or if email-link is not found, clone or recreate.
-        // For simplicity, we assume email-link exists and move it.
-        const emailLink = document.getElementById("email-link");
-        if (emailLink) { // Check if it's not already in the container to prevent re-adding
-           if(emailLink.parentNode !== actionsContainer){
-                actionsContainer.appendChild(emailLink); // Moves the existing email link
-           }
+        // Dynamically create the "Email Me" link
+        if (data.contact && data.contact.email) {
+          const emailLinkElement = document.createElement("a");
+          emailLinkElement.id = "email-link";
+          emailLinkElement.href = "mailto:" + data.contact.email;
+          emailLinkElement.className = "btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gradient-to-r from-[#197fe5] to-[#3b8dff] text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg hover:shadow-xl no-print";
+          // emailLinkElement.textContent will be set by the translation logic later
+          actionsContainer.appendChild(emailLinkElement);
+        } else {
+          // Optionally, if email is critical, display a placeholder or log that it's missing
+          // For now, if no email, the link just won't be created.
+          // Ensure that setLinkHref("email-link", "mailto:contact-not-available@example.com"); from above is removed or conditional.
+          // And ensure setTextContent('email-link', texts.emailLinkText) handles missing element.
+           const emailLinkPlaceholder = document.getElementById("email-link");
+           if(emailLinkPlaceholder) emailLinkPlaceholder.remove(); // Remove if a static one was somehow left in HTML
         }
-
 
         // GitHub Profile Button (Contact Section)
         if (data.githubProfileUrl) {
