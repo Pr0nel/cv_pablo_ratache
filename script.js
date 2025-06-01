@@ -166,7 +166,7 @@ function loadResumeData(language) {
           githubContactButton.href = data.githubProfileUrl;
           githubContactButton.target = "_blank";
           githubContactButton.rel = "noopener noreferrer";
-          githubContactButton.className = "inline-flex items-center bg-[#197fe5] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#156abc] transition-colors duration-300 btn-hover no-print";
+          githubContactButton.className = "btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg no-print bg-[#197fe5] hover:bg-[#156abc] transition-colors duration-300";
           // textContent will be set by translation logic using GITHUB_ICON_SVG
           actionsContainer.appendChild(githubContactButton);
         }
@@ -175,7 +175,7 @@ function loadResumeData(language) {
         if (data.contact && data.contact.email) {
           const copyEmailContactBtn = document.createElement("button");
           copyEmailContactBtn.id = "copy-email-contact-button"; // New ID
-          copyEmailContactBtn.className = "inline-flex items-center bg-slate-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-slate-600 transition-colors duration-300 btn-hover no-print";
+          copyEmailContactBtn.className = "btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg no-print bg-slate-500 hover:bg-slate-600 transition-colors duration-300";
           // textContent will be set by translation logic
 
           copyEmailContactBtn.addEventListener('click', () => {
