@@ -29,6 +29,14 @@
     .print-only-contact-info {
       display: none; /* Oculto por defecto en la vista de navegador */
     }
+    /* Estilos para la lista de habilidades solo en impresión */
+    .print-only-skills-list {
+      display: none; /* Oculto por defecto en la vista de navegador */
+    }
+    /* Estilos para la URL del repositorio del proyecto solo en impresión */
+    .print-only-repo-url {
+      display: none; /* Oculto por defecto en la vista de navegador */
+    }
 
     @media print {
       * {
@@ -111,6 +119,34 @@
       section#contact {
         page-break-inside: avoid;
       }
+
+      /* Oculta el contenedor de las barras de progreso de habilidades en impresión */
+      #skills-section .space-y-6 { /* Este es el div con id="skills-KEY" que contiene los skillDiv */
+        display: none !important;
+      }
+
+      /* Estilos para la lista de habilidades solo para impresión */
+      .print-only-skills-list {
+        display: block !important;
+        list-style: disc !important;
+        margin-left: 20px !important; /* Indentación de la lista */
+        margin-top: 0.5em; /* Espacio después del título de la categoría */
+        margin-bottom: 1em; /* Espacio antes de la siguiente categoría si aplica */
+        color: #000 !important;
+      }
+      .print-only-skills-list li {
+        padding-bottom: 0.25em; /* Espacio entre ítems de la lista */
+        color: #000 !important;
+      }
+
+      /* Estilos para la URL del repositorio del proyecto solo para impresión */
+      .print-only-repo-url {
+        display: block !important;
+        font-size: 0.9em;         /* Ligeramente más pequeño */
+        color: #333333 !important; /* Gris oscuro */
+        margin-top: 0.25em;       /* Pequeño espacio arriba */
+        word-break: break-all;    /* Evitar que URLs largas rompan el layout */
+      }
     }
   </style>
 </head>
@@ -120,7 +156,7 @@
   <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Hamburger Icon Button (Visible on sm screens and up) -->
-      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4 no-print">
+      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4 no-print" aria-expanded="false" aria-controls="side-menu">
         &#9776;
       </button>
 
