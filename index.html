@@ -9,146 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> -->
 
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
 
   <!-- Custom Styles -->
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+  <!-- <style> ... </style> -->
 
-    .progress-bar-fill {
-      background: linear-gradient(90deg, #197fe5, #3b8dff);
-      transition: width 0.5s ease-in-out;
-    }
-
-    /* Estilos para información de contacto solo en impresión */
-    .print-only-contact-info {
-      display: none; /* Oculto por defecto en la vista de navegador */
-    }
-    /* Estilos para la lista de habilidades solo en impresión */
-    .print-only-skills-list {
-      display: none; /* Oculto por defecto en la vista de navegador */
-    }
-    /* Estilos para la URL del repositorio del proyecto solo en impresión */
-    .print-only-repo-url {
-      display: none; /* Oculto por defecto en la vista de navegador */
-    }
-
-    @media print {
-      * {
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
-      }
-
-      body {
-        background-color: #fff !important;
-        color: #000 !important;
-        font-family: Arial, sans-serif;
-      }
-
-      header, footer, .no-print, svg, .btn-hover, .card-hover:hover, #side-menu, #menu-overlay { /* Added side-menu & overlay to print:none */
-        display: none !important;
-      }
-
-      main section {
-        page-break-inside: avoid;
-        padding: 1em 0;
-        border-bottom: 1px solid #ccc;
-      }
-
-      #print-cv-button,
-      /* #contact, */ /* Contact section should now be visible for print */
-      /* header, footer, nav, svg, img, */ /* nav is no longer a direct element to hide, covered by header */
-      #hamburger-button /* Hide hamburger for print */ {
-        display: none !important;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        color: #000 !important;
-      }
-
-      p, span, li, ul, ol {
-        color: #000 !important;
-      }
-
-      a::after {
-        content: " (" attr(href) ")";
-        font-size: 0.8em;
-        color: #000;
-      }
-
-      /* Mostrar información de contacto específica para impresión */
-      .print-only-contact-info {
-        display: block !important; /* Asegurar que se muestre en impresión */
-        margin-top: 0.5em;       /* Espaciado superior */
-        color: #000000 !important; /* Asegurar texto negro */
-        font-size: 10pt;         /* Tamaño de fuente legible */
-        line-height: 1.4;        /* Interlineado adecuado */
-        text-align: center;      /* Centrado, como el resto de la sección de contacto */
-      }
-
-      /* Ocultar imagen de perfil para ATS */
-      #profile-image {
-        display: none !important;
-      }
-
-      /* Forzar diseño de una columna para secciones con grid/flex para ATS */
-      #skills-section,
-      #project-list,
-      #language-list {
-        display: block !important; /* Anula display:grid o display:flex */
-      }
-      #skills-section > div,
-      #project-list > div,
-      #language-list > div {
-        margin-bottom: 1em; /* Espaciado entre items apilados */
-        page-break-inside: avoid; /* Intentar no romper items individualmente */
-      }
-      /* Asegurar que las secciones principales no se rompan internamente de forma abrupta */
-      section#about,
-      section#experience,
-      section#projects,
-      section#skills,
-      section#languages,
-      section#education,
-      section#certifications,
-      section#contact {
-        page-break-inside: avoid;
-      }
-
-      /* Oculta el contenedor de las barras de progreso de habilidades en impresión */
-      #skills-section .space-y-6 { /* Este es el div con id="skills-KEY" que contiene los skillDiv */
-        display: none !important;
-      }
-
-      /* Estilos para la lista de habilidades solo para impresión */
-      .print-only-skills-list {
-        display: block !important;
-        list-style: disc !important;
-        margin-left: 20px !important; /* Indentación de la lista */
-        margin-top: 0.5em; /* Espacio después del título de la categoría */
-        margin-bottom: 1em; /* Espacio antes de la siguiente categoría si aplica */
-        color: #000 !important;
-      }
-      .print-only-skills-list li {
-        padding-bottom: 0.25em; /* Espacio entre ítems de la lista */
-        color: #000 !important;
-      }
-
-      /* Estilos para la URL del repositorio del proyecto solo para impresión */
-      .print-only-repo-url {
-        display: block !important;
-        font-size: 0.9em;         /* Ligeramente más pequeño */
-        color: #333333 !important; /* Gris oscuro */
-        margin-top: 0.25em;       /* Pequeño espacio arriba */
-        word-break: break-all;    /* Evitar que URLs largas rompan el layout */
-      }
-    }
-  </style>
+  <!-- Enlace al CSS generado por Tailwind -->
+  <link rel="stylesheet" href="css/output.css">
 </head>
 <body class="bg-[#0a1016] text-slate-100">
 

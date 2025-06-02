@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Este repositorio contiene el código fuente del sitio web personal de Pablo Ratache. El sitio muestra las habilidades de Pablo, su experiencia profesional, proyectos, educación y certificaciones.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./css/output.css",
+    "watch-css": "npx tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "build-css:prod": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pr0nel/cv_pablo_ratache.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pr0nel/cv_pablo_ratache/issues"
+  },
+  "homepage": "https://github.com/Pr0nel/cv_pablo_ratache#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8"
+  }
+}
