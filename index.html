@@ -25,6 +25,11 @@
       transition: width 0.5s ease-in-out;
     }
 
+    /* Estilos para información de contacto solo en impresión */
+    .print-only-contact-info {
+      display: none; /* Oculto por defecto en la vista de navegador */
+    }
+
     @media print {
       * {
         -webkit-print-color-adjust: exact;
@@ -48,7 +53,7 @@
       }
 
       #print-cv-button,
-      #contact,
+      /* #contact, */ /* Contact section should now be visible for print */
       /* header, footer, nav, svg, img, */ /* nav is no longer a direct element to hide, covered by header */
       #hamburger-button /* Hide hamburger for print */ {
         display: none !important;
@@ -66,6 +71,45 @@
         content: " (" attr(href) ")";
         font-size: 0.8em;
         color: #000;
+      }
+
+      /* Mostrar información de contacto específica para impresión */
+      .print-only-contact-info {
+        display: block !important; /* Asegurar que se muestre en impresión */
+        margin-top: 0.5em;       /* Espaciado superior */
+        color: #000000 !important; /* Asegurar texto negro */
+        font-size: 10pt;         /* Tamaño de fuente legible */
+        line-height: 1.4;        /* Interlineado adecuado */
+        text-align: center;      /* Centrado, como el resto de la sección de contacto */
+      }
+
+      /* Ocultar imagen de perfil para ATS */
+      #profile-image {
+        display: none !important;
+      }
+
+      /* Forzar diseño de una columna para secciones con grid/flex para ATS */
+      #skills-section,
+      #project-list,
+      #language-list {
+        display: block !important; /* Anula display:grid o display:flex */
+      }
+      #skills-section > div,
+      #project-list > div,
+      #language-list > div {
+        margin-bottom: 1em; /* Espaciado entre items apilados */
+        page-break-inside: avoid; /* Intentar no romper items individualmente */
+      }
+      /* Asegurar que las secciones principales no se rompan internamente de forma abrupta */
+      section#about,
+      section#experience,
+      section#projects,
+      section#skills,
+      section#languages,
+      section#education,
+      section#certifications,
+      section#contact {
+        page-break-inside: avoid;
       }
     }
   </style>
