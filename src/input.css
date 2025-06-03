@@ -1,10 +1,62 @@
+/* INICIO DEFINICIONES FUENTES LOCALES */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter Regular'), local('Inter-Regular'), url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Inter Medium'), local('Inter-Medium'), url('../assets/fonts/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter Bold'), local('Inter-Bold'), url('../assets/fonts/Inter-Bold.woff2') format('woff2');
+}
+/* FIN DEFINICIONES FUENTES LOCALES */
+
+/* INICIO DEFINICIONES FUENTES LOCALES - Noto Sans */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Regular'), local('NotoSans-Regular'), url('../assets/fonts/NotoSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Noto Sans Medium'), local('NotoSans-Medium'), url('../assets/fonts/NotoSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'), url('../assets/fonts/NotoSans-Bold.woff2') format('woff2');
+}
+/* FIN DEFINICIONES FUENTES LOCALES - Noto Sans */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Estilos Generales Consolidados */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans', sans-serif;
 }
 
 .progress-bar-fill {
@@ -24,7 +76,7 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .btn-hover:hover { /* Estilos de hover específicos pueden variar por botón, pero este es un general */
-  /* background-color: #156abc; */ /* Comentado para permitir overrides más específicos por botón */
+  /* background-color: #156abc; */ /* Comentado para permitir sobreescrituras más específicas por botón */
   transform: scale(1.05);
 }
 
@@ -39,138 +91,143 @@ body {
 /* Estilos de Impresión Consolidados */
 @media print {
   * {
-    -webkit-print-color-adjust: exact !important; /* Forzado para navegadores WebKit */
-    color-adjust: exact !important; /* Estándar */
-    background: transparent !important; /* Evitar fondos de color inesperados */
-    box-shadow: none !important; /* Eliminar todas las sombras */
+    -webkit-print-color-adjust: exact !important; /* Forzado para navegadores WebKit (Chrome, Safari) */
+    color-adjust: exact !important; /* Estándar para otros navegadores (Firefox) */
+    background: transparent !important; /* Asegura que no haya fondos de color inesperados */
+    box-shadow: none !important; /* Elimina todas las sombras para una impresión más limpia */
   }
 
   body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    font-family: Arial, sans-serif !important; /* Usar fuentes sans-serif estándar para impresión */
-    font-size: 10pt; /* Tamaño base para impresión */
-    line-height: 1.4; /* Interlineado legible */
+    background-color: #ffffff !important; /* Fondo blanco para impresión */
+    color: #000000 !important; /* Texto negro para máxima legibilidad */
+    font-family: Arial, sans-serif !important; /* Fuente estándar y segura para impresión */
+    font-size: 10pt; /* Tamaño de fuente base legible para documentos impresos */
+    line-height: 1.4; /* Interlineado para mejorar la legibilidad */
   }
 
-  /* Ocultar elementos no deseados en impresión */
+  /* Ocultar elementos no deseados en la versión impresa */
   header,
   footer,
-  .no-print, /* Clase genérica para ocultar */
-  svg, /* Ocultar todos los SVGs (iconos) */
+  .no-print, /* Clase genérica para ocultar elementos específicos de la pantalla */
+  svg, /* Ocultar todos los iconos SVG (generalmente decorativos o interactivos) */
   #side-menu,
   #menu-overlay,
   #print-cv-button,
   #hamburger-button,
-  #profile-image { /* Ocultar imagen de perfil */
+  #profile-image { /* Ocultar la imagen de perfil en la impresión */
     display: none !important;
   }
 
-  /* Los botones interactivos ya tienen .no-print, pero .btn-hover también se oculta por si acaso */
+  /* Los botones interactivos, aunque podrían estar cubiertos por .no-print, se ocultan explícitamente */
   .btn-hover,
-  .card-hover:hover { /* :hover no aplica en print, pero por completitud */
+  .card-hover:hover { /* ':hover' no aplica en impresión, pero se incluye por completitud */
       display: none !important;
   }
 
-  /* Estilos para las secciones principales en impresión */
+  /* Estilos para las secciones principales en la impresión */
   main section {
-    page-break-inside: avoid; /* Evitar que las secciones se corten entre páginas */
-    padding: 0.8em 0; /* Reducir padding vertical para impresión */
-    border-bottom: 1px solid #dddddd; /* Separador más sutil */
+    page-break-inside: avoid; /* Intenta evitar que las secciones se dividan entre páginas */
+    padding: 0.8em 0; /* Padding vertical reducido para economizar espacio */
+    border-bottom: 1px solid #dddddd; /* Separador sutil entre secciones */
   }
   main section:last-of-type {
-    border-bottom: none; /* No añadir borde a la última sección */
+    border-bottom: none; /* Eliminar el borde de la última sección */
   }
 
-  /* Estilos para encabezados en impresión */
+  /* Estilos para encabezados (h1-h6) en impresión */
   h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important;
+    color: #000000 !important; /* Encabezados en negro */
     page-break-after: avoid; /* Evitar saltos de página justo después de un encabezado */
-    margin-top: 0.8em;
-    margin-bottom: 0.4em;
+    margin-top: 0.8em; /* Margen superior para encabezados */
+    margin-bottom: 0.4em; /* Margen inferior para encabezados */
   }
-  h1 { font-size: 18pt; }
-  h2 { font-size: 14pt; }
-  h3 { font-size: 12pt; }
+  h1 { font-size: 18pt; } /* Tamaño para el título principal (nombre) */
+  h2 { font-size: 14pt; } /* Tamaño para títulos de sección */
+  h3 { font-size: 12pt; } /* Tamaño para subtítulos o roles */
 
-  /* Estilos para párrafos y listas en impresión */
-  p, span, li, div#summary /* Aplicar a div#summary también para el texto del resumen */ {
-    color: #000000 !important;
-    orphans: 3; /* Mínimo de líneas al final de una página */
-    widows: 3;  /* Mínimo de líneas al inicio de una página */
+  /* Estilos para párrafos, spans, y elementos de lista en impresión */
+  p, span, li, div#summary /* Aplicar también a div#summary para el texto del resumen */ {
+    color: #000000 !important; /* Texto en negro */
+    orphans: 3; /* Mínimo de líneas de un párrafo al final de una página */
+    widows: 3;  /* Mínimo de líneas de un párrafo al inicio de una nueva página */
   }
   p {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5em; /* Espacio después de los párrafos */
   }
 
-  /* Mostrar URL completa para enlaces */
+  /* Mostrar URL completa para enlaces externos e email en impresión */
   a[href^="http"]::after,
   a[href^="mailto"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.9em; /* Ligeramente más pequeño */
-    color: #555555; /* Gris para no distraer tanto */
+    content: " (" attr(href) ")"; /* Añade la URL entre paréntesis después del texto del enlace */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño para la URL */
+    color: #555555; /* Color gris para la URL, para no distraer demasiado */
   }
-  /* No mostrar para enlaces internos de navegación */
+  /* No mostrar URL para enlaces internos (anclas) */
   a[href^="#"]::after {
-    content: "";
+    content: ""; /* No añadir contenido para enlaces internos */
   }
 
 
-  /* Información de contacto específica para impresión */
+  /* Información de contacto específica para impresión (email, teléfono, GitHub) */
   .print-only-contact-info {
-    display: block !important;
-    margin-top: 0.4em;
-    color: #000000 !important;
-    font-size: 10pt;
-    line-height: 1.3;
-    text-align: center;
+    display: block !important; /* Asegura que sea visible en impresión */
+    margin-top: 0.4em; /* Espacio superior */
+    color: #000000 !important; /* Texto en negro */
+    font-size: 10pt; /* Mismo tamaño que el cuerpo del texto */
+    line-height: 1.3; /* Interlineado para la información de contacto */
+    text-align: center; /* Centrar la información de contacto */
   }
 
-  /* Lista de habilidades para impresión */
-  #skills-section .space-y-6, /* Oculta barras de progreso web */
-  #skills-section .web-skills-display { /* Oculta barras de progreso web (clase más específica) */
+  /* Lista de habilidades para impresión (oculta las barras de progreso) */
+  #skills-section .space-y-6, /* Oculta el contenedor de barras de progreso web */
+  #skills-section .web-skills-display { /* Oculta las barras de progreso web (clase más específica) */
     display: none !important;
   }
   .print-only-skills-list {
-    display: block !important;
-    list-style: disc !important;
-    margin-left: 20px !important;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    color: #000 !important;
+    display: block !important; /* Muestra la lista de habilidades solo en impresión */
+    list-style: disc !important; /* Estilo de viñeta estándar */
+    margin-left: 20px !important; /* Sangría para la lista */
+    margin-top: 0.5em; /* Margen superior */
+    margin-bottom: 1em; /* Margen inferior */
+    color: #000 !important; /* Color de texto para la lista */
   }
   .print-only-skills-list li {
-    padding-bottom: 0.25em;
-    color: #000 !important;
+    padding-bottom: 0.25em; /* Espacio debajo de cada elemento de la lista */
+    color: #000 !important; /* Color de texto para los elementos de la lista */
   }
 
   /* URL del repositorio del proyecto para impresión */
   .print-only-repo-url {
-    display: block !important;
-    font-size: 0.9em;
-    color: #333333 !important;
-    margin-top: 0.25em;
-    word-break: break-all; /* Para URLs largas */
+    display: block !important; /* Muestra la URL del repositorio solo en impresión */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #333333 !important; /* Color de texto oscuro pero no negro puro */
+    margin-top: 0.25em; /* Espacio superior */
+    word-break: break-all; /* Permite que las URLs largas se dividan para evitar desbordamientos */
   }
 
-  /* Estilos específicos para barras de progreso en impresión (si se decidiera mostrarlas) */
-  /* Por ahora, las barras de progreso están ocultas por .web-skills-display o #skills-section .space-y-6 */
-  /* Si se quisieran mostrar de forma simplificada:
+  /* Estilos para barras de progreso en impresión (actualmente ocultas) */
+  /* Si se decidiera mostrarlas de forma simplificada, se podrían descomentar y ajustar:
   .progress-bar-fill {
-    background: #cccccc !important;
-    height: 8px !important;
-    border-radius: 0 !important;
+    background: #cccccc !important; // Un color gris simple para la barra
+    height: 8px !important;        // Altura fija
+    border-radius: 0 !important;   // Sin bordes redondeados
+    border: 1px solid #aaaaaa;     // Un borde sutil
+  }
+  div[role="progressbar"] {        // Contenedor de la barra
+      border: 1px solid #aaaaaa;   // Borde para el contenedor también
+      padding: 1px;                // Pequeño padding si es necesario
   }
   */
 
-  /* Eliminar clases de Tailwind que puedan interferir con la impresión */
+  /* Eliminar clases de Tailwind que puedan interferir con los estilos de impresión */
   .bg-gradient-to-br,
-  .bg-\[\#0a1016\], /* Sintaxis Tailwind para colores arbitrarios */
+  .bg-\[\#0a1016\], /* Sintaxis de Tailwind para colores arbitrarios */
   .bg-\[\#111a22\] {
-    background: none !important;
-    background-color: transparent !important;
+    background: none !important; /* Elimina fondos gradientes o de color sólido */
+    background-color: transparent !important; /* Asegura fondo transparente */
   }
 
+  /* Asegurar que el texto sea negro, anulando colores de Tailwind */
   .text-slate-100,
   .text-slate-300,
   .text-slate-400,
@@ -179,17 +236,18 @@ body {
     color: #000000 !important;
   }
 
-  /* Clases de layout de Tailwind que podrían necesitar anulación para impresión */
+  /* Clases de layout de Tailwind que podrían necesitar anulación para un flujo lineal en impresión */
   .grid, .lg\:grid-cols-3, .md\:grid-cols-2, .sm\:grid-cols-2, .gap-8, .gap-10, .space-y-8 {
-      /* La anulación a display:block ya se hace para #project-list, #skills-section, #language-list */
-      /* Si otros elementos grid/flex necesitan linealizarse, se añadirían aquí */
+      /* La anulación a display:block ya se realiza más específicamente abajo para las listas de proyectos, idiomas y habilidades */
   }
-  #project-list, #language-list, #skills-section { /* Ya definido arriba, pero para enfatizar */
+  /* Asegurar que las listas principales (proyectos, idiomas, habilidades) se muestren como bloques */
+  #project-list, #language-list, #skills-section {
       display: block !important;
   }
-  #project-list > div, #language-list > div, #skills-section > div { /* Ya definido arriba */
-      margin-bottom: 1em;
-      page-break-inside: avoid;
+  /* Estilos para los elementos individuales dentro de estas listas */
+  #project-list > div, #language-list > div, #skills-section > div {
+      margin-bottom: 1em; /* Espacio entre elementos de la lista */
+      page-break-inside: avoid; /* Evitar que los elementos individuales se corten entre páginas */
   }
 
 }

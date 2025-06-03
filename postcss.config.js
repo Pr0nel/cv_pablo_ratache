@@ -1,4 +1,5 @@
-// postcss.config.js
+// Configuración de PostCSS para el proyecto.
+// Incluye Tailwind CSS y Autoprefixer.
 module.exports = {
   plugins: {
     autoprefixer: {},
