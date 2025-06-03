@@ -1,3 +1,5 @@
+// Configuración de Tailwind CSS para el proyecto.
+// Define rutas de contenido, tema personalizado y plugins.
 module.exports = {
   content: [
     "./index.html",
