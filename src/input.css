@@ -87,11 +87,16 @@ body {
   display: none; /* Oculto por defecto en la vista de navegador */
 }
 
+/* Elementos solo para impresión - ocultos en web */
+.print-only {
+  display: none;
+}
 
 /* Estilos de Impresión Consolidados */
 @media print {
+  /* --- Configuración General de Impresión --- */
   * {
-    -webkit-print-color-adjust: exact !important; /* Forzado para navegadores WebKit (Chrome, Safari) */
+    -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important; /* Estándar para otros navegadores (Firefox) */
     background: transparent !important; /* Asegura que no haya fondos de color inesperados */
     box-shadow: none !important; /* Elimina todas las sombras para una impresión más limpia */
@@ -249,5 +254,148 @@ body {
       margin-bottom: 1em; /* Espacio entre elementos de la lista */
       page-break-inside: avoid; /* Evitar que los elementos individuales se corten entre páginas */
   }
+
+  /* --- Estilos y Orden para el Header de Impresión --- */
+  #print-header {
+    order: 1;
+    text-align: center;
+    margin-bottom: 0.2in; /* Espacio después del header de contacto */
+  }
+  #print-name {
+    font-size: 22pt; /* Nombre: 18-24pt */
+    font-weight: bold; /* Nombre destacado */
+    margin-bottom: 0.1in;
+  }
+  #print-contact-info {
+    font-size: 10pt; /* Texto principal: 10-12pt */
+    line-height: 1.5;
+  }
+  #print-contact-info > div {
+    margin-bottom: 2px; /* Pequeño espacio entre líneas de contacto */
+  }
+  /* No añadir " (href)" para el enlace de GitHub en impresión, ya que se pide texto plano */
+  #print-github::after {
+    content: "" !important;
+  }
+
+
+  /* --- Estilos y Orden para Separadores --- */
+  hr.print-separator {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin-top: 0.2in;
+    margin-bottom: 0.2in;
+    width: 100%;
+  }
+  #print-separator-1 { order: 2; }
+  #print-separator-2 { order: 4; }
+
+  /* --- Estilos y Orden para Resumen (About me) --- */
+  /* El div #print-summary-content se usa si queremos un contenedor separado.
+     Alternativamente, si section#about se usa directamente: */
+  section#about { /* Esta es la sección que contiene p#summary */
+    order: 3;
+    padding: 0 !important; /* Resetear padding de la sección web */
+    border: none !important; /* Resetear borde de la sección web */
+    margin: 0 0 0.2in 0; /* Margen después del resumen */
+  }
+  section#about > #about-text-content > p#summary { /* El párrafo del resumen */
+    font-size: 11pt; /* Texto principal: 10-12pt */
+    display: block !important; /* Asegurar que sea visible */
+    text-align: justify; /* Justificar el resumen */
+  }
+  /* Ocultar el div #print-summary-content si section#about/p#summary se muestra directamente */
+  #print-summary-content.print-only {
+      /* Si se usa p#summary directamente de section#about, este div puede no ser necesario o usarse como wrapper */
+      /* Si p#summary se clona en #print-summary-content, entonces este div toma el order: 3 */
+      /* Asumamos que p#summary se muestra desde section#about, y #print-summary-content no se usa. */
+      display: none !important;
+  }
+
+
+  /* --- Estilos y Orden para Secciones del CV --- */
+  main.flex-1 > section { /* Estilos generales para secciones en impresión */
+    padding: 0.1in 0;
+    border-bottom: 1px solid #eeeeee; /* Borde más sutil entre secciones */
+    page-break-inside: avoid;
+  }
+  main.flex-1 > section:last-of-type {
+    border-bottom: none;
+  }
+
+  section h2 { /* Títulos de sección: 12-14pt negrita */
+    font-size: 13pt;
+    font-weight: bold !important; /* Tailwind puede quitar negrita a h2 base */
+    margin-top: 0;
+    margin-bottom: 0.15in;
+    color: #000000 !important;
+  }
+  /* Ocultar H2 si la sección está vacía */
+  section.empty-for-print h2 {
+    display: none !important;
+  }
+
+  /* Texto principal dentro de las secciones */
+  section p, section li, section div.text-slate-300, section div.text-base {
+    font-size: 11pt; /* Texto principal: 10-12pt */
+    color: #000000 !important;
+  }
+  section .text-slate-400 { /* Para fechas o roles secundarios */
+    font-size: 10pt;
+    color: #333333 !important;
+  }
+
+  /* Ocultar elementos específicos de la web dentro de las secciones */
+  section .web-skills-display { /* Barras de progreso de skills */
+      display: none !important;
+  }
+  section .print-only-skills-list { /* Lista de skills para impresión */
+      display: block !important;
+      list-style: disc !important;
+      margin-left: 20px !important;
+      font-size: 11pt;
+  }
+  section .print-only-skills-list li {
+      padding-bottom: 2px;
+  }
+  /* Enlaces de proyectos en impresión */
+  section a.project-repo-link {
+    display: none !important; /* Ocultar el botón/enlace "View Code" */
+  }
+  section p.print-only-repo-url { /* Mostrar la URL del repo */
+    display: block !important;
+    font-size: 9pt;
+    color: #555555 !important;
+    margin-top: 3px;
+  }
+  section p.print-only-repo-url::before {
+    content: "Repositorio: "; /* Etiqueta para la URL */
+    font-weight: bold;
+  }
+   section p.print-only-repo-url::after { /* No añadir la URL de nuevo si ya está en el texto */
+    content: "" !important;
+  }
+
+
+  /* Orden de las secciones */
+  section#experience { order: 5; }
+  section#skills { order: 6; }
+  section#projects { order: 7; }
+  section#education { order: 8; }
+  section#certifications { order: 9; }
+  section#languages { order: 10; margin-bottom: 0; } /* Última sección, sin margen inferior */
+
+  /* --- Ocultar Secciones Vacías --- */
+  .empty-for-print {
+    display: none !important;
+  }
+
+  /* --- Ocultar Secciones No Deseadas en Impresión --- */
+  section#contact { /* La sección contact original */
+      display: none !important;
+      /* Su contenido (dirección, etc.) se muestra a través de #print-header */
+  }
+  /* Si hay otras secciones que no se mencionaron y no deberían imprimirse */
+  /* section#nombre_otra_seccion { display: none !important; } */
 
 }

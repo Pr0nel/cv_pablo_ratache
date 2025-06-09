@@ -93,6 +93,7 @@
   ],
   "contact": {
     "email": "pablo.ratache@uni.pe",
-    "phone": "+51 966979127"
+    "phone": "+51 966979127",
+    "fullAddress": "Placeholder: Your Full Address Here, City, Country"
   }
 }

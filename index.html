@@ -80,6 +80,25 @@
   <div id="menu-overlay" class="fixed top-0 left-0 w-full h-full bg-black/50 z-[55] hidden no-print"></div>
 
   <main class="flex-1">
+<!-- Elementos solo para la versión de impresión -->
+<div id="print-header" class="print-only">
+  <div id="print-name" class="print-name-style"></div>
+  <div id="print-contact-info" class="print-contact-style">
+    <div id="print-address"></div>
+    <div id="print-phone"></div>
+    <div id="print-email"></div>
+    <div id="print-github"></div>
+  </div>
+</div>
+
+<hr class="print-only print-separator" id="print-separator-1">
+
+<div id="print-summary-content" class="print-only print-summary-style">
+  <!-- El contenido del resumen (p#summary) se clonará aquí o se mostrará directamente section#about con estilos -->
+</div>
+
+<hr class="print-only print-separator" id="print-separator-2">
+<!-- Fin de elementos solo para la versión de impresión -->
     <section id="about" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
   <div class="layout-content-container flex flex-col md:flex-row md:items-start md:gap-8 max-w-6xl mx-auto">
     <div id="about-text-content" class="order-2 md:order-1"> <!-- New div wrapping text elements -->

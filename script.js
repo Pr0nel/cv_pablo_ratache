@@ -307,6 +307,47 @@ function populateCertifications(certificationsData) {
   });
 }
 
+function populatePrintSpecificContent(data, texts) {
+  // Poblar el encabezado de impresión
+  const printNameEl = document.getElementById('print-name');
+  if (printNameEl && data.name) {
+    printNameEl.textContent = data.name;
+  }
+
+  const printAddressEl = document.getElementById('print-address');
+  if (printAddressEl && data.contact && data.contact.fullAddress) {
+    printAddressEl.textContent = data.contact.fullAddress;
+  } else if (printAddressEl) {
+    printAddressEl.textContent = 'Dirección no proporcionada'; // Placeholder si no hay dirección
+  }
+
+  const printPhoneEl = document.getElementById('print-phone');
+  if (printPhoneEl && data.contact && data.contact.phone) {
+    printPhoneEl.textContent = 'Tel: ' + data.contact.phone;
+  }
+
+  const printEmailEl = document.getElementById('print-email');
+  if (printEmailEl && data.contact && data.contact.email) {
+    printEmailEl.textContent = 'Email: ' + data.contact.email;
+  }
+
+  const printGithubEl = document.getElementById('print-github');
+  if (printGithubEl && data.githubProfileUrl) {
+    // Para impresión, solo el texto de la URL es lo más común, no un enlace clickeable.
+    printGithubEl.textContent = 'GitHub: ' + data.githubProfileUrl;
+  }
+
+  // Poblar el resumen de impresión
+  const printSummaryEl = document.getElementById('print-summary-content');
+  const webSummaryEl = document.getElementById('summary'); // El p#summary original
+  if (printSummaryEl && webSummaryEl && webSummaryEl.textContent) {
+    printSummaryEl.textContent = webSummaryEl.textContent;
+  } else if (printSummaryEl && data.about && data.about.summary) {
+    // Fallback si p#summary no está poblado aún pero los datos existen
+    printSummaryEl.textContent = data.about.summary;
+  }
+}
+
 function applyStaticTranslations(texts, data) {
   const setQueryText = (selector, text) => {
     const el = document.querySelector(selector);
@@ -426,6 +467,32 @@ function loadResumeData(language) {
       if (data.education) populateEducation(data.education);
       if (data.certifications) populateCertifications(data.certifications);
       applyStaticTranslations(texts, data);
+      populatePrintSpecificContent(data, texts);
+  // Marcar secciones vacías para impresión después de poblar todo
+  const sectionsToPotentiallyHide = ['experience', 'projects', 'skills', 'languages', 'education', 'certifications'];
+  const sectionDataKeysInJson = ['experience', 'projects', 'skills', 'languages', 'education', 'certifications']; // Corresponde a data.experience, data.projects, etc.
+
+  sectionsToPotentiallyHide.forEach((sectionId, index) => {
+    const jsonDataKey = sectionDataKeysInJson[index];
+    const sectionData = data[jsonDataKey]; // data.experience, data.projects, etc.
+
+    // Chequeo primario: ¿Existe el array de datos y tiene elementos?
+    let isEmpty = !sectionData || sectionData.length === 0;
+
+    // Chequeo secundario (si los datos existen pero la lista DOM podría estar vacía por otra razón):
+    // Esto es más complejo porque los IDs de las listas varían.
+    // Por simplicidad, nos basaremos principalmente en si el array de datos JSON original está vacío.
+    // Las funciones populate* deberían evitar crear elementos si no hay datos.
+
+    const sectionElement = document.getElementById(sectionId);
+    if (isEmpty && sectionElement) {
+      sectionElement.classList.add('empty-for-print');
+      console.log('Marcando sección ' + sectionId + ' como empty-for-print porque no hay datos en JSON.');
+    } else if (sectionElement) {
+      // Si hay datos, asegurarse de que no tenga la clase por si acaso
+      sectionElement.classList.remove('empty-for-print');
+    }
+  });
     })
     .catch(error => {
       console.error(`Error en loadResumeData para ${language}:`, error.message);
