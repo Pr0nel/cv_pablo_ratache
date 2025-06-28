@@ -37,13 +37,13 @@
       "title": "Análisis en tiempo real de datos bursátiles",
       "description": "Construí un sistema de análisis en tiempo real de datos del mercado de valores, permitiendo decisiones de inversión rápidas y gestión de riesgos.",
       "image": "assets/project2.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/SNIPPF_data_pipeline_project"
     },
     {
       "title": "Segmentación de clientes usando Machine Learning",
       "description": "Implementé algoritmos de machine learning para segmentar clientes basados en patrones de compra, mejorando estrategias de marketing dirigido.",
       "image": "assets/project3.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     }
   ],
   "skills": {
