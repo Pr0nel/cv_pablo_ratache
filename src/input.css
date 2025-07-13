@@ -250,4 +250,8 @@ body {
       page-break-inside: avoid; /* Evitar que los elementos individuales se corten entre páginas */
   }
 
+  /* Ocultar todas las imágenes en la impresión */
+  img {
+    display: none !important;
+  }
 }

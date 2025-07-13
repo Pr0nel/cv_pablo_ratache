@@ -217,7 +217,8 @@ function populateProjects(projectsData, texts) {
 
     // Contenido HTML para la vista web (imagen, título, descripción, enlace interactivo)
     let webContentHTML = `
-      <img src="${projectImage}" alt="${projectTitleText}" class="w-full aspect-video rounded-lg object-cover" onerror="this.onerror=null; this.src='assets/project_placeholder.png'; console.error('Error loading image for project: ${projectTitleText} at ${projectImage}');">
+      <img src="${projectImage}" alt="${projectTitleText}" class="w-full aspect-video rounded-lg object-cover no-print" onerror="this.onerror=null; this.src='assets/project_placeholder.png'; console.error('Error loading image for project: ${projectTitleText} at ${projectImage}');">
+
       <h3 class="text-white text-xl font-semibold">${project.title || ''}</h3>
       <p class="text-slate-400 text-sm">${project.description || ''}</p>
     `;
