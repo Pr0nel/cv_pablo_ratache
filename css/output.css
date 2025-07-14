@@ -1320,6 +1320,26 @@ body {
     /* Asegura fondo transparente */
   }
 
+  /* Anular diseño grid para impresión */
+
+  .grid,
+  .lg\:grid-cols-3,
+  .md\:grid-cols-2,
+  .sm\:grid-cols-2,
+  .gap-8,
+  .gap-10,
+  .space-y-8,
+  .flex,
+  .justify-between,
+  .items-center {
+    display: block !important;
+    gap: 0 !important;
+    justify-content: initial !important;
+    align-items: initial !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   /* Asegurar que el texto sea negro, anulando colores de Tailwind */
 
   .text-slate-100,
