@@ -3,7 +3,7 @@
   "title": "Data Engineer & Junior Software Developer",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
-    "summary": "Soy Pablo, un ingeniero físico incursionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
+    "summary": "Soy Pablo, Ingeniero Físico incursionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
     "image": "assets/profile.png"
   },
   "experience": [
@@ -37,13 +37,13 @@
       "title": "Análisis en tiempo real de datos bursátiles",
       "description": "Construí un sistema de análisis en tiempo real de datos del mercado de valores, permitiendo decisiones de inversión rápidas y gestión de riesgos.",
       "image": "assets/project_placeholder.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
       "title": "Segmentación de clientes usando Machine Learning",
       "description": "Implementé algoritmos de machine learning para segmentar clientes basados en patrones de compra, mejorando estrategias de marketing dirigido.",
       "image": "assets/project_placeholder.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/SNIPPF_data_pipeline_project"
     }
   ],
   "skills": {
@@ -74,22 +74,15 @@
   ],
   "education": [
     {
-      "degree": "M.Sc. en Ciencias de la Computación",
-      "institution": "Tech University, Cityville",
-      "dates": "2020 - 2022",
-      "details": "Especializado en Ciencia de Datos y Machine Learning. Tesis sobre 'Optimización de pipelines ETL para Big Data'."
-    },
-    {
-      "degree": "B.Sc. en Ingeniería de Software",
-      "institution": "State College, Townsville",
-      "dates": "2016 - 2020",
-      "details": "Graduado con honores. Proyecto final consistió en el desarrollo de un sistema web de gestión de inventario."
+      "degree": "B.Sc. en Ingeniería Física",
+      "institution": "Universidad Nacional de Ingeniería, Lima - Perú",
+      "dates": "2010 - 2019",
+      "details": "El proyecto final consistió en simular el consumo de energía para la calefacción de un Módulo de Vivienda Experimental ubicado a 4500 msnm. Las predicciones de temperatura se comparan con las temperaturas interiores registradas, para validar el modelo. A continuación, se calcula la temperatura interior objetivo. Finalmente, se calcula la energía necesaria para mantener una temperatura interior neutra."
     }
   ],
   "languages": [
-    { "language": "Inglés", "level": "Nativo", "progress": 100 },
-    { "language": "Español", "level": "Avanzado (C1)", "progress": 85 },
-    { "language": "Alemán", "level": "Intermedio (B1)", "progress": 50 }
+    { "language": "Español", "level": "Nativo", "progress": 100 },
+    { "language": "Inglés", "level": "Intermedio", "progress": 50 }
   ],
   "contact": {
     "email": "pablo.ratache@uni.pe",

@@ -37,13 +37,13 @@
       "title": "Real-time stock market data analysis",
       "description": "Built a real-time stock market data analysis system, enabling rapid investment decisions and risk management.",
       "image": "assets/project_placeholder.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
       "title": "Customer segmentation using Machine Learning",
       "description": "Implemented machine learning algorithms to segment customers based on purchasing patterns, improving targeted marketing strategies.",
       "image": "assets/project_placeholder.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/SNIPPF_data_pipeline_project"
     }
   ],
   "skills": {
@@ -74,22 +74,15 @@
   ],
   "education": [
     {
-      "degree": "M.Sc. en Ciencias de la Computación",
-      "institution": "Tech University, Cityville",
-      "dates": "2020 - 2022",
-      "details": "Specialized in Data Science and Machine Learning. Thesis on 'Optimizing ETL pipelines for Big Data'."
-    },
-    {
-      "degree": "B.Sc. en Ingeniería de Software",
-      "institution": "State College, Townsville",
-      "dates": "2016 - 2020",
-      "details": "Graduated with honors. Final project involved developing a web-based inventory management system."
+      "degree": "B.Sc. Physical Engineering",
+      "institution": "Universidad Nacional de Ingeniería, Lima - Perú",
+      "dates": "2010 - 2019",
+      "details": "Final project involved simulating energy consumption for heating an Experimental Housing Module located at 4500 masl. The temperature predictions are compared with recorded indoor temperatures to validate the model. The target indoor temperature is then calculated. Finally, the energy required to maintain a neutral indoor temperature is calculated."
     }
   ],
   "languages": [
-    { "language": "English", "level": "Native", "progress": 100 },
-    { "language": "Spanish", "level": "Advanced (C1)", "progress": 85 },
-    { "language": "German", "level": "Intermediate (B1)", "progress": 50 }
+    { "language": "Spanish", "level": "Native", "progress": 100 },
+    { "language": "English", "level": "Intermediate", "progress": 50 }
   ],
   "contact": {
     "email": "pablo.ratache@uni.pe",
