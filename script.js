@@ -202,6 +202,20 @@ function populateExperience(experienceData) {
   });
 }
 
+function alignProjectCards() {
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    const titleElement = card.querySelector('.project-title');
+    const descriptionElement = card.querySelector('.project-description');
+    if (titleElement && descriptionElement) {
+      const titleHeight = titleElement.offsetHeight;
+      const descriptionHeight = descriptionElement.offsetHeight;
+      const maxHeight = Math.max(titleHeight, descriptionHeight);
+      card.style.minHeight = `${maxHeight}px`; // Establecer el alto mínimo para alinear verticalmente
+    }
+  });
+}
+
 /**
  * Puebla la sección de proyectos.
  * @param {Array<Object>} projectsData - Array de objetos de proyecto.
@@ -215,21 +229,24 @@ function populateProjects(projectsData, texts) {
   }
   projectsData.forEach(project => {
     const projectCard = document.createElement("div"); // Renombrado de 'div' a 'projectCard' para claridad
-    projectCard.className = "flex flex-col gap-4 p-6 bg-[#111a22] rounded-xl shadow-lg";
-    const projectImage = project.image || 'https://via.placeholder.com/600x400.png?text=Image+Not+Available';
+    projectCard.className = "flex flex-col p-6 bg-[#111a22] rounded-xl shadow-lg h-full";
+    const projectImage = project.image || 'assets/project_placeholder.png';
     const projectTitleText = project.title || 'Project Image'; // Renombrado para evitar confusión con el elemento title
 
     // Contenido HTML para la vista web (imagen, título, descripción, enlace interactivo)
-    let webContentHTML = `
-      <img src="${projectImage}" alt="${projectTitleText}" class="w-full aspect-video rounded-lg object-cover no-print" onerror="this.onerror=null; this.src='assets/project_placeholder.png'; console.error('Error loading image for project: ${projectTitleText} at ${projectImage}');">
-
-      <h3 class="text-white text-xl font-semibold">${project.title || ''}</h3>
-      <p class="text-slate-400 text-sm">${project.description || ''}</p>
+    projectCard.innerHTML = `
+      <img src="${projectImage}" alt="${project.title || ''}" class="w-full aspect-video rounded-lg object-cover no-print">
+      <div class="flex flex-col flex-grow p-4">
+        <h3 class="text-white text-xl font-semibold mb-2">${project.title || ''}</h3>
+        <p class="text-slate-300 text-sm mb-3 whitespace-pre-line flex-grow">${project.description || ''}</p>
+        ${project.repositoryUrl ? `
+          <a href="${project.repositoryUrl}" target="_blank" rel="noopener noreferrer"
+            class="project-repo-link text-[#197fe5] hover:text-[#3b8dff] text-sm font-medium mt-auto flex items-center gap-2">
+            ${texts.projectRepoLinkText || "View Code"}
+          </a>
+        ` : ''}
+      </div>
     `;
-    if (project.repositoryUrl) {
-      webContentHTML += `<a href="${project.repositoryUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center text-[#197fe5] hover:text-[#3b8dff] transition-colors duration-300 no-print project-repo-link">${texts.projectRepoLinkText || "View Code"}</a>`;
-    }
-    projectCard.innerHTML = webContentHTML;
 
     // Añadir URL del repositorio para impresión (print-only)
     if (project.repositoryUrl) {
@@ -240,6 +257,9 @@ function populateProjects(projectsData, texts) {
     }
     projectList.appendChild(projectCard);
   });
+  
+  // Alineación vertical de las tarjetas de proyectos
+  alignProjectCards();
 }
 
 function populateSkills(skillsData, language) {
@@ -438,6 +458,7 @@ function loadResumeData(language) {
       if (data.education) populateEducation(data.education);
       if (data.certifications) populateCertifications(data.certifications);
       applyStaticTranslations(texts, data);
+      alignProjectCards(); // Llamar a alignProjectCards después de poblar los proyectos
     })
     .catch(error => {
       console.error(`Error en loadResumeData para ${language}:`, error.message);
@@ -512,4 +533,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error("Side menu element (#side-menu) not found. Hamburger functionality disabled.");
   }
+});
+
+// Evento para realineación cuando se cambia el tamaño de la ventana
+window.addEventListener('resize', () => {
+  alignProjectCards();
 });

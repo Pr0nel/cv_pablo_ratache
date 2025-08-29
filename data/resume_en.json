@@ -35,7 +35,7 @@
       "repositoryUrl": "https://github.com/Pr0nel/proyecto_ocr_vouchers"
     },
     {
-      "title": "Solar Radiation Prediction",
+      "title": "Data Analysis and Modeling for Solar Radiation Prediction",
       "description": "Data analysis and modeling project to predict hourly solar radiation over a given time horizon. This project involves data exploration, data preprocessing and cleaning, and training a machine learning model to perform the prediction.",
       "image": "assets/project2.png",
       "repositoryUrl": "https://github.com/Pr0nel/weather_data"
