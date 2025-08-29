@@ -70,7 +70,7 @@ function clearDynamicContent() {
   }
 
   clearElementInnerHTML("experience-list");
-  clearElementInnerHTML("project-list"); // Se limpian los proyectos aquí
+  clearElementInnerHTML("project-list");
   clearElementInnerHTML("skills-section");
   clearElementInnerHTML("language-list");
   clearElementInnerHTML("education-list");
@@ -187,13 +187,17 @@ function populateContactActions(data, texts, language) {
   }
 }
 
+/**
+ * Renderiza la lista de experiencias laborales.
+ * @param {Array<Object>} experienceData - Array de objetos con role, company, dates, description.
+ */
 function populateExperience(experienceData) {
   const experienceList = document.getElementById("experience-list");
   if (!experienceData || !experienceList) { return; }
   experienceData.forEach(job => {
     const div = document.createElement("div");
     div.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
-    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${job.role || ''}</h3><p class="text-slate-400 text-sm">${job.company || ''} | ${job.dates || ''}</p><p class="text-slate-300 text-base mt-2">${job.description || ''}</p>`;
+    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${job.role || ''}</h3><p class="text-slate-400 text-sm">${job.company || ''} | ${job.dates || ''}</p><p class="text-slate-300 text-base mt-2 whitespace-pre-line">${job.description || ''}</p>`;
     experienceList.appendChild(div);
   });
 }
@@ -298,8 +302,15 @@ function populateEducation(educationData) {
 }
 
 function populateCertifications(certificationsData) {
+  const certificationSection = document.getElementById("certifications");
   const certificationList = document.getElementById("certification-list");
   if (!certificationsData || !certificationList) { return; }
+  // Si no hay datos de certificaciones, oculta la sección completa
+  if (certificationsData.length === 0) {
+    certificationSection.style.display = 'none';
+    certificationList.style.display = 'none';
+    return;
+  }
   certificationsData.forEach(cert => {
     const div = document.createElement("div");
     div.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
@@ -344,7 +355,7 @@ function applyStaticTranslations(texts, data) {
   const copyEmailButton = document.getElementById("copy-email-contact-button");
   if (copyEmailButton) { copyEmailButton.innerHTML = texts.copyEmailButtonText || "Copy Email"; }
   const projectRepoLinks = document.querySelectorAll(".project-repo-link");
-  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); });
+  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); link.setAttribute('aria-label', `${texts.projectRepoLinkText || "View Code"} de ${link.closest('div').querySelector('h3')?.textContent || 'proyecto'}`);});
   const profileImg = document.getElementById("profile-image");
   if (profileImg) { profileImg.alt = texts.profileImageAlt; }
 
@@ -388,7 +399,7 @@ const staticTextConfig = {
     emailLabelPrint: 'Correo Electrónico:',
     githubLabelPrint: 'Perfil de GitHub:',
     phoneLabelPrint: 'Celular:',
-    projectRepoUrlLabelPrint: 'Repositorio:', // Nueva clave
+    projectRepoUrlLabelPrint: 'Repositorio:',
     profileImageAlt: "Foto de perfil de "
   },
   en: {
@@ -401,7 +412,7 @@ const staticTextConfig = {
     emailLabelPrint: 'Email:',
     githubLabelPrint: 'GitHub Profile:',
     phoneLabelPrint: 'Phone:',
-    projectRepoUrlLabelPrint: 'Repository:', // New key
+    projectRepoUrlLabelPrint: 'Repository:',
     profileImageAlt: "Profile picture of "
   }
 };

@@ -415,6 +415,10 @@ select {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -731,6 +735,10 @@ select {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
 }
 
 .rounded-full {
@@ -1059,6 +1067,10 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
 /* Estilos Generales Consolidados */
 
 body {
@@ -1097,7 +1109,6 @@ body {
 .print-only-skills-list,
 .print-only-repo-url {
   display: none;
-  /* Oculto por defecto en la vista de navegador */
 }
 
 /* Estilos de Impresión Consolidados */
@@ -1294,21 +1305,6 @@ body {
     /* Permite que las URLs largas se dividan para evitar desbordamientos */
   }
 
-  /* Estilos para barras de progreso en impresión (actualmente ocultas) */
-
-  /* Si se decidiera mostrarlas de forma simplificada, se podrían descomentar y ajustar:
-  .progress-bar-fill {
-    background: #cccccc !important; // Un color gris simple para la barra
-    height: 8px !important;        // Altura fija
-    border-radius: 0 !important;   // Sin bordes redondeados
-    border: 1px solid #aaaaaa;     // Un borde sutil
-  }
-  div[role="progressbar"] {        // Contenedor de la barra
-      border: 1px solid #aaaaaa;   // Borde para el contenedor también
-      padding: 1px;                // Pequeño padding si es necesario
-  }
-  */
-
   /* Eliminar clases de Tailwind que puedan interferir con los estilos de impresión */
 
   .bg-gradient-to-br,
@@ -1358,9 +1354,11 @@ body {
 
   /* Asegurar que las listas principales (proyectos, idiomas, habilidades) se muestren como bloques */
 
+  /*
   #project-list, #language-list, #skills-section {
-    display: block !important;
+      display: block !important;
   }
+*/
 
   /* Estilos para los elementos individuales dentro de estas listas */
 

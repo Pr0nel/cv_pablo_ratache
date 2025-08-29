@@ -54,16 +54,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+}
+
 /* Estilos Generales Consolidados */
 body {
   font-family: 'Inter', 'Noto Sans', sans-serif;
 }
-
 .progress-bar-fill {
   background: linear-gradient(90deg, #197fe5, #3b8dff);
   transition: width 0.5s ease-in-out;
 }
-
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -71,7 +75,6 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-
 .btn-hover { /* Ya incluye la transición de background-color y transform */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -84,9 +87,8 @@ body {
 .print-only-contact-info,
 .print-only-skills-list,
 .print-only-repo-url {
-  display: none; /* Oculto por defecto en la vista de navegador */
+  display: none;
 }
-
 
 /* Estilos de Impresión Consolidados */
 @media print {
@@ -167,7 +169,6 @@ body {
     content: ""; /* No añadir contenido para enlaces internos */
   }
 
-
   /* Información de contacto específica para impresión (email, teléfono, GitHub) */
   .print-only-contact-info {
     display: block !important; /* Asegura que sea visible en impresión */
@@ -204,20 +205,6 @@ body {
     margin-top: 0.25em; /* Espacio superior */
     word-break: break-all; /* Permite que las URLs largas se dividan para evitar desbordamientos */
   }
-
-  /* Estilos para barras de progreso en impresión (actualmente ocultas) */
-  /* Si se decidiera mostrarlas de forma simplificada, se podrían descomentar y ajustar:
-  .progress-bar-fill {
-    background: #cccccc !important; // Un color gris simple para la barra
-    height: 8px !important;        // Altura fija
-    border-radius: 0 !important;   // Sin bordes redondeados
-    border: 1px solid #aaaaaa;     // Un borde sutil
-  }
-  div[role="progressbar"] {        // Contenedor de la barra
-      border: 1px solid #aaaaaa;   // Borde para el contenedor también
-      padding: 1px;                // Pequeño padding si es necesario
-  }
-  */
 
   /* Eliminar clases de Tailwind que puedan interferir con los estilos de impresión */
   .bg-gradient-to-br,
@@ -259,10 +246,13 @@ body {
   .grid, .lg\:grid-cols-3, .md\:grid-cols-2, .sm\:grid-cols-2, .gap-8, .gap-10, .space-y-8 {
       /* La anulación a display:block ya se realiza más específicamente abajo para las listas de proyectos, idiomas y habilidades */
   }
+
   /* Asegurar que las listas principales (proyectos, idiomas, habilidades) se muestren como bloques */
+/*
   #project-list, #language-list, #skills-section {
       display: block !important;
   }
+*/
   /* Estilos para los elementos individuales dentro de estas listas */
   #project-list > div, #language-list > div, #skills-section > div {
       margin-bottom: 1em; /* Espacio entre elementos de la lista */

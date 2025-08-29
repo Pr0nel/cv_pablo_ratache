@@ -4,78 +4,85 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "Soy Pablo, Ingeniero Físico incursionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
+    "professionalProfile": "Jr. Data Engineer con experiencia en el diseño y desarrollo de pipelines ETL/ELT utilizando tecnologías como GCP, AWS y Airflow. He logrado reducciones significativas en los tiempos de carga (hasta un 40 %) y ha automatizado ingestas delta y full-load. Además, he desplegado contenedores para ETL web-scrapping, lo que ha reducido la latencia en un 60 %. También ha implementado soluciones de Machine Learning y Optical Character Recognition (OCR), alcanzando precisión del 90 % en tareas de segmentación (SAM) y extracción de texto (AWS Textract). Mi experiencia incluye la aplicación de metodologías ágiles como Scrum y el uso de métricas de eficiencia y estabilidad como OEE, Cp y Cpk en entornos industriales y procesos de análisis avanzado, incluyendo la gestión de calidad (QA/QC) bajo normativas ISO/IEC 17025 e INACAL.",
     "image": "assets/profile.png"
   },
   "experience": [
     {
-      "role": "Data Engineer Intern",
-      "company": "Innovatech Solutions",
-      "dates": "Mayo 2023 - Agosto 2023",
-      "description": "Ayudé en el desarrollo y mantenimiento de pipelines de datos. Contribuí a procesos de aseguramiento de calidad de datos. Gane experiencia práctica con herramientas ETL y plataformas en la nube."
+      "role": "Jr. Data Engineer",
+      "company": "Freelance",
+      "dates": "Febrero 2025 - Actualidad",
+      "description": "- Diseñé infraestructura de datos en GCP con Terraform y JSON.\n- Automatizé stored procedures y DAGs en Airflow, reduciendo tiempos de carga en 40 %.\n- Gestioné reprocesos de Oracle a BigQuery con 100 % de consistencia.\n- Desarrollé pipelines en AWS con PySpark para generar tablas finales escalables.\n- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.\n- Implementé arquitectura modular de ML (CLIP, OCR, segmentación, validación) alcanzando 90 % de precisión."
     },
     {
-      "role": "Junior Software Developer (Tiempo Parcial)",
-      "company": "CodeCrafters Inc.",
-      "dates": "Enero 2022 - Abril 2023",
-      "description": "Desarrollé y probé módulos de software para diversos proyectos de clientes. Colaboré con desarrolladores senior en revisiones de código y depuración. Participé en metodologías ágiles de desarrollo."
+      "role": "Investigador de Producción",
+      "company": "Productora De Alimentos Uno S.A.C.",
+      "dates": "Mayo 2024 - Enero 2025",
+      "description": "- Implementé KPIs de OEE para medir eficiencia en cuatro líneas de envasado.\n- Apliqué Cp y Cpk para evaluar variabilidad y estabilidad de procesos.\n- Transformé indicadores de planta en datasets estructurados (ETL, SQL Server).\n- Ejecuté calibración de tanques y sensores, asegurando trazabilidad metrológica.\n- Definí límites de reproceso para optimizar fermentación y reducir mermas."
     },
     {
-      "role": "Desarrollador Web Freelance",
-      "company": "Autónomo",
-      "dates": "Junio 2021 - Diciembre 2021",
-      "description": "Diseñé y desarrollé sitios web para pequeñas empresas. Gestioné la comunicación con los clientes y los plazos de entrega. Integré APIs y servicios de terceros."
+      "role": "Asistente de Calibraciones",
+      "company": "Factio Qualitas S.A.C.",
+      "dates": "Junio 2023 - Enero 2024",
+      "description": "- Gestioné registros de calibración en la nube, garantizando trazabilidad.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
     }
   ],
   "projects": [
     {
-      "title": "Pipeline de datos para análisis e-commerce",
-      "description": "Desarrollé un pipeline robusto para recolectar, procesar y analizar datos de ventas, brindando insights sobre tendencias y comportamiento del cliente.",
+      "title": "Procesamiento de cupones con OCR y aprendizaje automático",
+      "description": "Diseñé una aplicación Python que permite el proceso imágenes de vouchers (comprobantes o recibos) a través de un pipeline que incluye segmentación de los vouchers dentro de una imagen más grande, la validación si los segmentos son realmente vouchers y la extracción de texto mediante OCR.",
       "image": "assets/project1.png",
       "repositoryUrl": "https://github.com/Pr0nel/proyecto_ocr_vouchers"
     },
     {
-      "title": "Análisis en tiempo real de datos bursátiles",
-      "description": "Construí un sistema de análisis en tiempo real de datos del mercado de valores, permitiendo decisiones de inversión rápidas y gestión de riesgos.",
+      "title": "Predicción de Radiación Solar",
+      "description": "Proyecto de análisis y modelado de datos para predecir la radiación solar horaria en un horizonte de tiempo determinado. Este proyecto involucra la exploración de datos, el preprocesamiento y limpieza de los mismos, y el entrenamiento de un modelo de aprendizaje automático para realizar la predicción.",
       "image": "assets/project_placeholder.png",
       "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
-      "title": "Segmentación de clientes usando Machine Learning",
-      "description": "Implementé algoritmos de machine learning para segmentar clientes basados en patrones de compra, mejorando estrategias de marketing dirigido.",
-      "image": "assets/project_placeholder.png",
-      "repositoryUrl": "https://github.com/Pr0nel/SNIPPF_data_pipeline_project"
+      "title": "Pipeline ETL/ELT: Ingesta y Normalización de Datos Web",
+      "description": "Desarrollé un pipeline ETL/ELT para la ingesta de datos web (web-scraping), optimizando el proceso de extracción y normalización. Utilicé tecnologías como Python y PostgreSQL para la lógica de datos y Docker para la contenerización y despliegue en un entorno Linux. El proyecto logró normalizar registros diarios y reducir la latencia de procesamiento en un 60%.",
+      "image": "assets/project3.png",
+      "repositoryUrl": "https://github.com/Pr0nel/snippf-poc"
     }
   ],
   "skills": {
     "languages": [
+      { "name": "C/C++", "level": 90 },
       { "name": "Python", "level": 90 },
-      { "name": "SQL", "level": 85 },
+      { "name": "SQL", "level": 90 },
+      { "name": "PySpark", "level": 85 },
+      { "name": "Bash", "level": 85 },
+      { "name": "HTML", "level": 65 },
+      { "name": "CSS", "level": 65 },
       { "name": "JavaScript", "level": 65 }
     ],
     "tools": [
-      { "name": "ETL Processes", "level": 75 },
-      { "name": "Cloud Computing (AWS/GCP)", "level": 70 }
+      { "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Jira, Trello", "level": 90 },
+      { "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket", "level": 90 },
+      { "name": "Sistemas operativos: Linux, Windows", "level": 85 },
+      { "name": "Contenedores y Virtualización: Docker, Docker Compose", "level": 80 },
+      { "name": "Base de datos: PostgreSQL (Docker)", "level": 80 },
+      { "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)", "level": 75 },
+      { "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI", "level": 70 }
     ],
     "concepts": [
-      { "name": "Data Warehousing", "level": 80 }
+      { "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, Lean, PMBOK", "level": 90 },
+      { "name": "Data Warehousing", "level": 85 },
+      { "name": "ETL Processes", "level": 75 },
+      { "name": "Cloud Computing (AWS/GCP)", "level": 70 },
+      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 70 },
+      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 90 },
+      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 80 }
     ]
   },
   "certifications": [
-    {
-      "title": "AWS Certified Data Analytics – Specialty",
-      "issuer": "Amazon Web Services",
-      "date": "Junio 2023"
-    },
-    {
-      "title": "Google Cloud Professional Data Engineer",
-      "issuer": "Google Cloud",
-      "date": "Diciembre 2022"
-    }
   ],
   "education": [
     {
-      "degree": "B.Sc. en Ingeniería Física",
-      "institution": "Universidad Nacional de Ingeniería, Lima - Perú",
+      "degree": "B.Sc. con mención en Ingeniería Física",
+      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
       "dates": "2010 - 2019",
       "details": "El proyecto final consistió en simular el consumo de energía para la calefacción de un Módulo de Vivienda Experimental ubicado a 4500 msnm. Las predicciones de temperatura se comparan con las temperaturas interiores registradas, para validar el modelo. A continuación, se calcula la temperatura interior objetivo. Finalmente, se calcula la energía necesaria para mantener una temperatura interior neutra."
     }
