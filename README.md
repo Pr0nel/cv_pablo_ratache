@@ -10,20 +10,20 @@ The website showcases Pablo's skills, professional experience, projects, educati
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Styling:** Tailwind CSS (con algo de CSS personalizado en `style.css`)
-- **Data Management:** El contenido del currículum se carga dinámicamente desde `data/resume.json`.
+- **Data Management:** El contenido del currículum se carga dinámicamente desde `data/resume_en.json` y `data/resume_es.json`.
 
 ## Descripción General / Overview
 
-El sitio es una aplicación de página única. El contenido de varias secciones como "About Me", "Experience", "Projects", "Skills", etc., se rellena mediante `script.js` que obtiene los datos de `data/resume.json`.
+El sitio es una aplicación de página única. El contenido de varias secciones como "About Me", "Experience", "Projects", "Skills", etc., se rellena mediante `script.js` que obtiene los datos de `data/resume_en.json` o `data/resume_es.json` (dependiendo del idioma seleccionado).
 
 El sitio también incluye estilos optimizados para impresión (`@media print` in `style.css`) para generar una salida similar a un CV ATG-compatible cuando se imprime.
 
-The website is a single-page application. The content for various sections like "About Me", "Experience", "Projects", "Skills", etc., is populated by `script.js` which fetches data from `data/resume.json`.
+The website is a single-page application. The content for various sections like "About Me", "Experience", "Projects", "Skills", etc., is populated by `script.js` which fetches data from `data/resume_en.json` o `data/resume_es.json` (dependiendo del idioma seleccionado).
 
 The site also includes print-friendly styles (`@media print` in `style.css`) to generate a CV-like output when printed.
 
 ## Cómo se Gestiona el Contenido / How Content is Managed
 
-Todos los datos textuales y estructurales del portafolio (experience, project details, skills, etc.) están almacenados en `data/resume.json`. Para actualizar el contenido del sitio web, principalmente debes modificar el archivo JSON. El JavaScript en `script.js` se encargará de renderizar dinámicamente la información actualizada en la página web.
+Todos los datos textuales y estructurales del portafolio (experience, project details, skills, etc.) están almacenados en `data/resume_en.json` y `data/resume_es.json`. Para actualizar el contenido del sitio web, principalmente debes modificar estos archivos JSON. El JavaScript en `script.js` se encargará de renderizar dinámicamente la información actualizada en la página web.
 
-All the textual and structural data for the portfolio (experience, project details, skills, etc.) is stored in `data/resume.json`. To update the content of the website, you primarily need to modify this JSON file. The JavaScript in `script.js` will then dynamically render the updated information on the webpage.
+All the textual and structural data for the portfolio (experience, project details, skills, etc.) is stored in `data/resume_en.json` and `data/resume_es.json`. To update the content of the website, you primarily need to modify these JSON files. The JavaScript in `script.js` will then dynamically render the updated information on the webpage.
