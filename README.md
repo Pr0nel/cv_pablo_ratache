@@ -27,3 +27,9 @@ The site also includes print-friendly styles (`@media print` in `style.css`) to 
 Todos los datos textuales y estructurales del portafolio (experience, project details, skills, etc.) están almacenados en `data/resume_en.json` y `data/resume_es.json`. Para actualizar el contenido del sitio web, principalmente debes modificar estos archivos JSON. El JavaScript en `script.js` se encargará de renderizar dinámicamente la información actualizada en la página web.
 
 All the textual and structural data for the portfolio (experience, project details, skills, etc.) is stored in `data/resume_en.json` and `data/resume_es.json`. To update the content of the website, you primarily need to modify these JSON files. The JavaScript in `script.js` will then dynamically render the updated information on the webpage.
+
+---
+
+## Licencia
+
+Todo el contenido de este repositorio está disponible bajo la licencia [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). Esto significa que eres libre de usar, compartir y adaptar este material para fines no comerciales, siempre y cuando des la atribución adecuada y cualquier obra derivada se distribuya bajo la misma licencia.
