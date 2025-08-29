@@ -251,7 +251,9 @@ function populateProjects(projectsData, texts) {
 
     // Contenido HTML para la vista web (imagen, título, descripción, enlace interactivo)
     projectCard.innerHTML = `
-      <img src="${projectImage}" alt="${project.title || ''}" class="w-full aspect-video rounded-lg object-cover no-print">
+      <div class="flex justify-center w-full">
+        <img src="${projectImage}" alt="${project.title || ''}" class="w-full aspect-video rounded-lg object-cover no-print">
+      </div>
       <div class="flex flex-col flex-grow p-4">
         <h3 class="text-white text-xl font-semibold mb-2">${project.title || ''}</h3>
         <p class="text-slate-300 text-sm mb-3 whitespace-pre-line flex-grow">${project.description || ''}</p>

@@ -26,7 +26,10 @@ module.exports = {
         '128': '32rem',
         '144': '36rem',
         '160': '40rem'
-      }
+      },
+      screens: {
+        'xl-plus': '1380px',
+      },
     },
   },
   safelist: [
