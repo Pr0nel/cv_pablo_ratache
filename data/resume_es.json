@@ -37,7 +37,7 @@
     {
       "title": "Predicción de Radiación Solar",
       "description": "Proyecto de análisis y modelado de datos para predecir la radiación solar horaria en un horizonte de tiempo determinado. Este proyecto involucra la exploración de datos, el preprocesamiento y limpieza de los mismos, y el entrenamiento de un modelo de aprendizaje automático para realizar la predicción.",
-      "image": "assets/project_placeholder.png",
+      "image": "assets/project2.png",
       "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
@@ -59,26 +59,46 @@
       { "name": "JavaScript", "level": 65 }
     ],
     "tools": [
-      { "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Jira, Trello", "level": 90 },
-      { "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket", "level": 90 },
+      {
+        "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Jira, Trello",
+        "level": 90
+      },
+      {
+        "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket",
+        "level": 90
+      },
       { "name": "Sistemas operativos: Linux, Windows", "level": 85 },
-      { "name": "Contenedores y Virtualización: Docker, Docker Compose", "level": 80 },
+      {
+        "name": "Contenedores y Virtualización: Docker, Docker Compose",
+        "level": 80
+      },
       { "name": "Base de datos: PostgreSQL (Docker)", "level": 80 },
-      { "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)", "level": 75 },
-      { "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI", "level": 70 }
+      {
+        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
+        "level": 75
+      },
+      {
+        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI",
+        "level": 70
+      }
     ],
     "concepts": [
-      { "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, Lean, PMBOK", "level": 90 },
+      {
+        "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, Lean, PMBOK",
+        "level": 90
+      },
       { "name": "Data Warehousing", "level": 85 },
       { "name": "ETL Processes", "level": 75 },
       { "name": "Cloud Computing (AWS/GCP)", "level": 70 },
-      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 70 },
+      {
+        "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR",
+        "level": 70
+      },
       { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 90 },
       { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 80 }
     ]
   },
-  "certifications": [
-  ],
+  "certifications": [],
   "education": [
     {
       "degree": "B.Sc. con mención en Ingeniería Física",
