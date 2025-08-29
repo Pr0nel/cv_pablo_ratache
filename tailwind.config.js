@@ -28,8 +28,11 @@ module.exports = {
         '160': '40rem'
       },
       screens: {
-        'xl-plus': '1380px',
+        'xl-plus': '1600px',
       },
+      maxWidth: {
+        '6xl-plus': '90rem',
+      }
     },
   },
   safelist: [

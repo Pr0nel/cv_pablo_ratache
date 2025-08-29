@@ -426,15 +426,15 @@ select {
   }
 }
 
-@media (min-width: 1380px) {
-  .container {
-    max-width: 1380px;
-  }
-}
-
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
   }
 }
 
@@ -642,6 +642,10 @@ select {
 
 .max-w-6xl {
   max-width: 72rem;
+}
+
+.max-w-6xl-plus {
+  max-width: 90rem;
 }
 
 .max-w-\[180px\] {
@@ -1681,7 +1685,7 @@ img {
   }
 }
 
-@media (min-width: 1380px) {
+@media (min-width: 1600px) {
   .xl-plus\:flex {
     display: flex;
   }
