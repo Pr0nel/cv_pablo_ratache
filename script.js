@@ -1,4 +1,20 @@
-// Script principal para la funcionalidad del portafolio, incluyendo carga de datos y manipulación del DOM.
+/*
+  script.js: script principal para la funcionalidad del portafolio, incluyendo carga de datos y manipulación del DOM.
+  Copyright 2025 Pablo Ronel Ratache Rojas
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ */
+
 // Función auxiliar para establecer el contenido de texto de forma segura
 function setTextContent(elementId, text) {
   const element = document.getElementById(elementId);
@@ -257,7 +273,7 @@ function populateProjects(projectsData, texts) {
     }
     projectList.appendChild(projectCard);
   });
-  
+
   // Alineación vertical de las tarjetas de proyectos
   alignProjectCards();
 }
@@ -369,13 +385,13 @@ function applyStaticTranslations(texts, data) {
   setQueryText('#contact h2', texts.contactTitle);
   setQueryText('#contact p.text-slate-300', texts.contactIntro);
   const emailLink = document.getElementById("email-link");
-  if(emailLink) emailLink.textContent = texts.emailLinkText;
+  if (emailLink) emailLink.textContent = texts.emailLinkText;
   const githubProfileLink = document.getElementById("github-contact-link");
   if (githubProfileLink) { githubProfileLink.innerHTML = GITHUB_ICON_SVG + (texts.githubProfileLinkText || "GitHub Profile"); }
   const copyEmailButton = document.getElementById("copy-email-contact-button");
   if (copyEmailButton) { copyEmailButton.innerHTML = texts.copyEmailButtonText || "Copy Email"; }
   const projectRepoLinks = document.querySelectorAll(".project-repo-link");
-  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); link.setAttribute('aria-label', `${texts.projectRepoLinkText || "View Code"} de ${link.closest('div').querySelector('h3')?.textContent || 'proyecto'}`);});
+  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); link.setAttribute('aria-label', `${texts.projectRepoLinkText || "View Code"} de ${link.closest('div').querySelector('h3')?.textContent || 'proyecto'}`); });
   const profileImg = document.getElementById("profile-image");
   if (profileImg) { profileImg.alt = texts.profileImageAlt; }
 
@@ -466,8 +482,8 @@ function loadResumeData(language) {
         setTextContent("summary", `Ocurrió un error al cargar el contenido para ${language}. Detalles en la consola.`);
       }
       if (errorDisplay && errorDisplay.style.display === 'none') {
-         errorDisplay.textContent = `Ocurrió un error general al cargar los datos para ${language}. Por favor, revise la consola.`;
-         errorDisplay.style.display = 'block';
+        errorDisplay.textContent = `Ocurrió un error general al cargar los datos para ${language}. Por favor, revise la consola.`;
+        errorDisplay.style.display = 'block';
       }
     });
 }
