@@ -1,3 +1,4 @@
+// Script principal para la funcionalidad del portafolio, incluyendo carga de datos y manipulación del DOM.
 // Función auxiliar para establecer el contenido de texto de forma segura
 function setTextContent(elementId, text) {
   const element = document.getElementById(elementId);
@@ -29,7 +30,7 @@ function setLinkHref(elementId, href) {
   }
 }
 
-// GitHub SVG Icon
+// Icono SVG de GitHub (actualmente inline, el archivo assets/icons/github.svg es una copia para referencia)
 const GITHUB_ICON_SVG = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="w-5 h-5 mr-2"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>';
 
 // Función auxiliar para limpiar el innerHTML de un elemento
@@ -42,7 +43,7 @@ function clearElementInnerHTML(elementId) {
   }
 }
 
-// --- Funciones de Limpieza y Configuración ---
+// --- Funciones de Limpieza y Configuración del DOM ---
 
 /**
  * Limpia todo el contenido dinámico del DOM antes de cargar nuevos datos.
@@ -69,7 +70,7 @@ function clearDynamicContent() {
   }
 
   clearElementInnerHTML("experience-list");
-  clearElementInnerHTML("project-list"); // Se limpian los proyectos aquí
+  clearElementInnerHTML("project-list");
   clearElementInnerHTML("skills-section");
   clearElementInnerHTML("language-list");
   clearElementInnerHTML("education-list");
@@ -97,7 +98,7 @@ function setupErrorDisplay() {
   return errorDisplay;
 }
 
-// --- Funciones de Obtención y Procesamiento de Datos ---
+// --- Funciones para Obtener y Procesar Datos del JSON ---
 function fetchData(filePath, errorDisplay) {
   return fetch(filePath)
     .then(res => {
@@ -114,7 +115,7 @@ function fetchData(filePath, errorDisplay) {
     });
 }
 
-// --- Funciones para Poblar Secciones Específicas ---
+// --- Funciones para Rellenar Secciones Específicas del HTML ---
 function populateAbout(data) {
   setTextContent("name", data.name);
   setTextContent("title", data.title);
@@ -186,13 +187,17 @@ function populateContactActions(data, texts, language) {
   }
 }
 
+/**
+ * Renderiza la lista de experiencias laborales.
+ * @param {Array<Object>} experienceData - Array de objetos con role, company, dates, description.
+ */
 function populateExperience(experienceData) {
   const experienceList = document.getElementById("experience-list");
   if (!experienceData || !experienceList) { return; }
   experienceData.forEach(job => {
     const div = document.createElement("div");
     div.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
-    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${job.role || ''}</h3><p class="text-slate-400 text-sm">${job.company || ''} | ${job.dates || ''}</p><p class="text-slate-300 text-base mt-2">${job.description || ''}</p>`;
+    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${job.role || ''}</h3><p class="text-slate-400 text-sm">${job.company || ''} | ${job.dates || ''}</p><p class="text-slate-300 text-base mt-2 whitespace-pre-line">${job.description || ''}</p>`;
     experienceList.appendChild(div);
   });
 }
@@ -216,7 +221,8 @@ function populateProjects(projectsData, texts) {
 
     // Contenido HTML para la vista web (imagen, título, descripción, enlace interactivo)
     let webContentHTML = `
-      <img src="${projectImage}" alt="${projectTitleText}" class="w-full aspect-video rounded-lg object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400.png?text=Project+Image+Not+Found'; console.error('Error loading image for project: ${projectTitleText} at ${projectImage}');">
+      <img src="${projectImage}" alt="${projectTitleText}" class="w-full aspect-video rounded-lg object-cover no-print" onerror="this.onerror=null; this.src='assets/project_placeholder.png'; console.error('Error loading image for project: ${projectTitleText} at ${projectImage}');">
+
       <h3 class="text-white text-xl font-semibold">${project.title || ''}</h3>
       <p class="text-slate-400 text-sm">${project.description || ''}</p>
     `;
@@ -296,8 +302,15 @@ function populateEducation(educationData) {
 }
 
 function populateCertifications(certificationsData) {
+  const certificationSection = document.getElementById("certifications");
   const certificationList = document.getElementById("certification-list");
   if (!certificationsData || !certificationList) { return; }
+  // Si no hay datos de certificaciones, oculta la sección completa
+  if (certificationsData.length === 0) {
+    certificationSection.style.display = 'none';
+    certificationList.style.display = 'none';
+    return;
+  }
   certificationsData.forEach(cert => {
     const div = document.createElement("div");
     div.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
@@ -342,7 +355,7 @@ function applyStaticTranslations(texts, data) {
   const copyEmailButton = document.getElementById("copy-email-contact-button");
   if (copyEmailButton) { copyEmailButton.innerHTML = texts.copyEmailButtonText || "Copy Email"; }
   const projectRepoLinks = document.querySelectorAll(".project-repo-link");
-  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); });
+  projectRepoLinks.forEach(link => { link.innerHTML = GITHUB_ICON_SVG + (texts.projectRepoLinkText || "View Code"); link.setAttribute('aria-label', `${texts.projectRepoLinkText || "View Code"} de ${link.closest('div').querySelector('h3')?.textContent || 'proyecto'}`);});
   const profileImg = document.getElementById("profile-image");
   if (profileImg) { profileImg.alt = texts.profileImageAlt; }
 
@@ -374,7 +387,7 @@ function applyStaticTranslations(texts, data) {
   });
 }
 
-// --- Constante de Configuración de Textos Estáticos ---
+// --- Objeto de Configuración para Textos Estáticos y Traducciones ---
 const staticTextConfig = {
   es: {
     navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
@@ -386,7 +399,7 @@ const staticTextConfig = {
     emailLabelPrint: 'Correo Electrónico:',
     githubLabelPrint: 'Perfil de GitHub:',
     phoneLabelPrint: 'Celular:',
-    projectRepoUrlLabelPrint: 'Repositorio:', // Nueva clave
+    projectRepoUrlLabelPrint: 'Repositorio:',
     profileImageAlt: "Foto de perfil de "
   },
   en: {
@@ -399,12 +412,12 @@ const staticTextConfig = {
     emailLabelPrint: 'Email:',
     githubLabelPrint: 'GitHub Profile:',
     phoneLabelPrint: 'Phone:',
-    projectRepoUrlLabelPrint: 'Repository:', // New key
+    projectRepoUrlLabelPrint: 'Repository:',
     profileImageAlt: "Profile picture of "
   }
 };
 
-// Carga y muestra toda la información del currículum para el idioma seleccionado.
+// Función principal para cargar y mostrar toda la información del currículum para el idioma seleccionado.
 function loadResumeData(language) {
   document.documentElement.lang = language;
   const filePath = `data/resume_${language}.json`;

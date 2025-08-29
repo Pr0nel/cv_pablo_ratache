@@ -4,92 +4,92 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "I'm Pablo, a physical engineer venturing into data engineering and software development, passionate about building scalable and efficient solutions. With a solid foundation in data storage, ETL processes, and programming concepts, I'm eager to contribute to innovative projects and continue to grow professionally.",
+    "professionalProfile": "Jr. Data Engineer with experience in the design and development of ETL/ELT pipelines using technologies such as GCP, AWS, and Airflow. I have achieved significant reductions in load times (up to 40%) and automated delta and full-load ingestions. Additionally, I have deployed containers for ETL web scraping, which has reduced latency by 60%. I have also implemented Machine Learning and Optical Character Recognition (OCR) solutions, achieving 90% accuracy in segmentation (SAM) and text extraction (AWS Textract) tasks. My experience includes the application of agile methodologies such as Scrum and the use of efficiency and stability metrics such as OEE, Cp, and Cpk in industrial environments and advanced analytics processes, including quality management (QA/QC) under ISO/IEC 17025 and INACAL standards.",
     "image": "assets/profile.png"
   },
   "experience": [
     {
-      "role": "Data Engineer Intern",
-      "company": "Innovatech Solutions",
-      "dates": "Mayo 2023 - Agosto 2023",
-      "description": "Assisted in the development and maintenance of data pipelines. Contributed to data quality assurance processes. Gained practical experience with ETL tools and cloud platforms."
-    },
-    {
-      "role": "Junior Software Developer (Tiempo Parcial)",
-      "company": "CodeCrafters Inc.",
-      "dates": "Enero 2022 - Abril 2023",
-      "description": "Developed and tested software modules for various client projects. Collaborated with senior developers on code reviews and debugging. Participated in agile development methodologies."
-    },
-    {
-      "role": "Freelance Web Developer",
+      "role": "Jr. Data Engineer",
       "company": "Freelance",
-      "dates": "Junio 2021 - Diciembre 2021",
-      "description": "Designed and developed websites for small businesses. Managed client communication and project deadlines. Integrated third-party APIs and services."
+      "dates": "February 2025 - Present",
+      "description": "- I designed data infrastructure on GCP using Terraform and JSON.\n- I automated stored procedures and DAGs in Airflow, reducing load times by 40%.\n- I managed reprocessing from Oracle to BigQuery with 100% consistency.\n- I developed pipelines on AWS with PySpark to generate scalable final tables.\n- I deployed a Docker container (Linux + PostgreSQL) for ETL web scraping, normalizing logs and reducing latency by 60%.\n- I implemented modular ML architecture (CLIP, OCR, segmentation, validation) with 90% accuracy."
+    },
+    {
+      "role": "Food Industry Production Researcher",
+      "company": "Productora De Alimentos Uno S.A.C.",
+      "dates": "May 2024 - January 2025",
+      "description": "- I implemented OEE KPIs to measure efficiency on four packaging lines.\n- I applied CP and CPK to assess process variability and stability.\n- I transformed plant indicators into structured datasets (ETL, SQL Server).\n- I calibrated tanks and sensors, ensuring metrological traceability.\n- I defined reprocessing limits to optimize fermentation and reduce waste."
+    },
+    {
+      "role": "Calibration Wizard",
+      "company": "Factio Qualitas S.A.C.",
+      "dates": "June 2023 - January 2024",
+      "description": "- I managed calibration records in the cloud, ensuring traceability.\n- I analyzed results using data-driven decisions.\n- I coordinated external field calibration providers.\n- I collaborated with QA/QC to improve the laboratory's management system.\n- I supported documentation for ISO/IEC 17025 accreditation."
     }
   ],
   "projects": [
     {
-      "title": "Data pipeline for e-commerce analytics",
-      "description": "Developed a robust pipeline to collect, process, and analyze sales data, providing insights into customer trends and behavior.",
+      "title": "Voucher Processing with OCR and Machine Learning",
+      "description": "I designed a Python application that processes voucher images (or receipts) through a pipeline that includes segmenting the vouchers within a larger image, validating whether the segments are actually vouchers and extracting text using OCR.",
       "image": "assets/project1.png",
       "repositoryUrl": "https://github.com/Pr0nel/proyecto_ocr_vouchers"
     },
     {
-      "title": "Real-time stock market data analysis",
-      "description": "Built a real-time stock market data analysis system, enabling rapid investment decisions and risk management.",
-      "image": "assets/project2.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "title": "Solar Radiation Prediction",
+      "description": "Data analysis and modeling project to predict hourly solar radiation over a given time horizon. This project involves data exploration, data preprocessing and cleaning, and training a machine learning model to perform the prediction.",
+      "image": "assets/project_placeholder.png",
+      "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
-      "title": "Customer segmentation using Machine Learning",
-      "description": "Implemented machine learning algorithms to segment customers based on purchasing patterns, improving targeted marketing strategies.",
+      "title": "ETL/ELT Pipeline: Web Data Ingestion and Normalization",
+      "description": "I developed an ETL/ELT pipeline for web data ingestion (web scraping), optimizing the extraction and normalization process. I used technologies such as Python and PostgreSQL for data logic and Docker for containerization and deployment in a Linux environment. The project managed to normalize daily logs and reduce processing latency by 60%.",
       "image": "assets/project3.png",
-      "repositoryUrl": "https://github.com/USER/REPO_PLACEHOLDER"
+      "repositoryUrl": "https://github.com/Pr0nel/snippf-poc"
     }
   ],
   "skills": {
     "languages": [
+      { "name": "C/C++", "level": 90 },
       { "name": "Python", "level": 90 },
-      { "name": "SQL", "level": 85 },
+      { "name": "SQL", "level": 90 },
+      { "name": "PySpark", "level": 85 },
+      { "name": "Bash", "level": 85 },
+      { "name": "HTML", "level": 65 },
+      { "name": "CSS", "level": 65 },
       { "name": "JavaScript", "level": 65 }
     ],
     "tools": [
-      { "name": "ETL Processes", "level": 75 },
-      { "name": "Cloud Computing (AWS/GCP)", "level": 70 }
+      { "name": "Project management tools: Slack, Microsoft Teams, Jira, Trello", "level": 90 },
+      { "name": "Version control: Git, GitHub, GitLab, Bitbucket", "level": 90 },
+      { "name": "Operating systems: Linux, Windows", "level": 85 },
+      { "name": "Containers & virtualization: Docker, Docker Compose", "level": 80 },
+      { "name": "Database: PostgreSQL (Docker)", "level": 80 },
+      { "name": "Cloud, CI/CD & Orchestration: GCP, AWS, Apache Airflow, Terraform (IaC)", "level": 75 },
+      { "name": "Data analysis & visualization tools: Microsoft Excel, Power BI", "level": 70 }
     ],
     "concepts": [
-      { "name": "Data Warehousing", "level": 80 }
+      { "name": "Project management and agile methodologies: Scrum, Kanban, Design Thinking, Lean, PMBOK", "level": 90 },
+      { "name": "Data Warehousing", "level": 85 },
+      { "name": "ETL Processes", "level": 75 },
+      { "name": "Cloud Computing (AWS/GCP)", "level": 70 },
+      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 70 },
+      { "name": "Quality & efficiency metrics: OEE, Cp, Cpk", "level": 90 },
+      { "name": "QA/QC & Regulations: ISO/IEC 17025, INACAL", "level": 80 }
     ]
   },
   "certifications": [
-    {
-      "title": "AWS Certified Data Analytics – Specialty",
-      "issuer": "Amazon Web Services",
-      "date": "Junio 2023"
-    },
-    {
-      "title": "Google Cloud Professional Data Engineer",
-      "issuer": "Google Cloud",
-      "date": "Diciembre 2022"
-    }
   ],
   "education": [
     {
-      "degree": "M.Sc. en Ciencias de la Computación",
-      "institution": "Tech University, Cityville",
-      "dates": "2020 - 2022",
-      "details": "Specialized in Data Science and Machine Learning. Thesis on 'Optimizing ETL pipelines for Big Data'."
-    },
-    {
-      "degree": "B.Sc. en Ingeniería de Software",
-      "institution": "State College, Townsville",
-      "dates": "2016 - 2020",
-      "details": "Graduated with honors. Final project involved developing a web-based inventory management system."
+      "degree": "B.Sc. with a major in Physical Engineering",
+      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
+      "dates": "2010 - 2019",
+      "details": "Final project involved simulating energy consumption for heating an Experimental Housing Module located at 4500 masl. The temperature predictions are compared with recorded indoor temperatures to validate the model. The target indoor temperature is then calculated. Finally, the energy required to maintain a neutral indoor temperature is calculated."
     }
   ],
   "languages": [
-    { "language": "English", "level": "Native", "progress": 100 },
-    { "language": "Spanish", "level": "Advanced (C1)", "progress": 85 },
-    { "language": "German", "level": "Intermediate (B1)", "progress": 50 }
+    { "language": "Spanish", "level": "Native", "progress": 100 },
+    { "language": "English", "level": "Intermediate", "progress": 50 }
   ],
   "contact": {
     "email": "pablo.ratache@uni.pe",
