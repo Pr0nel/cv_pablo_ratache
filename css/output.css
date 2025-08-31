@@ -596,6 +596,10 @@ select {
   height: 0.75rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -610,6 +614,10 @@ select {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .w-5 {
@@ -736,6 +744,12 @@ select {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -906,6 +920,11 @@ select {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-5 {
@@ -1134,15 +1153,17 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+/* Ya incluye la transición de background-color y transform */
+
 .btn-hover {
-  /* Ya incluye la transición de background-color y transform */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Estilos de hover específicos pueden variar por botón, pero este es un general */
+
+/* background-color: #156abc; */
+
 .btn-hover:hover {
-  /* Estilos de hover específicos pueden variar por botón, pero este es un general */
-  /* background-color: #156abc; */
-  /* Comentado para permitir sobreescrituras más específicas por botón */
   transform: scale(1.05);
 }
 
@@ -1159,6 +1180,27 @@ body {
 .print-only-skills-list,
 .print-only-repo-url {
   display: none;
+}
+
+.max-h-4-skills {
+  max-height: 35rem;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.expanded {
+  max-height: none;
+  overflow-y: auto;
+}
+
+/* Rotación suave del icono */
+
+#toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 img {
@@ -1350,11 +1392,10 @@ img {
 
   /* Lista de habilidades para impresión (oculta las barras de progreso) */
 
-  #skills-section .space-y-6,
-  /* Oculta el contenedor de barras de progreso web */
+  #skills-section .space-y-6, /* Oculta el contenedor de barras de progreso web */
   #skills-section .web-skills-display {
-    /* Oculta las barras de progreso web (clase más específica) */
     display: none !important;
+    /* Oculta las barras de progreso web (clase más específica) */
   }
 
   .print-only-skills-list {
@@ -1397,8 +1438,7 @@ img {
   /* Eliminar clases de Tailwind que puedan interferir con los estilos de impresión */
 
   .bg-gradient-to-br,
-  .bg-\[\#0a1016\],
-  /* Sintaxis de Tailwind para colores arbitrarios */
+  .bg-\[\#0a1016\], /* Sintaxis de Tailwind para colores arbitrarios */
   .bg-\[\#111a22\] {
     background: none !important;
     /* Elimina fondos gradientes o de color sólido */
@@ -1446,9 +1486,9 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Aligns content vertically */
+    /* Alinea el contenido verticalmente */
     height: 100%;
-    /* Ensure each card takes the full height */
+    /* Asegura que cada tarjeta ocupe toda la altura */
     margin-bottom: 20px;
   }
 
@@ -1457,7 +1497,7 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 40px;
-    /* Adjust based on your design */
+    /* Ajustar según tu diseño */
   }
 
   .project-description {

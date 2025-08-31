@@ -434,6 +434,8 @@ const staticTextConfig = {
     copyEmailButtonText: 'Copiar Correo', copyEmailButtonSuccessText: '¡Correo Copiado!', copyEmailButtonFailText: 'Error al Copiar',
     projectRepoLinkText: 'Ver Código',
     githubProfileLinkText: 'Perfil de GitHub',
+    skillsToggle: 'Expandir',
+    skillsToggleLess: 'Contraer',
     emailLabelPrint: 'Correo Electrónico:',
     githubLabelPrint: 'Perfil de GitHub:',
     phoneLabelPrint: 'Celular:',
@@ -447,6 +449,8 @@ const staticTextConfig = {
     copyEmailButtonText: 'Copy Email', copyEmailButtonSuccessText: 'Email Copied!', copyEmailButtonFailText: 'Copy Failed',
     projectRepoLinkText: 'View Code',
     githubProfileLinkText: 'GitHub Profile',
+    skillsToggle: 'Expand',
+    skillsToggleLess: 'Collapse',
     emailLabelPrint: 'Email:',
     githubLabelPrint: 'GitHub Profile:',
     phoneLabelPrint: 'Phone:',
@@ -523,6 +527,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sideMenu = document.getElementById('side-menu');
   const closeMenuButton = document.getElementById('close-menu-button');
   const menuOverlay = document.getElementById('menu-overlay');
+  const skillsSection = document.getElementById('skills-section');
+  const toggleBtn = document.getElementById('skills-toggle');
+  const toggleText = document.getElementById('toggle-text');
+  const toggleIcon = document.getElementById('toggle-icon');
   if (sideMenu) {
     const sideMenuLinks = sideMenu.querySelectorAll('nav a');
     const toggleSideMenu = () => {
@@ -550,6 +558,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else {
     console.error("Side menu element (#side-menu) not found. Hamburger functionality disabled.");
+  }
+  if (!toggleBtn || !toggleText || !toggleIcon || !skillsSection) return;
+  if (toggleBtn){
+    toggleBtn.addEventListener('click', () => {
+      const expanded = skillsSection.classList.toggle('expanded');
+      toggleBtn.setAttribute('aria-expanded', expanded);
+      // Obtener el idioma actual del selector
+      const currentLanguage = document.getElementById('language-switcher').value || 'es';
+      const currentTexts = staticTextConfig[currentLanguage] || staticTextConfig.es;
+      toggleText.textContent = expanded ? (currentTexts.skillsToggleLess || 'Collapse') : (currentTexts.skillsToggle || 'Expand');
+      toggleIcon.classList.toggle('rotate', expanded);
+    });
   }
 });
 

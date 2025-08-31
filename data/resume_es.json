@@ -93,6 +93,14 @@
         "level": 100
       },
       {
+        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
+        "level": 80
+      },
+      {
+        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
+        "level": 70
+      },
+      {
         "name": "Sistemas operativos: Linux, Windows",
         "level": 100
       },
@@ -103,14 +111,6 @@
       {
         "name": "Base de datos: PostgreSQL (Docker)",
         "level": 80
-      },
-      {
-        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
-        "level": 80
-      },
-      {
-        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
-        "level": 70
       }
     ],
     "concepts": [

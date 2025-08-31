@@ -93,6 +93,14 @@
         "level": 100
       },
       {
+        "name": "Cloud, CI/CD & Orchestration: GCP, AWS, Apache Airflow, Terraform (IaC)",
+        "level": 80
+      },
+      {
+        "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
+        "level": 70
+      },
+      {
         "name": "Operating systems: Linux, Windows",
         "level": 100
       },
@@ -103,14 +111,6 @@
       {
         "name": "Database: PostgreSQL (Docker)",
         "level": 80
-      },
-      {
-        "name": "Cloud, CI/CD & Orchestration: GCP, AWS, Apache Airflow, Terraform (IaC)",
-        "level": 80
-      },
-      {
-        "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
-        "level": 70
       }
     ],
     "concepts": [
