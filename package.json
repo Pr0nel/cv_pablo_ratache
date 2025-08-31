@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Este repositorio contiene el código fuente del sitio web personal de Pablo Ratache. El sitio muestra las habilidades de Pablo, su experiencia profesional, proyectos, educación y certificaciones.",
+  "description": "Este repositorio contiene el código fuente del sitio web personal de Pablo Ratache. El sitio muestra las habilidades, experiencia profesional, proyectos, educación y certificaciones.",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

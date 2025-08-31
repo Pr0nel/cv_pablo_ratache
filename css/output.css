@@ -1224,24 +1224,17 @@ img {
 
   header,
   footer,
-  .no-print,
-  /* Clase genérica para ocultar elementos específicos de la pantalla */
-  svg,
-  /* Ocultar todos los iconos SVG (generalmente decorativos o interactivos) */
+  .no-print, /* Clase genérica para ocultar elementos específicos de la pantalla */
+  .btn-hover, /* Los botones interactivos, aunque podrían estar cubiertos por .no-print, se ocultan explícitamente */
+  svg, /* Ocultar todos los iconos SVG (generalmente decorativos o interactivos) */
   #side-menu,
-  #menu-overlay,
-  #print-cv-button,
-  #hamburger-button,
-  #profile-image {
-    /* Ocultar la imagen de perfil en la impresión */
-    display: none !important;
-  }
-
-  /* Los botones interactivos, aunque podrían estar cubiertos por .no-print, se ocultan explícitamente */
-
-  .btn-hover,
-  .card-hover:hover {
-    /* ':hover' no aplica en impresión, pero se incluye por completitud */
+  #profile-image, /* Ocultar la imagen de perfil en la impresión */
+  #projects,
+  #projects + *,
+  section#skills h2,
+  section#skills h3,
+  section#languages h2,
+  section#education details {
     display: none !important;
   }
 
@@ -1509,13 +1502,35 @@ img {
 
   /* Estilos para los elementos individuales dentro de estas listas */
 
-  #language-list>div,
-  #skills-section>div {
+  #language-list>div {
     margin-bottom: 1em;
     /* Espacio entre elementos de la lista */
     page-break-inside: avoid;
     /* Evitar que los elementos individuales se corten entre páginas */
   }
+
+  /*
+  #language-list::after {
+    content: attr(data-languages-print);
+    font-size: 10pt;
+  }
+*/
+
+  #skills-section>div {
+    display: none !important;
+    margin-bottom: 1em;
+    /* Espacio entre elementos de la lista */
+    page-break-inside: avoid;
+    /* Evitar que los elementos individuales se corten entre páginas */
+  }
+
+  /*
+  #skills-section::after {
+    content: attr(data-skills-print);
+    white-space: pre-line;
+    font-size: 10pt;
+  }
+*/
 
   /* Ocultar todas las imágenes en la impresión */
 
@@ -1579,6 +1594,48 @@ img {
 .focus\:ring-\[\#197fe5\]:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(25 127 229 / var(--tw-ring-opacity, 1));
+}
+
+@media (max-width: 400px) {
+  .max-\[400px\]\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .max-\[400px\]\:w-full {
+    width: 100%;
+  }
+
+  .max-\[400px\]\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-\[400px\]\:items-start {
+    align-items: flex-start;
+  }
+
+  .max-\[400px\]\:items-center {
+    align-items: center;
+  }
+
+  .max-\[400px\]\:justify-center {
+    justify-content: center;
+  }
+
+  .max-\[400px\]\:space-x-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0px * var(--tw-space-x-reverse));
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .max-\[400px\]\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+
+  .max-\[400px\]\:text-center {
+    text-align: center;
+  }
 }
 
 @media (min-width: 640px) {

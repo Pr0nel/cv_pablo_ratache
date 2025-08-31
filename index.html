@@ -29,17 +29,18 @@
 
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
   <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
-    <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center max-[400px]:flex-col max-[400px]:items-start max-[400px]:space-y-2"> -->
+    <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center max-[400px]:flex-col max-[400px]:justify-center max-[400px]:items-center max-[400px]:space-y-2">
       <!-- Botón con icono de hamburguesa (visible en pantallas pequeñas y superiores) -->
-      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4 no-print" aria-expanded="false" aria-controls="side-menu">
+      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4" aria-expanded="false" aria-controls="side-menu">
         &#9776;
       </button>
 
       <!-- Group 1: Título/Logo del sitio -->
-      <a class="text-2xl font-bold text-white hover:text-[#197fe5] transition-colors" href="#">Pablo's Portfolio</a>
+      <a class="text-2xl font-bold text-white hover:text-[#197fe5] transition-colors max-[400px]:text-center" href="#">Pablo's Portfolio</a>
 
       <!-- Group 2: Enlaces de navegación principales (ahora ocultos) -->
-      <div class=" hidden xl-plus:flex items-center space-x-6 no-print flex-shrink min-w-0 overflow-hidden">
+      <div class=" hidden xl-plus:flex items-center space-x-6 flex-shrink min-w-0 overflow-hidden">
         <!-- <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#about">About</a> -->
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#experience">Experience</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#projects">Projects</a>
@@ -55,12 +56,12 @@
       <div class="flex-grow sm:hidden"></div><!-- Oculto en la parte inferior y superior, proporciona espacio en la parte superior -->
 
       <!-- Group 3: Controles (cambio de idioma y botón de impresión) -->
-      <div class="flex items-center space-x-4 no-print flex-shrink-0">
+      <div class="flex items-center space-x-4 flex-shrink-0 max-[400px]:flex-col max-[400px]:items-center max-[400px]:space-x-0 max-[400px]:space-y-2 max-[400px]:w-full max-[400px]:mt-2">
         <select id="language-switcher" class="bg-[#0a1016] text-slate-300 border-slate-700 rounded-md shadow-sm focus:ring-[#197fe5] focus:border-[#197fe5]">
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
-        <button id="print-cv-button" onclick="window.print()" class="btn-hover flex min-w-[84px] max-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg no-print">
+        <button id="print-cv-button" onclick="window.print()" class="btn-hover flex min-w-[84px] max-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg">
           Print CV
         </button>
       </div>

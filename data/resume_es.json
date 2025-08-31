@@ -7,6 +7,31 @@
     "professionalProfile": "Jr. Data Engineer con experiencia en el diseño y desarrollo de pipelines ETL/ELT utilizando tecnologías como GCP, AWS y Airflow. He logrado reducciones significativas en los tiempos de carga (hasta un 40 %) y ha automatizado ingestas delta y full-load. Además, he desplegado contenedores para ETL web-scrapping, lo que ha reducido la latencia en un 60 %. También ha implementado soluciones de Machine Learning y Optical Character Recognition (OCR), alcanzando precisión del 90 % en tareas de segmentación (SAM) y extracción de texto (AWS Textract). Mi experiencia incluye la aplicación de metodologías ágiles como Scrum y el uso de métricas de eficiencia y estabilidad como OEE, Cp y Cpk en entornos industriales y procesos de análisis avanzado, incluyendo la gestión de calidad (QA/QC) bajo normativas ISO/IEC 17025 e INACAL.",
     "image": "assets/profile.png"
   },
+  "contact": {
+    "email": "pablo.ratache@uni.pe",
+    "phone": "+51 966979127"
+  },
+  "education": [
+    {
+      "degree": "B.Sc. con mención en Ingeniería Física",
+      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
+      "dates": "2010 - 2019",
+      "details": "El proyecto final consistió en simular el consumo de energía para la calefacción de un Módulo de Vivienda Experimental ubicado a 4500 msnm. Las predicciones de temperatura se comparan con las temperaturas interiores registradas, para validar el modelo. A continuación, se calcula la temperatura interior objetivo. Finalmente, se calcula la energía necesaria para mantener una temperatura interior neutra."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Simulación del consumo energético para la calefacción de un módulo de vivienda experimental ubicado a 4500 msnm",
+      "journal": "TECNIA",
+      "date": "Jun 2021",
+      "doiUrl": "https://doi.org/10.21754/tecnia.v21i1.1083"
+    }
+  ],
+  "certifications": [],
+  "languages": [
+    { "language": "Español", "level": "Nativo", "progress": 100 },
+    { "language": "Inglés", "level": "Intermedio", "progress": 50 }
+  ],
   "experience": [
     {
       "role": "Jr. Data Engineer",
@@ -18,13 +43,13 @@
       "role": "Investigador de Producción",
       "company": "Productora De Alimentos Uno S.A.C.",
       "dates": "Mayo 2024 - Enero 2025",
-      "description": "- Implementé KPIs de OEE para medir eficiencia en cuatro líneas de envasado.\n- Apliqué Cp y Cpk para evaluar variabilidad y estabilidad de procesos.\n- Transformé indicadores de planta en datasets estructurados (ETL, SQL Server).\n- Ejecuté calibración de tanques y sensores, asegurando trazabilidad metrológica.\n- Definí límites de reproceso para optimizar fermentación y reducir mermas."
+      "description": "- Implementé KPIs de OEE para medir eficiencia en cuatro líneas de envasado.\n- Apliqué Cp y Cpk para evaluar variabilidad y estabilidad de procesos.\n- Transformé indicadores de planta en datasets estructurados (ETL, SQL Server).\n- Realicé la calibración de tanques y sensores, asegurando trazabilidad metrológica.\n- Definí límites de reproceso para optimizar fermentación y reducir mermas."
     },
     {
       "role": "Asistente de Calibraciones",
       "company": "Factio Qualitas S.A.C.",
       "dates": "Junio 2023 - Enero 2024",
-      "description": "- Gestioné registros de calibración en la nube, garantizando trazabilidad.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
+      "description": "- Desarrollé un sistema de gestión, que centralizó clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo de atención en 60 %.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
     }
   ],
   "projects": [
@@ -49,11 +74,11 @@
   ],
   "skills": {
     "languages": [
-      { "name": "C/C++", "level": 90 },
+      { "name": "C/C++", "level": 100 },
       { "name": "Python", "level": 90 },
       { "name": "SQL", "level": 90 },
-      { "name": "PySpark", "level": 85 },
-      { "name": "Bash", "level": 85 },
+      { "name": "PySpark", "level": 80 },
+      { "name": "Bash", "level": 80 },
       { "name": "HTML", "level": 65 },
       { "name": "CSS", "level": 65 },
       { "name": "JavaScript", "level": 65 }
@@ -61,58 +86,51 @@
     "tools": [
       {
         "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Jira, Trello",
-        "level": 90
+        "level": 100
       },
       {
         "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket",
-        "level": 90
+        "level": 100
       },
-      { "name": "Sistemas operativos: Linux, Windows", "level": 85 },
+      {
+        "name": "Sistemas operativos: Linux, Windows",
+        "level": 100
+      },
       {
         "name": "Contenedores y Virtualización: Docker, Docker Compose",
         "level": 80
       },
-      { "name": "Base de datos: PostgreSQL (Docker)", "level": 80 },
       {
-        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
-        "level": 75
+        "name": "Base de datos: PostgreSQL (Docker)",
+        "level": 80
       },
       {
-        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI",
+        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
+        "level": 80
+      },
+      {
+        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
         "level": 70
       }
     ],
     "concepts": [
-      {
-        "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, Lean, PMBOK",
-        "level": 90
-      },
-      { "name": "Data Warehousing", "level": 85 },
-      { "name": "ETL Processes", "level": 75 },
-      { "name": "Cloud Computing (AWS/GCP)", "level": 70 },
-      {
-        "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR",
-        "level": 70
-      },
-      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 90 },
-      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 80 }
+      { "name": "Aprendizaje rápido", "level": 100 },
+      { "name": "Planificación estratégica", "level": 100 },
+      { "name": "Trabajo en equipo", "level": 100 },
+      { "name": "Adaptabilidad", "level": 100 },
+      { "name": "Pensamiento pragmático", "level": 100 },
+      { "name": "Pensamiento abstracto", "level": 100 },
+      { "name": "Escucha activa", "level": 100 },
+      { "name": "Resolución de problemas", "level": 100 },
+      { "name": "Gestión del tiempo", "level": 100 },
+      { "name": "Gestión del cambio", "level": 100 },
+      { "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, enfoque Lean, PMBOK", "level": 100 },
+      { "name": "Data Warehousing", "level": 100 },
+      { "name": "ETL Processes", "level": 100 },
+      { "name": "Cloud Computing (AWS/GCP)", "level": 80 },
+      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 70 },
+      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 100 },
+      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 100 }
     ]
-  },
-  "certifications": [],
-  "education": [
-    {
-      "degree": "B.Sc. con mención en Ingeniería Física",
-      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
-      "dates": "2010 - 2019",
-      "details": "El proyecto final consistió en simular el consumo de energía para la calefacción de un Módulo de Vivienda Experimental ubicado a 4500 msnm. Las predicciones de temperatura se comparan con las temperaturas interiores registradas, para validar el modelo. A continuación, se calcula la temperatura interior objetivo. Finalmente, se calcula la energía necesaria para mantener una temperatura interior neutra."
-    }
-  ],
-  "languages": [
-    { "language": "Español", "level": "Nativo", "progress": 100 },
-    { "language": "Inglés", "level": "Intermedio", "progress": 50 }
-  ],
-  "contact": {
-    "email": "pablo.ratache@uni.pe",
-    "phone": "+51 966979127"
-  }
+  }  
 }

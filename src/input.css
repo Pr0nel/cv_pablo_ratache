@@ -174,25 +174,20 @@ img {
   /* Ocultar elementos no deseados en la versión impresa */
   header,
   footer,
-  .no-print,
-  /* Clase genérica para ocultar elementos específicos de la pantalla */
-  svg,
-  /* Ocultar todos los iconos SVG (generalmente decorativos o interactivos) */
+  .no-print, /* Clase genérica para ocultar elementos específicos de la pantalla */
+  .btn-hover, /* Los botones interactivos, aunque podrían estar cubiertos por .no-print, se ocultan explícitamente */
+  svg, /* Ocultar todos los iconos SVG (generalmente decorativos o interactivos) */
   #side-menu,
-  #menu-overlay,
-  #print-cv-button,
-  #hamburger-button,
-  #profile-image {
-    /* Ocultar la imagen de perfil en la impresión */
+  #profile-image, /* Ocultar la imagen de perfil en la impresión */
+  #projects,
+  #projects + *,
+  section#skills h2,
+  section#skills h3,
+  section#languages h2,
+  section#education details {
     display: none !important;
   }
-  /* Los botones interactivos, aunque podrían estar cubiertos por .no-print, se ocultan explícitamente */
-  .btn-hover,
-  .card-hover:hover {
-    /* ':hover' no aplica en impresión, pero se incluye por completitud */
-    display: none !important;
-  }
-
+  
   /* Estilos para las secciones principales en la impresión */
   main section {
     page-break-inside: avoid;
@@ -432,14 +427,28 @@ img {
   }
 
   /* Estilos para los elementos individuales dentro de estas listas */
-  #language-list>div,
-  #skills-section>div {
-    margin-bottom: 1em;
-    /* Espacio entre elementos de la lista */
-    page-break-inside: avoid;
-    /* Evitar que los elementos individuales se corten entre páginas */
+  #language-list>div {
+    margin-bottom: 1em; /* Espacio entre elementos de la lista */
+    page-break-inside: avoid; /* Evitar que los elementos individuales se corten entre páginas */
   }
-
+/*
+  #language-list::after {
+    content: attr(data-languages-print);
+    font-size: 10pt;
+  }
+*/
+  #skills-section>div {
+    display: none !important;
+    margin-bottom: 1em; /* Espacio entre elementos de la lista */
+    page-break-inside: avoid; /* Evitar que los elementos individuales se corten entre páginas */
+  }
+/*
+  #skills-section::after {
+    content: attr(data-skills-print);
+    white-space: pre-line;
+    font-size: 10pt;
+  }
+*/
   /* Ocultar todas las imágenes en la impresión */
   img {
     display: none !important;
