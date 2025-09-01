@@ -1649,10 +1649,6 @@ img {
     flex-direction: column;
   }
 
-  .max-\[400px\]\:items-start {
-    align-items: flex-start;
-  }
-
   .max-\[400px\]\:items-center {
     align-items: center;
   }

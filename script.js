@@ -15,6 +15,114 @@
   limitations under the License.
  */
 
+// --- Objeto de Configuración para Textos Estáticos y Traducciones ---
+const staticTextConfig = {
+  es: {
+    navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
+    titleExperience: 'Experiencia Laboral', titleProjects: 'Mis Proyectos', titleSkills: 'Habilidades Técnicas', titleLanguages: 'Idiomas', titleEducation: 'Educación', titleCertifications: 'Certificaciones',
+    contactTitle: 'Ponte en Contacto', contactIntro: 'Actualmente estoy buscando nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡no dudes en contactarme!', emailLinkText: 'Envíame un Correo',
+    copyEmailButtonText: 'Copiar Correo', copyEmailButtonSuccessText: '¡Correo Copiado!', copyEmailButtonFailText: 'Error al Copiar',
+    projectRepoLinkText: 'Ver Código',
+    githubProfileLinkText: 'Perfil de GitHub',
+    skillsToggle: 'Expandir',
+    skillsToggleLess: 'Contraer',
+    emailLabelPrint: 'Correo Electrónico:',
+    githubLabelPrint: 'Perfil de GitHub:',
+    phoneLabelPrint: 'Celular:',
+    projectRepoUrlLabelPrint: 'Repositorio:',
+    profileImageAlt: "Foto de perfil de "
+  },
+  en: {
+    navAbout: 'About', navExperience: 'Experience', navProjects: 'Projects', navSkills: 'Skills', navLanguages: 'Languages', navEducation: 'Education', navCertifications: 'Certifications', navContact: 'Contact', printCV: 'Print CV',
+    titleExperience: 'Work Experience', titleProjects: 'My Projects', titleSkills: 'Technical Skills', titleLanguages: 'Languages', titleEducation: 'Education', titleCertifications: 'Certifications',
+    contactTitle: 'Get In Touch', contactIntro: "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!", emailLinkText: 'Email Me',
+    copyEmailButtonText: 'Copy Email', copyEmailButtonSuccessText: 'Email Copied!', copyEmailButtonFailText: 'Copy Failed',
+    projectRepoLinkText: 'View Code',
+    githubProfileLinkText: 'GitHub Profile',
+    skillsToggle: 'Expand',
+    skillsToggleLess: 'Collapse',
+    emailLabelPrint: 'Email:',
+    githubLabelPrint: 'GitHub Profile:',
+    phoneLabelPrint: 'Phone:',
+    projectRepoUrlLabelPrint: 'Repository:',
+    profileImageAlt: "Profile picture of "
+  }
+};
+
+// Icono SVG de GitHub (actualmente inline, el archivo assets/icons/github.svg es una copia para referencia)
+const GITHUB_ICON_SVG = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="w-5 h-5 mr-2"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>';
+
+// EventManager - Gestiona todos los event listeners dinámicos
+const EventManager = {
+  listeners: new Map(),
+  
+  // Añade un event listener y lo registra para cleanup posterior
+  add(element, event, handler, options = {}) {
+    if (!element) {
+      console.warn('EventManager.add: elemento es null o undefined');
+      return;
+    }
+    element.addEventListener(event, handler, options);
+    // Registrar para cleanup
+    if (!this.listeners.has(element)) { this.listeners.set(element, []); }
+    this.listeners.get(element).push({ event, handler, options });
+    console.log(`EventManager: Registrado ${event} en`, element);
+  },
+  // Limpia todos los event listeners registrados
+  cleanup() {
+    console.log('EventManager: Iniciando cleanup de event listeners');
+    let cleanedCount = 0;  
+    this.listeners.forEach((events, element) => {
+      events.forEach(({ event, handler, options }) => {
+        element.removeEventListener(event, handler, options);
+        cleanedCount++;
+      });
+    });
+    this.listeners.clear();
+    console.log(`EventManager: ${cleanedCount} event listeners removidos`);
+  },
+  
+  // Remueve listeners específicos de un elemento
+  removeFrom(element) {
+    if (!this.listeners.has(element)) return;
+    const events = this.listeners.get(element);
+    events.forEach(({ event, handler, options }) => {
+      element.removeEventListener(event, handler, options);
+    });
+    this.listeners.delete(element);
+  }
+};
+
+// Utility Functions
+const Utils = {
+  // Debounce: evita que una función se ejecute demasiado frecuentemente
+  debounce(func, wait, immediate = false) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        timeout = null;
+        if (!immediate) func.apply(this, args);
+      };
+      const callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(this, args);
+    };
+  },
+  
+  // Throttle: limita la ejecución a máximo una vez cada X ms
+  throttle(func, limit) {
+    let inThrottle;
+    return function executedFunction(...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    };
+  }
+};
+
 // Función auxiliar para establecer el contenido de texto de forma segura
 function setTextContent(elementId, text) {
   const element = document.getElementById(elementId);
@@ -46,9 +154,6 @@ function setLinkHref(elementId, href) {
   }
 }
 
-// Icono SVG de GitHub (actualmente inline, el archivo assets/icons/github.svg es una copia para referencia)
-const GITHUB_ICON_SVG = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="w-5 h-5 mr-2"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>';
-
 // Función auxiliar para limpiar el innerHTML de un elemento
 function clearElementInnerHTML(elementId) {
   const element = document.getElementById(elementId);
@@ -63,34 +168,50 @@ function clearElementInnerHTML(elementId) {
 
 /**
  * Limpia todo el contenido dinámico del DOM antes de cargar nuevos datos.
- * Esto incluye áreas de texto, imágenes y listas.
+ * Esto incluye: áreas de texto, imágenes y listas; cleanup de event listeners para evitar memory leaks.
  */
 function clearDynamicContent() {
+  EventManager.cleanup();
   setTextContent("name", "");
   setTextContent("title", "");
   setTextContent("summary", "Cargando contenido...");
   setImageAttributes("profile-image", "", "Cargando imagen de perfil");
 
-  const oldGitHubLink = document.getElementById("github-profile-link");
-  if (oldGitHubLink) oldGitHubLink.remove();
-  const oldCopyEmailButton = document.getElementById("copy-email-button");
-  if (oldCopyEmailButton) oldCopyEmailButton.remove();
+  const elementsToRemove = ["github-profile-link", "copy-email-button", "contact-links-container"];
+  elementsToRemove.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      // Remover listeners específicos de este elemento antes de eliminarlo
+      EventManager.removeFrom(element);
+      element.remove();
+    }
+  });
+
   const oldContactLinksContainer = document.getElementById("contact-links-container");
   if (oldContactLinksContainer && oldContactLinksContainer.parentNode.id === 'about-text-content') {
+    EventManager.removeFrom(oldContactLinksContainer);
     oldContactLinksContainer.remove();
   }
 
   const contactActionsContainer = document.getElementById("contact-actions-container");
   if (contactActionsContainer) {
+    // Remover listeners de todos los hijos antes de limpiar innerHTML
+    const children = contactActionsContainer.querySelectorAll('*');
+    children.forEach(child => EventManager.removeFrom(child));
     contactActionsContainer.innerHTML = '';
   }
 
-  clearElementInnerHTML("experience-list");
-  clearElementInnerHTML("project-list");
-  clearElementInnerHTML("skills-section");
-  clearElementInnerHTML("language-list");
-  clearElementInnerHTML("education-list");
-  clearElementInnerHTML("certification-list");
+  const contentContainers = ["experience-list", "project-list", "skills-section", "language-list", "education-list", "certification-list"];
+  contentContainers.forEach(id => {
+    const container = document.getElementById(id);
+    if (container) {
+      // Remover listeners de elementos hijos antes de limpiar
+      const children = container.querySelectorAll('*');
+      children.forEach(child => EventManager.removeFrom(child));
+      clearElementInnerHTML(id);
+    }
+  });
+  console.log('clearDynamicContent: Limpieza completa realizada');
 }
 
 /**
@@ -168,17 +289,22 @@ function populateContactActions(data, texts, language) {
     const copyEmailContactBtn = document.createElement("button");
     copyEmailContactBtn.id = "copy-email-contact-button";
     copyEmailContactBtn.className = "btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg no-print bg-slate-500 hover:bg-slate-600 transition-colors duration-300";
-    copyEmailContactBtn.addEventListener('click', () => {
+    const copyEmailHandler = () => {
       navigator.clipboard.writeText(data.contact.email)
         .then(() => {
           copyEmailContactBtn.innerHTML = texts.copyEmailButtonSuccessText || "Email Copied!";
-          setTimeout(() => { copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email"; }, 2000);
+          setTimeout(() => { 
+            copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email"; 
+          }, 2000);
         }).catch(err => {
           console.error('Fallo al copiar el correo: ', err);
           copyEmailContactBtn.innerHTML = texts.copyEmailButtonFailText || "Copy Failed";
-          setTimeout(() => { copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email"; }, 2000);
+          setTimeout(() => { 
+            copyEmailContactBtn.innerHTML = texts.copyEmailButtonText || "Copy Email"; 
+          }, 2000);
         });
-    });
+    };
+    EventManager.add(copyEmailContactBtn, 'click', copyEmailHandler);
     actionsContainer.appendChild(copyEmailContactBtn);
     const emailPrintText = document.createElement('p');
     emailPrintText.className = 'print-only-contact-info';
@@ -423,41 +549,43 @@ function applyStaticTranslations(texts, data) {
       }
     }
   });
+  // Actualizar texto del botón toggle de skills
+  const skillsSection = document.getElementById("skills-section");
+  const skillsToggleBtn = document.getElementById("skills-toggle");
+  const skillsToggleText = document.getElementById("toggle-text");
+  if (skillsToggleBtn && skillsToggleText && skillsSection) {
+    // Verificar si está expandido actualmente
+    const isExpanded = skillsSection.classList.contains('expanded');
+    // Aplicar el texto correcto según el estado actual
+    const correctText = isExpanded ? (texts.skillsToggleLess || 'Collapse') : (texts.skillsToggle || 'Expand');
+    skillsToggleText.textContent = correctText;
+  }
 }
 
-// --- Objeto de Configuración para Textos Estáticos y Traducciones ---
-const staticTextConfig = {
-  es: {
-    navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
-    titleExperience: 'Experiencia Laboral', titleProjects: 'Mis Proyectos', titleSkills: 'Habilidades Técnicas', titleLanguages: 'Idiomas', titleEducation: 'Educación', titleCertifications: 'Certificaciones',
-    contactTitle: 'Ponte en Contacto', contactIntro: 'Actualmente estoy buscando nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡no dudes en contactarme!', emailLinkText: 'Envíame un Correo',
-    copyEmailButtonText: 'Copiar Correo', copyEmailButtonSuccessText: '¡Correo Copiado!', copyEmailButtonFailText: 'Error al Copiar',
-    projectRepoLinkText: 'Ver Código',
-    githubProfileLinkText: 'Perfil de GitHub',
-    skillsToggle: 'Expandir',
-    skillsToggleLess: 'Contraer',
-    emailLabelPrint: 'Correo Electrónico:',
-    githubLabelPrint: 'Perfil de GitHub:',
-    phoneLabelPrint: 'Celular:',
-    projectRepoUrlLabelPrint: 'Repositorio:',
-    profileImageAlt: "Foto de perfil de "
-  },
-  en: {
-    navAbout: 'About', navExperience: 'Experience', navProjects: 'Projects', navSkills: 'Skills', navLanguages: 'Languages', navEducation: 'Education', navCertifications: 'Certifications', navContact: 'Contact', printCV: 'Print CV',
-    titleExperience: 'Work Experience', titleProjects: 'My Projects', titleSkills: 'Technical Skills', titleLanguages: 'Languages', titleEducation: 'Education', titleCertifications: 'Certifications',
-    contactTitle: 'Get In Touch', contactIntro: "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!", emailLinkText: 'Email Me',
-    copyEmailButtonText: 'Copy Email', copyEmailButtonSuccessText: 'Email Copied!', copyEmailButtonFailText: 'Copy Failed',
-    projectRepoLinkText: 'View Code',
-    githubProfileLinkText: 'GitHub Profile',
-    skillsToggle: 'Expand',
-    skillsToggleLess: 'Collapse',
-    emailLabelPrint: 'Email:',
-    githubLabelPrint: 'GitHub Profile:',
-    phoneLabelPrint: 'Phone:',
-    projectRepoUrlLabelPrint: 'Repository:',
-    profileImageAlt: "Profile picture of "
-  }
-};
+// Funciones de inicialización de la aplicación
+function initializeApp() {
+  console.log('Inicializando aplicación...');
+  // Configurar event listeners globales con debouncing
+  const debouncedAlignCards = Utils.debounce(() => {
+    console.log('Realineando tarjetas de proyecto...');
+    alignProjectCards();
+  }, 250);
+  EventManager.add(window, 'resize', debouncedAlignCards);
+  // Cleanup cuando la página se descarga (opcional, para SPA)
+  EventManager.add(window, 'beforeunload', () => {
+    console.log('Limpiando recursos antes de salir...');
+    EventManager.cleanup();
+  });
+  console.log('Aplicación inicializada correctamente');
+}
+
+// Función para reinicializar después de cambios de idioma
+function reinitializeAfterLanguageChange() {
+  // Solo reinicializar los event listeners de resize
+  // (los otros se limpian automáticamente en clearDynamicContent)
+  const debouncedAlignCards = Utils.debounce(alignProjectCards, 250);
+  EventManager.add(window, 'resize', debouncedAlignCards);
+}
 
 // Función principal para cargar y mostrar toda la información del currículum para el idioma seleccionado.
 function loadResumeData(language) {
@@ -481,6 +609,7 @@ function loadResumeData(language) {
       if (data.certifications) populateCertifications(data.certifications);
       applyStaticTranslations(texts, data);
       alignProjectCards(); // Llamar a alignProjectCards después de poblar los proyectos
+      reinitializeAfterLanguageChange();
     })
     .catch(error => {
       console.error(`Error en loadResumeData para ${language}:`, error.message);
@@ -495,6 +624,7 @@ function loadResumeData(language) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initializeApp();
   const languageSwitcher = document.getElementById('language-switcher');
   if (!languageSwitcher) {
     console.error("Language switcher element (#language-switcher) not found!");
@@ -574,6 +704,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Evento para realineación cuando se cambia el tamaño de la ventana
-window.addEventListener('resize', () => {
+const debouncedAlignCards = Utils.debounce(() => {
+  console.log('Realineando tarjetas de proyecto...');
   alignProjectCards();
-});
+}, 250);
+
+// Usar EventManager para el resize
+EventManager.add(window, 'resize', debouncedAlignCards);
