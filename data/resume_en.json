@@ -36,7 +36,7 @@
   "experience": [
     {
       "role": "Jr. Data Engineer",
-      "company": "Konexa-WOM [Chile] [Telecom, B2B/B2C]",
+      "company": "Konexa - WOM [Chile] [Telecom, B2B/B2C]",
       "dates": "February 2025 - Present",
       "description": "- I designed data infrastructure on GCP using Terraform and JSON.\n- I automated stored procedures and DAGs in Airflow, reducing load times by 40%.\n- I managed reprocessing from Oracle to BigQuery with 100% consistency.\n- I developed pipelines on AWS with PySpark to generate scalable final tables.\n- I deployed a Docker container (Linux + PostgreSQL) for ETL web scraping, normalizing logs and reducing latency by 60%.\n- I implemented modular ML architecture (CLIP, OCR, segmentation, validation) with 90% accuracy."
     },
@@ -50,7 +50,7 @@
       "role": "Calibration Wizard",
       "company": "Factio Qualitas S.A.C. [Surco-Lima-Peru] [Pharmaceutical Consulting, B2B/B2C]",
       "dates": "June 2023 - January 2024",
-      "description": "- I developed a management system that centralizes clients, equipment, and certificates, with cloud storage and data governance, reducing service time by 60%.\n- I analyzed results using data-driven decisions.\n- I coordinated external field calibration providers.\n- I collaborated with QA/QC to improve the laboratory's management system.\n- I supported documentation for ISO/IEC 17025 accreditation."
+      "description": "- I defined and implemented a strategic solution management that centralizes clients, equipment, and certificates, with cloud storage and data governance, reducing service time by 60%.\n- I analyzed results using data-driven decisions.\n- I coordinated external field calibration providers.\n- I collaborated with QA/QC to improve the laboratory's management system.\n- I supported documentation for ISO/IEC 17025 accreditation."
     }
   ],
   "projects": [

@@ -36,7 +36,7 @@
   "experience": [
     {
       "role": "Jr. Data Engineer",
-      "company": "Konexa-WOM [Chile] [Telecomunicaciones, B2C/B2B]",
+      "company": "Konexa - WOM [Chile] [Telecomunicaciones, B2C/B2B]",
       "dates": "Febrero 2025 - Actualidad",
       "description": "- Diseñé infraestructura de datos en GCP con Terraform y JSON.\n- Automatizé stored procedures y DAGs en Airflow, reduciendo tiempos de carga en 40 %.\n- Gestioné reprocesos de Oracle a BigQuery con 100 % de consistencia.\n- Desarrollé pipelines en AWS con PySpark para generar tablas finales escalables.\n- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.\n- Implementé arquitectura modular de ML (CLIP, OCR, segmentación, validación) alcanzando 90 % de precisión."
     },
@@ -50,7 +50,7 @@
       "role": "Asistente de Calibraciones",
       "company": "Factio Qualitas S.A.C. [Surco-Lima-Perú] [Consultora Farmacéutica, B2B/B2C]",
       "dates": "Junio 2023 - Enero 2024",
-      "description": "- Desarrollé un sistema de gestión, que centralizó clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo de atención en 60 %.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
+      "description": "- Definí e implementé una solución estratégica de gestión, que centralizó clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo de atención en 60 %.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
     }
   ],
   "projects": [
