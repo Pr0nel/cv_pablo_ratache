@@ -7,7 +7,7 @@ This repository contains the source code for Pablo Ratache's personal portfolio 
 The site showcases skills, professional experience, projects, and education.
 
 ## 🚀 Live Demo
-[pr0nel.github.io/cv_pablo_ratache/](URL)
+[pr0nel.github.io/cv_pablo_ratache/](https://pr0nel.github.io/cv_pablo_ratache/)
 
 ## Technology Stack
 
@@ -25,7 +25,7 @@ The site showcases skills, professional experience, projects, and education.
 - Mobile optimized
 
 ## 🏗️ Build Process
-```npm install && npm run build```
+```npm install && npm run build-css:prod```
 
 ## Descripción General / Overview
 

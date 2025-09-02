@@ -145,7 +145,7 @@ img {
 
 /* Específico para imagen de perfil */
 #profile-image {
-  border-radius: 50%;
+  border-radius: 44%;
   object-fit: cover;
 }
 
