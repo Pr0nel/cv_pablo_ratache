@@ -1,5 +1,5 @@
 /* 
-  src/input.css: archivo principal de estilos CSS para el portafolio.
+  css/output.css: archivo compilado (optimización y minificación) de estilos CSS para el portafolio.
   Copyright 2025 Pablo Ronel Ratache Rojas
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -1370,6 +1370,12 @@ img {
     background: none !important;
   }
 
+  h1 {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+
   h2 {
     font-size: 14pt !important;
     font-weight: bold !important;
@@ -1425,12 +1431,13 @@ img {
   .print-only-contact-info {
     display: block !important;
     /* Asegura que sea visible en impresión */
-    margin: 0.2em 0 !important;
-    /* Espacio superior */
     color: #000000 !important;
     /* Texto en negro */
+    margin: 3em 0 !important;
+    /* Espacio superior */
     font-size: 10pt !important;
     /* Mismo tamaño que el cuerpo del texto */
+    font-weight: bold !important;
     text-align: center !important;
     /* Centrar la información de contacto */
   }
@@ -1608,6 +1615,7 @@ img {
     font-size: 10pt !important;
     -moz-column-break-inside: avoid !important;
          break-inside: avoid !important;
+    /* line-height: 1.5 !important; */
   }
 
   #education {

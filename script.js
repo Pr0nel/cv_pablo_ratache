@@ -101,7 +101,7 @@ const EventManager = {
 
 // Utility Functions
 const Utils = {
-  // Debounce: evita que una función se ejecute demasiado frecuentemente
+  // Debounce: evita que una función se ejecute demasiado, frecuentemente
   debounce(func, wait, immediate = false) {
     let timeout;
     return function executedFunction(...args) {

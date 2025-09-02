@@ -271,6 +271,12 @@ img {
     background: none !important;
   }
 
+  h1 {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+
   h2 {
     font-size: 14pt !important;
     font-weight: bold !important;
@@ -312,9 +318,10 @@ img {
   /* Información de contacto específica para impresión (email, teléfono, GitHub) */
   .print-only-contact-info {
     display: block !important; /* Asegura que sea visible en impresión */
-    margin: 0.2em 0 !important; /* Espacio superior */
     color: #000000 !important; /* Texto en negro */
+    margin: 3em 0 !important; /* Espacio superior */
     font-size: 10pt !important; /* Mismo tamaño que el cuerpo del texto */
+    font-weight: bold !important;
     text-align: center !important; /* Centrar la información de contacto */
   }
 
@@ -468,6 +475,7 @@ img {
     color: #000000 !important;
     font-size: 10pt !important;
     break-inside: avoid !important;
+    /* line-height: 1.5 !important; */
   }
 
   #education {
