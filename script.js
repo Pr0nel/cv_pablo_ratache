@@ -18,34 +18,40 @@
 // --- Objeto de Configuración para Textos Estáticos y Traducciones ---
 const staticTextConfig = {
   es: {
-    navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
-    titleExperience: 'Experiencia Laboral', titleProjects: 'Mis Proyectos', titleSkills: 'Habilidades Técnicas', titleLanguages: 'Idiomas', titleEducation: 'Educación', titleCertifications: 'Certificaciones',
+    navAbout: 'Acerca de', navExperience: 'Experiencia', navProjects: 'Proyectos', navSkills: 'Habilidades', navLanguages: 'Idiomas', navEducation: 'Educación', navPublications: 'Publicaciones', navCertifications: 'Certificaciones', navContact: 'Contacto', printCV: 'Imprimir CV',
+    titleExperience: 'Experiencia Laboral', titleProjects: 'Mis Proyectos', titleSkills: 'Habilidades', titleLanguages: 'Idiomas', titleEducation: 'Educación', titlePublications: 'Publicaciones', titleCertifications: 'Certificaciones',
     contactTitle: 'Ponte en Contacto', contactIntro: 'Actualmente estoy buscando nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡no dudes en contactarme!', emailLinkText: 'Envíame un Correo',
     copyEmailButtonText: 'Copiar Correo', copyEmailButtonSuccessText: '¡Correo Copiado!', copyEmailButtonFailText: 'Error al Copiar',
     projectRepoLinkText: 'Ver Código',
     githubProfileLinkText: 'Perfil de GitHub',
+    publicationDoiLinkText: 'Ver Publicación',
     skillsToggle: 'Expandir',
     skillsToggleLess: 'Contraer',
     emailLabelPrint: 'Correo Electrónico:',
     githubLabelPrint: 'Perfil de GitHub:',
     phoneLabelPrint: 'Celular:',
     projectRepoUrlLabelPrint: 'Repositorio:',
-    profileImageAlt: "Foto de perfil de "
+    publicationUrlLabelPrint: 'DOI:',
+    profileImageAlt: "Foto de perfil de ",
+    referencesAvailableText: 'Referencias disponibles a solicitud.'
   },
   en: {
-    navAbout: 'About', navExperience: 'Experience', navProjects: 'Projects', navSkills: 'Skills', navLanguages: 'Languages', navEducation: 'Education', navCertifications: 'Certifications', navContact: 'Contact', printCV: 'Print CV',
-    titleExperience: 'Work Experience', titleProjects: 'My Projects', titleSkills: 'Technical Skills', titleLanguages: 'Languages', titleEducation: 'Education', titleCertifications: 'Certifications',
+    navAbout: 'About', navExperience: 'Experience', navProjects: 'Projects', navSkills: 'Skills', navLanguages: 'Languages', navEducation: 'Education', navPublications: 'Publications', navCertifications: 'Certifications', navContact: 'Contact', printCV: 'Print CV',
+    titleExperience: 'Work Experience', titleProjects: 'My Projects', titleSkills: 'Skills', titleLanguages: 'Languages', titleEducation: 'Education', titlePublications: 'Publications', titleCertifications: 'Certifications',
     contactTitle: 'Get In Touch', contactIntro: "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out!", emailLinkText: 'Email Me',
     copyEmailButtonText: 'Copy Email', copyEmailButtonSuccessText: 'Email Copied!', copyEmailButtonFailText: 'Copy Failed',
     projectRepoLinkText: 'View Code',
     githubProfileLinkText: 'GitHub Profile',
+    publicationDoiLinkText: 'View Publication',
     skillsToggle: 'Expand',
     skillsToggleLess: 'Collapse',
     emailLabelPrint: 'Email:',
     githubLabelPrint: 'GitHub Profile:',
     phoneLabelPrint: 'Phone:',
     projectRepoUrlLabelPrint: 'Repository:',
-    profileImageAlt: "Profile picture of "
+    publicationUrlLabelPrint: 'DOI:',
+    profileImageAlt: "Profile picture of ",
+    referencesAvailableText: 'References available upon request.'
   }
 };
 
@@ -201,7 +207,7 @@ function clearDynamicContent() {
     contactActionsContainer.innerHTML = '';
   }
 
-  const contentContainers = ["experience-list", "project-list", "skills-section", "language-list", "education-list", "certification-list"];
+  const contentContainers = ["experience-list", "project-list", "skills-section", "language-list", "education-list", "publication-list", "certification-list"];
   contentContainers.forEach(id => {
     const container = document.getElementById(id);
     if (container) {
@@ -252,20 +258,71 @@ function fetchData(filePath, errorDisplay) {
     });
 }
 
+function createPrintContactLineInAbout(data) {
+  // Remover TODAS las líneas de contacto existentes (tanto por ID como por clase)
+  const existingContactLines = document.querySelectorAll('.print-contact-line, #print-contact-line');
+  existingContactLines.forEach(line => line.remove());
+  // Verificar si tenemos datos de contacto
+  const hasContactData = (data.contact && (data.contact.email || data.contact.phone)) || data.githubProfileUrl;
+  if (!hasContactData) {
+    console.warn('createPrintContactLineInAbout: No hay datos de contacto disponibles');
+    return;
+  }
+  // Crear nueva línea de contacto
+  const contactLine = document.createElement('div');
+  contactLine.id = 'print-contact-line';
+  contactLine.className = 'print-contact-line';
+  contactLine.style.display = 'none'; // Oculto por defecto
+  // Construir elementos de contacto
+  const contactElements = [];
+  if (data.contact && data.contact.email) { contactElements.push(data.contact.email); }
+  if (data.contact && data.contact.phone) { contactElements.push(data.contact.phone); }
+  if (data.portfolioUrl) { contactElements.push(data.portfolioUrl); }
+  if (data.githubProfileUrl) { contactElements.push(data.githubProfileUrl); }
+  contactLine.textContent = contactElements.join(' | ');
+  // Insertar después del elemento name
+  const nameElement = document.getElementById('name');
+  if (nameElement && nameElement.parentNode) {
+    nameElement.parentNode.insertBefore(contactLine, nameElement.nextSibling);
+  } else {
+    console.warn('createPrintContactLineInAbout: Elemento name o su contenedor padre no encontrado');
+    // Fallback al contenedor about
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.appendChild(contactLine);
+    } else {
+      console.warn('createPrintContactLineInAbout: No se pudo insertar la línea de contacto - elementos contenedores no encontrados');
+    }
+  }
+}
+
 // --- Funciones para Rellenar Secciones Específicas del HTML ---
 function populateAbout(data) {
   setTextContent("name", data.name);
   setTextContent("title", data.title);
   if (data.about) {
     setTextContent("summary", data.about.summary);
+    // Crear elemento oculto para professionalProfile (solo visible en impresión)
+    let professionalProfileElement = document.getElementById("professional-profile");
+    if (!professionalProfileElement) {
+      professionalProfileElement = document.createElement("p");
+      professionalProfileElement.id = "professional-profile";
+      professionalProfileElement.className = "text-slate-300 text-base sm:text-lg font-normal leading-relaxed mt-4 text-justify md:text-left print-only-profile";
+      const summaryElement = document.getElementById("summary");
+      if (summaryElement && summaryElement.parentNode) {
+        summaryElement.parentNode.insertBefore(professionalProfileElement, summaryElement.nextSibling);
+      }
+    }
+    setTextContent("professional-profile", data.about.professionalProfile);
     setImageAttributes("profile-image", data.about.image, "");
   } else {
     setTextContent("summary", "La sección 'Acerca de mí' no está disponible para este idioma.");
     setImageAttributes("profile-image", "assets/profile_placeholder.png", "Imagen de perfil no disponible");
   }
+  createPrintContactLineInAbout(data);
 }
 
-function populateContactActions(data, texts, language) {
+function populateContactActions(data, texts) {
   const contactSection = document.getElementById("contact");
   const contactIntroP = contactSection ? contactSection.querySelector('p.text-slate-300') : null;
   if (!contactSection || !contactIntroP) {
@@ -279,7 +336,7 @@ function populateContactActions(data, texts, language) {
     actionsContainer.className = "mt-6 flex flex-wrap justify-center items-center gap-4";
     contactIntroP.parentNode.insertBefore(actionsContainer, contactIntroP.nextSibling);
   }
-
+  // Botones para la web (sin cambios)
   if (data.contact && data.contact.email) {
     const emailLinkElement = document.createElement("a");
     emailLinkElement.id = "email-link";
@@ -306,10 +363,8 @@ function populateContactActions(data, texts, language) {
     };
     EventManager.add(copyEmailContactBtn, 'click', copyEmailHandler);
     actionsContainer.appendChild(copyEmailContactBtn);
-    const emailPrintText = document.createElement('p');
-    emailPrintText.className = 'print-only-contact-info';
-    actionsContainer.appendChild(emailPrintText);
   }
+
   if (data.githubProfileUrl) {
     const githubContactButton = document.createElement("a");
     githubContactButton.id = "github-contact-link";
@@ -318,15 +373,53 @@ function populateContactActions(data, texts, language) {
     githubContactButton.rel = "noopener noreferrer";
     githubContactButton.className = "btn-hover inline-flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-white text-base sm:text-lg font-bold leading-normal tracking-[0.015em] shadow-lg no-print bg-[#197fe5] hover:bg-[#156abc] transition-colors duration-300";
     actionsContainer.appendChild(githubContactButton);
-    const githubPrintText = document.createElement('p');
-    githubPrintText.className = 'print-only-contact-info';
-    actionsContainer.appendChild(githubPrintText);
   }
-  if (data.contact && data.contact.phone) {
-    const phonePrintText = document.createElement('p');
-    phonePrintText.className = 'print-only-contact-info';
-    actionsContainer.appendChild(phonePrintText);
+  createPrintContactLineInAbout(data);
+}
+
+function populatePublications(publicationsData, texts) {
+  const publicationsSection = document.getElementById("publications");
+  const publicationList = document.getElementById("publication-list");
+  // Si no hay datos o la lista está vacía, ocultar la sección
+  if (!publicationsData || publicationsData.length === 0) {
+    if (publicationsSection) {
+      publicationsSection.style.display = 'none';
+    }
+    return;
   }
+  // Mostrar la sección si hay datos
+  if (publicationsSection) {
+    publicationsSection.style.display = 'block';
+  }
+  // Verificar que publicationList existe antes de usarlo
+  if (!publicationList) {
+    console.warn("populatePublications: Elemento 'publication-list' no encontrado.");
+    return;
+  }
+  publicationsData.forEach(publication => {
+    const publicationCard = document.createElement("div");
+    publicationCard.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
+    // Construir HTML para web (con enlace clickeable)
+    const webContent = `
+      <h3 class="text-white text-xl font-semibold mb-2">${publication.title || ''}</h3>
+      <p class="text-slate-400 text-sm mb-2">${publication.journal || ''} | ${publication.date || ''}</p>
+      ${publication.doiUrl ? `
+        <a href="${publication.doiUrl}" target="_blank" rel="noopener noreferrer" 
+           class="publication-doi-link text-[#197fe5] hover:text-[#3b8dff] text-sm font-medium flex items-center gap-2">
+          ${texts.publicationDoiLinkText || "View Publication"}
+        </a>
+      ` : ''}
+    `;
+    publicationCard.innerHTML = webContent;
+    // Añadir URL completa para impresión (ATS compatible)
+    if (publication.doiUrl) {
+      const printUrlElement = document.createElement('p');
+      printUrlElement.className = 'print-only-publication-url';
+      printUrlElement.textContent = `${texts.publicationUrlLabelPrint || 'DOI:'} ${publication.doiUrl}`;
+      publicationCard.appendChild(printUrlElement);
+    }
+    publicationList.appendChild(publicationCard);
+  });
 }
 
 /**
@@ -406,7 +499,7 @@ function populateProjects(projectsData, texts) {
   alignProjectCards();
 }
 
-function populateSkills(skillsData, language) {
+function populateSkills(skillsData, language, languagesData) {
   const skillsSection = document.getElementById("skills-section");
   if (!skillsData || !skillsSection) { return; }
   const skillCategoriesConfig = [
@@ -436,6 +529,13 @@ function populateSkills(skillsData, language) {
         listItem.textContent = skill.name || '';
         printList.appendChild(listItem);
       });
+      if (category.key === 'concepts' && languagesData && languagesData.length > 0) {
+        languagesData.forEach(lang => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${lang.language || ''} (${lang.level || ''})`;
+          printList.appendChild(listItem);
+        });
+      }
       container.appendChild(webDisplayContainer);
       container.appendChild(printList);
       skillsSection.appendChild(container);
@@ -460,7 +560,7 @@ function populateEducation(educationData) {
   educationData.forEach(edu => {
     const div = document.createElement("div");
     div.className = "p-6 bg-[#111a22] rounded-xl shadow-lg";
-    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${edu.degree || ''}</h3><p class="text-slate-400 text-sm">${edu.institution || ''} | ${edu.dates || ''}</p><p class="text-slate-300 text-base mt-2">${edu.details || ''}</p>`;
+    div.innerHTML = `<h3 class="text-white text-xl font-semibold">${edu.degree || ''}</h3><p class="text-slate-400 text-sm">${edu.institution || ''} | ${edu.dates || ''}</p><p class="text-slate-300 text-base mt-2 no-print">${edu.details || ''}</p>`;
     educationList.appendChild(div);
   });
 }
@@ -468,11 +568,20 @@ function populateEducation(educationData) {
 function populateCertifications(certificationsData) {
   const certificationSection = document.getElementById("certifications");
   const certificationList = document.getElementById("certification-list");
-  if (!certificationsData || !certificationList) { return; }
-  // Si no hay datos de certificaciones, oculta la sección completa
-  if (certificationsData.length === 0) {
-    certificationSection.style.display = 'none';
-    certificationList.style.display = 'none';
+  // Si no hay datos o la lista está vacía, ocultar la sección
+  if (!certificationsData || certificationsData.length === 0) {
+    if (certificationSection) {
+      certificationSection.style.display = 'none';
+    }
+    return;
+  }
+  // Mostrar la sección si hay datos
+  if (certificationSection) {
+    certificationSection.style.display = 'block';
+  }
+  // Verificar que certificationList existe antes de usarlo
+  if (!certificationList) {
+    console.warn("populateCertifications: Elemento 'certification-list' no encontrado.");
     return;
   }
   certificationsData.forEach(cert => {
@@ -495,6 +604,7 @@ function applyStaticTranslations(texts, data) {
   setQueryText('a[href="#skills"]', texts.navSkills);
   setQueryText('a[href="#languages"]', texts.navLanguages);
   setQueryText('a[href="#education"]', texts.navEducation);
+  setQueryText('a[href="#publications"]', texts.navPublications);
   setQueryText('a[href="#certifications"]', texts.navCertifications);
   setQueryText('a[href="#contact"]', texts.navContact);
   const sideMenuNavLinks = document.querySelectorAll('#side-menu nav a[data-translate-key]');
@@ -509,9 +619,18 @@ function applyStaticTranslations(texts, data) {
   setQueryText('section#skills h2', texts.titleSkills);
   setQueryText('section#languages h2', texts.titleLanguages);
   setQueryText('section#education h2', texts.titleEducation);
+  setQueryText('section#publications h2', texts.titlePublications);
   setQueryText('section#certifications h2', texts.titleCertifications);
   setQueryText('#contact h2', texts.contactTitle);
   setQueryText('#contact p.text-slate-300', texts.contactIntro);
+  // Limpiar los elementos existentes con la clase 'print-only-contact-info'
+  const existingElements = document.querySelectorAll('.print-only-contact-info');
+  existingElements.forEach(el => el.remove());
+  const referencesText = document.createElement('p');
+  referencesText.className = 'print-only-contact-info';
+  referencesText.textContent = texts.referencesAvailableText || (texts.lang === 'es' ? 'Referencias disponibles a solicitud.' : 'References available upon request.');
+  document.body.appendChild(referencesText);
+
   const emailLink = document.getElementById("email-link");
   if (emailLink) emailLink.textContent = texts.emailLinkText;
   const githubProfileLink = document.getElementById("github-contact-link");
@@ -523,22 +642,6 @@ function applyStaticTranslations(texts, data) {
   const profileImg = document.getElementById("profile-image");
   if (profileImg) { profileImg.alt = texts.profileImageAlt; }
 
-  const actionsContainer = document.getElementById('contact-actions-container');
-  if (actionsContainer) {
-    const printOnlyElements = actionsContainer.querySelectorAll('p.print-only-contact-info');
-    let currentPrintElementIndex = 0;
-    if (data.contact && data.contact.email && printOnlyElements[currentPrintElementIndex]) {
-      printOnlyElements[currentPrintElementIndex].textContent = (texts.emailLabelPrint || 'Email:') + ' ' + data.contact.email;
-      currentPrintElementIndex++;
-    }
-    if (data.githubProfileUrl && printOnlyElements[currentPrintElementIndex]) {
-      printOnlyElements[currentPrintElementIndex].textContent = (texts.githubLabelPrint || 'GitHub Profile:') + ' ' + data.githubProfileUrl;
-      currentPrintElementIndex++;
-    }
-    if (data.contact && data.contact.phone && printOnlyElements[currentPrintElementIndex]) {
-      printOnlyElements[currentPrintElementIndex].textContent = (texts.phoneLabelPrint || 'Phone:') + ' ' + data.contact.phone;
-    }
-  }
   // Poblar URLs de repositorios de proyectos para impresión
   const projectCards = document.querySelectorAll('#project-list > div'); // Asume que cada tarjeta es un div directo hijo de #project-list
   projectCards.forEach((card, index) => {
@@ -600,12 +703,13 @@ function loadResumeData(language) {
       else { currentProfileImageAlt += (language === 'es' ? "el usuario" : "the user"); }
       const texts = { ...(staticTextConfig[language] || staticTextConfig.en), profileImageAlt: currentProfileImageAlt };
       populateAbout(data);
-      populateContactActions(data, texts, language);
+      populateContactActions(data, texts);
       if (data.experience) populateExperience(data.experience);
       if (data.projects) populateProjects(data.projects, texts);
-      if (data.skills) populateSkills(data.skills, language);
+      if (data.skills) populateSkills(data.skills, language, data.languages);
       if (data.languages) populateLanguages(data.languages);
       if (data.education) populateEducation(data.education);
+      if (data.publications) populatePublications(data.publications, texts);
       if (data.certifications) populateCertifications(data.certifications);
       applyStaticTranslations(texts, data);
       alignProjectCards(); // Llamar a alignProjectCards después de poblar los proyectos

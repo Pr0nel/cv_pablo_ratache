@@ -20,7 +20,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pablo - Data Engineer & Software Developer</title>
+  <title>Pablo Ratache - Data Engineer & Software Developer</title>
 
   <!-- Enlace al CSS generado por Tailwind -->
   <link rel="stylesheet" href="css/output.css">
@@ -29,7 +29,7 @@
 
 <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
   <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
-    <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center max-[400px]:flex-col max-[400px]:justify-center max-[400px]:items-center max-[400px]:space-y-2">
+    <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center max-[460px]:flex-col max-[400px]:justify-center max-[400px]:items-center max-[400px]:space-y-2">
       <!-- Botón con icono de hamburguesa (visible en pantallas pequeñas y superiores) -->
       <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4" aria-expanded="false" aria-controls="side-menu">
         &#9776;
@@ -46,6 +46,7 @@
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#skills">Skills</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#languages">Languages</a>
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#education">Education</a>
+        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#publications">Publications</a>
         <!-- <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#certifications">Certifications</a> -->
         <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#contact">Contact</a>
       </div>
@@ -77,6 +78,7 @@
       <a href="#skills" data-translate-key="navSkills" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Skills</a>
       <a href="#languages" data-translate-key="navLanguages" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Languages</a>
       <a href="#education" data-translate-key="navEducation" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Education</a>
+      <a href="#publications" data-translate-key="navPublications" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Publications</a>
       <!-- <a href="#certifications" data-translate-key="navCertifications" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Certifications</a> -->
       <a href="#contact" data-translate-key="navContact" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Contact</a>
     </nav>
@@ -116,7 +118,7 @@
     </section>
 
     <section id="skills" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
-      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Technical Skills</h2>
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Skills</h2>
       <div id="skills-section" class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-h-4-skills"></div>
       <button id="skills-toggle" aria-expanded="false" aria-controls="skills-section" class="mt-6 mx-auto flex items-center justify-center space-x-1 px-4 py-2 bg-[#197fe5] text-white rounded-lg">
         <span id="toggle-text">Expand</span>
@@ -134,6 +136,11 @@
     <section id="education" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Education</h2>
       <div id="education-list" class="space-y-8"></div>
+    </section>
+
+    <section id="publications" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+      <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Publications</h2>
+      <div id="publication-list" class="space-y-8"></div>
     </section>
 
     <section id="certifications" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">

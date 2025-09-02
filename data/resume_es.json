@@ -1,10 +1,11 @@
 {
   "name": "Pablo Ratache",
-  "title": "Data Engineer & Junior Software Developer",
+  "title": "Data Engineer & Software Developer",
+  "portfolioUrl": "pr0nel.github.io/cv_pablo_ratache/",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "Soy Pablo, Ingeniero Físico incursionando en la ingeniería de datos y desarrollo de software, apasionado por construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente.",
-    "professionalProfile": "Jr. Data Engineer con experiencia en el diseño y desarrollo de pipelines ETL/ELT utilizando tecnologías como GCP, AWS y Airflow. He logrado reducciones significativas en los tiempos de carga (hasta un 40 %) y ha automatizado ingestas delta y full-load. Además, he desplegado contenedores para ETL web-scrapping, lo que ha reducido la latencia en un 60 %. También ha implementado soluciones de Machine Learning y Optical Character Recognition (OCR), alcanzando precisión del 90 % en tareas de segmentación (SAM) y extracción de texto (AWS Textract). Mi experiencia incluye la aplicación de metodologías ágiles como Scrum y el uso de métricas de eficiencia y estabilidad como OEE, Cp y Cpk en entornos industriales y procesos de análisis avanzado, incluyendo la gestión de calidad (QA/QC) bajo normativas ISO/IEC 17025 e INACAL.",
+    "professionalProfile": "Como Data Engineer he demostrado habilidades clave con experiencia en el diseño y desarrollo de pipelines ETL/ELT utilizando tecnologías como GCP, AWS y Airflow, logrando reducciones significativas en los tiempos de carga (hasta 40 %) y automatizando ingestas delta y full-load. Además, he desplegado contenedores para ETL web-scrapping, lo que ha reducido la latencia en un 60 %. También he implementado soluciones de Machine Learning y Optical Character Recognition (OCR), alcanzando precisión del 90 % en tareas de segmentación (SAM) y extracción de texto (AWS Textract). Mi experiencia incluye la aplicación de metodologías ágiles como Scrum y el uso de métricas de eficiencia y estabilidad como OEE, Cp y Cpk en entornos industriales y procesos de análisis avanzado, incluyendo la gestión de calidad (QA/QC) bajo normativas ISO/IEC 17025 e INACAL.",
     "image": "assets/profile.png"
   },
   "contact": {
@@ -35,19 +36,19 @@
   "experience": [
     {
       "role": "Jr. Data Engineer",
-      "company": "Freelance",
+      "company": "Konexa-WOM [Chile] [Telecomunicaciones, B2C/B2B]",
       "dates": "Febrero 2025 - Actualidad",
       "description": "- Diseñé infraestructura de datos en GCP con Terraform y JSON.\n- Automatizé stored procedures y DAGs en Airflow, reduciendo tiempos de carga en 40 %.\n- Gestioné reprocesos de Oracle a BigQuery con 100 % de consistencia.\n- Desarrollé pipelines en AWS con PySpark para generar tablas finales escalables.\n- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.\n- Implementé arquitectura modular de ML (CLIP, OCR, segmentación, validación) alcanzando 90 % de precisión."
     },
     {
       "role": "Investigador de Producción",
-      "company": "Productora De Alimentos Uno S.A.C.",
+      "company": "Productora De Alimentos Uno S.A.C. [Ate-Lima-Perú] [Alimentos Procesados, B2B]",
       "dates": "Mayo 2024 - Enero 2025",
       "description": "- Implementé KPIs de OEE para medir eficiencia en cuatro líneas de envasado.\n- Apliqué Cp y Cpk para evaluar variabilidad y estabilidad de procesos.\n- Transformé indicadores de planta en datasets estructurados (ETL, SQL Server).\n- Realicé la calibración de tanques y sensores, asegurando trazabilidad metrológica.\n- Definí límites de reproceso para optimizar fermentación y reducir mermas."
     },
     {
       "role": "Asistente de Calibraciones",
-      "company": "Factio Qualitas S.A.C.",
+      "company": "Factio Qualitas S.A.C. [Surco-Lima-Perú] [Consultora Farmacéutica, B2B/B2C]",
       "dates": "Junio 2023 - Enero 2024",
       "description": "- Desarrollé un sistema de gestión, que centralizó clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo de atención en 60 %.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
     }
@@ -79,13 +80,14 @@
       { "name": "SQL", "level": 90 },
       { "name": "PySpark", "level": 80 },
       { "name": "Bash", "level": 80 },
+      { "name": "Java", "level": 70 },
       { "name": "HTML", "level": 65 },
       { "name": "CSS", "level": 65 },
       { "name": "JavaScript", "level": 65 }
     ],
     "tools": [
       {
-        "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Jira, Trello",
+        "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Trello, Jira, Confluence",
         "level": 100
       },
       {
@@ -125,12 +127,14 @@
       { "name": "Gestión del tiempo", "level": 100 },
       { "name": "Gestión del cambio", "level": 100 },
       { "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, enfoque Lean, PMBOK", "level": 100 },
+      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 100 },
+      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 100 },
       { "name": "Data Warehousing", "level": 100 },
       { "name": "ETL Processes", "level": 100 },
+      { "name": "Data Modeling", "level": 100 },
+      { "name": "Analytics & Big Data", "level": 80 },
       { "name": "Cloud Computing (AWS/GCP)", "level": 80 },
-      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 70 },
-      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 100 },
-      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 100 }
+      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }  
 }
