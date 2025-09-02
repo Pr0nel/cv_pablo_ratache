@@ -134,7 +134,25 @@ body {
 img {
   max-width: 100%; /* Asegura que la imagen ocupe el ancho máximo disponible */
   height: auto; /* Mantener la relación de aspecto */
-  border-radius: 50%; /* Redondea las esquinas para hacerla circular */
+}
+.lazy-image {
+  transition: opacity 0.3s ease;
+  opacity: 0.7;
+}
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Específico para imagen de perfil */
+#profile-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Específico para imágenes de proyectos */
+#project-list img {
+  border-radius: 0.5rem; /* 8px en Tailwind */
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {

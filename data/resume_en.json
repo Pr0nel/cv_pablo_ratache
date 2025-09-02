@@ -6,7 +6,7 @@
   "about": {
     "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient solutions. With a solid foundation in data warehousing, ETL processes, and programming concepts, I'm eager to contribute to innovative projects and continue to grow professionally. My key skills include Python, SQL, PySpark, and cloud platforms such as Google Cloud and AWS.",
     "professionalProfile": "As a Data Engineer, I have demonstrated key skills with experience in the design and development of ETL/ELT pipelines using technologies such as GCP, AWS, and Airflow, achieving significant reductions in load times (up to 40%) and automating delta and full-load ingestions. Additionally, I have deployed containers for ETL web scraping, which has reduced latency by 60%. As a Software Developer, I have implemented Machine Learning and Optical Character Recognition (OCR) solutions, achieving 90% accuracy in segmentation (SAM) and text extraction (AWS Textract) tasks. My experience includes the application of agile methodologies such as Scrum and the use of efficiency and stability metrics such as OEE, Cp, and Cpk in industrial environments and advanced analytics processes, including quality management (QA/QC) under ISO/IEC 17025 and INACAL standards.",
-    "image": "assets/profile.png"
+    "image": "assets/profile.webp"
   },
   "contact": {
     "email": "pablo.ratache@uni.pe",
@@ -57,19 +57,19 @@
     {
       "title": "Voucher Processing with OCR and Machine Learning",
       "description": "I designed a Python application that processes voucher images (or receipts) through a pipeline that includes segmenting the vouchers within a larger image, validating whether the segments are actually vouchers and extracting text using OCR.",
-      "image": "assets/project1.png",
+      "image": "assets/project1.webp",
       "repositoryUrl": "https://github.com/Pr0nel/proyecto_ocr_vouchers"
     },
     {
       "title": "Data Analysis and Modeling for Solar Radiation Prediction",
       "description": "Data analysis and modeling project to predict hourly solar radiation over a given time horizon. This project involves data exploration, data preprocessing and cleaning, and training a machine learning model to perform the prediction.",
-      "image": "assets/project2.png",
+      "image": "assets/project2.webp",
       "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
       "title": "ETL/ELT Pipeline: Web Data Ingestion and Normalization",
       "description": "I developed an ETL/ELT pipeline for web data ingestion (web scraping), optimizing the extraction and normalization process. I used technologies such as Python and PostgreSQL for data logic and Docker for containerization and deployment in a Linux environment. The project managed to normalize daily logs and reduce processing latency by 60%.",
-      "image": "assets/project3.png",
+      "image": "assets/project3.webp",
       "repositoryUrl": "https://github.com/Pr0nel/snippf-poc"
     }
   ],

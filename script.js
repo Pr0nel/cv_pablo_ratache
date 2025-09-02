@@ -143,8 +143,27 @@ function setTextContent(elementId, text) {
 function setImageAttributes(elementId, src, alt) {
   const element = document.getElementById(elementId);
   if (element) {
-    element.src = src || '';
-    element.alt = alt || '';
+    if (elementId === 'profile-image') {
+      // Configurar lazy loading para imagen de perfil
+      element.dataset.src = src || '';
+      element.src = "data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23334155'/%3E%3C/svg%3E";
+      element.className += ' lazy-image';
+      element.alt = alt || '';
+      // Observer para imagen de perfil
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            entry.target.classList.remove('lazy-image');
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(element);
+    } else {
+        element.src = src || '';
+        element.alt = alt || '';
+    }
   } else {
     console.warn(`Element with ID '${elementId}' not found for setImageAttributes.`);
   }
@@ -317,7 +336,7 @@ function populateAbout(data) {
     setImageAttributes("profile-image", data.about.image, "");
   } else {
     setTextContent("summary", "La sección 'Acerca de mí' no está disponible para este idioma.");
-    setImageAttributes("profile-image", "assets/profile_placeholder.png", "Imagen de perfil no disponible");
+    setImageAttributes("profile-image", "assets/profile_placeholder.webp", "Imagen de perfil no disponible");
   }
   createPrintContactLineInAbout(data);
 }
@@ -465,13 +484,17 @@ function populateProjects(projectsData, texts) {
   projectsData.forEach(project => {
     const projectCard = document.createElement("div"); // Renombrado de 'div' a 'projectCard' para claridad
     projectCard.className = "flex flex-col p-6 bg-[#111a22] rounded-xl shadow-lg h-full";
-    const projectImage = project.image || 'assets/project_placeholder.png';
+    const projectImage = project.image || 'assets/project_placeholder.webp';
     const projectTitleText = project.title || 'Project Image'; // Renombrado para evitar confusión con el elemento title
 
     // Contenido HTML para la vista web (imagen, título, descripción, enlace interactivo)
     projectCard.innerHTML = `
       <div class="flex justify-center w-full">
-        <img src="${projectImage}" alt="${project.title || ''}" class="w-full aspect-video rounded-lg object-cover no-print">
+        <img data-src="${projectImage}" 
+            src="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23334155'/%3E%3C/svg%3E"
+            alt="${project.title || ''}"
+            class="lazy-image w-full aspect-video rounded-lg object-cover no-print"
+            loading="lazy">
       </div>
       <div class="flex flex-col flex-grow p-4">
         <h3 class="text-white text-xl font-semibold mb-2">${project.title || ''}</h3>
@@ -494,7 +517,7 @@ function populateProjects(projectsData, texts) {
     }
     projectList.appendChild(projectCard);
   });
-
+  initializeLazyLoading();
   // Alineación vertical de las tarjetas de proyectos
   alignProjectCards();
 }
@@ -725,6 +748,25 @@ function loadResumeData(language) {
         errorDisplay.style.display = 'block';
       }
     });
+}
+
+function initializeLazyLoading() {
+  const lazyImages = document.querySelectorAll('.lazy-image');
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy-image');
+        imageObserver.unobserve(img);
+        // Callback cuando la imagen se carga
+        img.onload = () => { img.classList.add('loaded'); };
+      }
+    });
+  }, {
+    rootMargin: '50px' // Cargar imagen 50px antes de ser visible
+  });
+  lazyImages.forEach(img => imageObserver.observe(img));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
