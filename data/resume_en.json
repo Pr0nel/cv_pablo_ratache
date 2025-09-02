@@ -15,7 +15,7 @@
   "education": [
     {
       "degree": "B.Sc. with a major in Physical Engineering",
-      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
+      "institution": "Universidad Nacional de Ingenieria, Rimac - Lima - Peru",
       "dates": "2010 - 2019",
       "details": "Final project involved simulating energy consumption for heating an Experimental Housing Module located at 4500 masl. The temperature predictions are compared with recorded indoor temperatures to validate the model. The target indoor temperature is then calculated. Finally, the energy required to maintain a neutral indoor temperature is calculated."
     }
@@ -42,13 +42,13 @@
     },
     {
       "role": "Production Researcher",
-      "company": "Productora De Alimentos Uno S.A.C. [Ate-Lima-Perú] [Food Processing, B2B]",
+      "company": "Productora De Alimentos Uno S.A.C. [Ate-Lima-Peru] [Food Processing, B2B]",
       "dates": "May 2024 - January 2025",
       "description": "- I implemented OEE KPIs to measure efficiency on four packaging lines.\n- I applied CP and CPK to assess process variability and stability.\n- I transformed plant indicators into structured datasets (ETL, SQL Server).\n- I calibrated tanks and sensors, ensuring metrological traceability.\n- I defined reprocessing limits to optimize fermentation and reduce waste."
     },
     {
       "role": "Calibration Wizard",
-      "company": "Factio Qualitas S.A.C. [Surco-Lima-Perú] [Pharmaceutical Consulting, B2B/B2C]",
+      "company": "Factio Qualitas S.A.C. [Surco-Lima-Peru] [Pharmaceutical Consulting, B2B/B2C]",
       "dates": "June 2023 - January 2024",
       "description": "- I developed a management system that centralizes clients, equipment, and certificates, with cloud storage and data governance, reducing service time by 60%.\n- I analyzed results using data-driven decisions.\n- I coordinated external field calibration providers.\n- I collaborated with QA/QC to improve the laboratory's management system.\n- I supported documentation for ISO/IEC 17025 accreditation."
     }
