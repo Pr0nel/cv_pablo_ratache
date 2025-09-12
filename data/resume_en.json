@@ -6,7 +6,7 @@
   "about": {
     "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient solutions. With a solid foundation in data warehousing, ETL processes, and programming concepts, I'm eager to contribute to innovative projects and continue to grow professionally. My key skills include Python, SQL, PySpark, and cloud platforms such as Google Cloud and AWS.",
     "professionalProfile": "+1 year of experience designing ETL/ELT pipelines in cloud environments (GCP/AWS), using Apache Airflow, reducing data loading times by 40%. Proven experience developing ML/OCR solutions with 90% accuracy, agile methodologies, quality compliance, web development, and independent projects. Physics Engineering background provides skills in systematic problem decomposition and complex systems modeling for designing scalable data architectures and efficiently solving technical challenges in production environments.",
-    "image": "assets/profile.webp"
+    "image": "./assets/profile.webp"
   },
   "contact": {
     "email": "pablo.ratache@uni.pe",

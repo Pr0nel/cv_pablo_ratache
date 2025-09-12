@@ -125,7 +125,7 @@ const DOMRenderer = {
         this.setImageAttributes("profile-image", data.about.image, "", false);
     } else {
         this.setTextContent("summary", "La sección 'Acerca de mí' no está disponible para este idioma.");
-        this.setImageAttributes("profile-image", "assets/profile_placeholder.webp", "Imagen de perfil no disponible", true);
+        this.setImageAttributes("profile-image", "./assets/profile_placeholder.webp", "Imagen de perfil no disponible", true);
     }
     this.createPrintContactLineInAbout(data);
   },
