@@ -27,50 +27,48 @@
 </head>
 <body class="bg-[#0a1016] text-slate-100">
 
-<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="relative flex min-h-screen flex-col group/design-root">
   <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0a1016]/80 shadow-lg no-print">
-    <div class="max-w-6xl-plus mx-auto px-6 py-4 flex justify-between items-center max-[460px]:flex-col max-[400px]:justify-center max-[400px]:items-center max-[400px]:space-y-2">
-      <!-- Botón con icono de hamburguesa (visible en pantallas pequeñas y superiores) -->
-      <button id="hamburger-button" class="hidden sm:block text-white text-2xl focus:outline-none mr-4" aria-expanded="false" aria-controls="side-menu">
-        &#9776;
-      </button>
+    <!-- Contenedor principal con ancho máximo -->
+    <div class="max-w-6xl-plus mx-auto px-6 py-4">
+      <!-- Flex container principal: dos grupos (izq y der), responsive -->
+      <div class="flex justify-between items-center gap-4 
+                  max-[580px]:flex-wrap max-[580px]:justify-start">
 
-      <!-- Group 1: Título/Logo del sitio -->
-      <a class="text-2xl font-bold text-white hover:text-[#197fe5] transition-colors max-[400px]:text-center" href="#">Pablo's Portfolio</a>
+        <!-- Grupo extremo izquierdo: hamburguesa + título -->
+        <div class="flex items-center space-x-4 flex-shrink-0">
+          <button id="hamburger-button" 
+                  class="btn-hover text-2xl focus:outline-none focus:ring-2 focus:ring-[#197fe5] rounded"
+                  aria-expanded="false" 
+                  aria-controls="side-menu"
+                  type="button">
+            &#9776;
+          </button>
+          <a href="#" class="text-2xl font-bold text-white">Pablo's Portfolio</a>
+        </div>
 
-      <!-- Group 2: Enlaces de navegación principales (ahora ocultos) -->
-      <div class=" hidden xl-plus:flex items-center space-x-6 flex-shrink min-w-0 overflow-hidden">
-        <!-- <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#about">About</a> -->
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#experience">Experience</a>
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#projects">Projects</a>
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#skills">Skills</a>
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#languages">Languages</a>
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#education">Education</a>
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#publications">Publications</a>
-        <!-- <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#certifications">Certifications</a> -->
-        <a class="text-slate-300 hover:text-[#197fe5] transition-colors" href="#contact">Contact</a>
-      </div>
+        <!-- Grupo extremo derecho: idioma + print CV -->
+        <div class="flex items-center space-x-4 flex-shrink-0 
+                    max-[400px]:flex-col max-[400px]:items-center max-[400px]:space-x-0 max-[400px]:space-y-2 max-[400px]:w-full">
+          
+          <select id="language-switcher" 
+                  class="bg-[#0a1016] text-slate-300 border border-slate-700 rounded-md px-3 py-2 focus:ring-[#197fe5] focus:border-[#197fe5] transition-colors min-w-[120px]">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
 
-      <!-- Espaciador para desplazar los controles hacia la derecha si los enlaces de navegación principales están ocultos o desaparecidos -->
-      <!-- Esto podría ser necesario si el Grupo 2 se elimina por completo o si la función de justificación entre elementos solo necesita ayuda con dos elementos -->
-      <div class="flex-grow sm:hidden"></div><!-- Oculto en la parte inferior y superior, proporciona espacio en la parte superior -->
-
-      <!-- Group 3: Controles (cambio de idioma y botón de impresión) -->
-      <div class="flex items-center space-x-4 flex-shrink-0 max-[400px]:flex-col max-[400px]:items-center max-[400px]:space-x-0 max-[400px]:space-y-2 max-[400px]:w-full max-[400px]:mt-2">
-        <select id="language-switcher" class="bg-[#0a1016] text-slate-300 border-slate-700 rounded-md shadow-sm focus:ring-[#197fe5] focus:border-[#197fe5]">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-        </select>
-        <button id="print-cv-button" onclick="window.print()" class="btn-hover flex min-w-[84px] max-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg">
-          Print CV
-        </button>
+          <button id="print-cv-button" 
+                  class="btn-hover h-10 min-w-[120px] max-w-[180px] px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center">
+            Print CV
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Menú lateral (Cajón) -->
   <div id="side-menu" class="fixed top-0 left-0 h-full w-64 bg-[#111a22] text-slate-100 p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-[60] no-print shadow-xl">
-    <button id="close-menu-button" class="text-white text-3xl absolute top-4 right-6 hover:text-[#197fe5] transition-colors">&times;</button>
+    <button id="close-menu-button" class="btn-hover text-3xl absolute top-4 right-6">&times;</button>
     <nav class="mt-16 flex flex-col space-y-2"> <!-- Espacio ajustado, para enlaces potencialmente más densos con más relleno -->
       <a href="#about" data-translate-key="navAbout" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">About</a>
       <a href="#experience" data-translate-key="navExperience" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Experience</a>
@@ -79,7 +77,7 @@
       <a href="#languages" data-translate-key="navLanguages" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Languages</a>
       <a href="#education" data-translate-key="navEducation" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Education</a>
       <a href="#publications" data-translate-key="navPublications" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Publications</a>
-      <!-- <a href="#certifications" data-translate-key="navCertifications" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Certifications</a> -->
+      <a href="#certifications" data-translate-key="navCertifications" class="hidden text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Certifications</a>
       <a href="#contact" data-translate-key="navContact" class="block text-lg text-slate-300 hover:text-[#197fe5] hover:bg-slate-700 py-2 px-3 rounded-md transition-colors">Contact</a>
     </nav>
   </div>
@@ -88,7 +86,7 @@
   <div id="menu-overlay" class="fixed top-0 left-0 w-full h-full bg-black/50 z-[55] hidden no-print"></div>
 
   <main class="flex-1">
-    <section id="about" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+    <section id="about" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <div class="layout-content-container flex flex-col md:flex-row md:items-start md:gap-8 max-w-6xl mx-auto">
         <div id="about-text-content" class="order-2 md:order-1">
           <!-- Información de contacto solo visible en impresión -->
@@ -107,17 +105,17 @@
       </div>
     </section>
 
-    <section id="experience" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+    <section id="experience" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Work Experience</h2>
       <div id="experience-list" class="space-y-8  white-space-pre-line"></div>
     </section>
 
-    <section id="projects" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+    <section id="projects" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">My Projects</h2>
       <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
 
-    <section id="skills" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+    <section id="skills" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Skills</h2>
       <div id="skills-section" class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-h-4-skills"></div>
       <button id="skills-toggle" aria-expanded="false" aria-controls="skills-section" class="mt-6 mx-auto flex items-center justify-center space-x-1 px-4 py-2 bg-[#197fe5] text-white rounded-lg">
@@ -128,27 +126,27 @@
       </button>
     </section>
 
-    <section id="languages" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+    <section id="languages" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Languages</h2>
       <div id="language-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
 
-    <section id="education" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+    <section id="education" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Education</h2>
       <div id="education-list" class="space-y-8"></div>
     </section>
 
-    <section id="publications" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016]">
+    <section id="publications" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-[#0a1016] no-print">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Publications</h2>
       <div id="publication-list" class="space-y-8"></div>
     </section>
 
-    <section id="certifications" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
+    <section id="certifications" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016]">
       <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-10 sm:mb-12 text-center">Certifications</h2>
       <div id="certification-list" class="space-y-8"></div>
     </section>
 
-    <section id="contact" class="px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016] no-print">
+    <section id="contact" class="scroll-mt-20 sm:scroll-mt-24 px-6 md:px-10 lg:px-20 xl:px-40 py-16 md:py-24 bg-gradient-to-br from-[#111a22] to-[#0a1016] no-print">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-6">Get In Touch</h2>
         <p class="text-slate-300 text-lg mb-8">
@@ -167,6 +165,6 @@
 </div>
 
 <!-- Script para cargar datos JSON -->
-<script src="script.js"></script>
+<script type="module" src="./js/main.js" defer></script>
 </body>
 </html>

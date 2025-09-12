@@ -5,7 +5,7 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "con formación en Ingeniería Física especializado en construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente. Mis habilidades clave incluyen Python, SQL, Pyspark, y plataformas en la nube como GCP y AWS.",
-    "professionalProfile": "Como Data Engineer he demostrado habilidades clave con experiencia en el diseño y desarrollo de pipelines ETL/ELT utilizando tecnologías como GCP, AWS y Airflow, logrando reducciones significativas en los tiempos de carga (hasta 40 %) y automatizando ingestas delta y full-load. Además, he desplegado contenedores para ETL web-scrapping, lo que ha reducido la latencia en un 60 %. Como Software Developer he implementado soluciones de Machine Learning y Optical Character Recognition (OCR), alcanzando precisión del 90 % en tareas de segmentación (SAM) y extracción de texto (AWS Textract). Mi experiencia incluye la aplicación de metodologías ágiles como Scrum y el uso de métricas de eficiencia y estabilidad como OEE, Cp y Cpk en entornos industriales y procesos de análisis avanzado, incluyendo la gestión de calidad (QA/QC) bajo normativas ISO/IEC 17025 e INACAL.",
+    "professionalProfile": "+1 año de experiencia en diseño de pipelines ETL/ELT en entornos cloud (GCP / AWS), usando Apache Airflow, reduciendo tiempos de carga en 40 %. Tengo experiencia en desarrollo de soluciones ML/OCR con 90 % de precisión, metodologías ágiles y cumplimiento de estándares de calidad, desarrollo web y proyectos independientes. Background en Ingeniería Física me aporta habilidades como la descomposición sistemática de problemas y la modelización de sistemas complejos, para el diseño de arquitecturas de datos escalables y la resolución eficiente de desafíos técnicos en entornos productivos.",
     "image": "assets/profile.webp"
   },
   "contact": {
@@ -15,7 +15,7 @@
   "education": [
     {
       "degree": "B.Sc. con mención en Ingeniería Física",
-      "institution": "Universidad Nacional de Ingeniería, Rímac - Lima - Perú",
+      "institution": "Universidad Nacional de Ingeniería \u2022 Rímac - Lima - Perú",
       "dates": "2010 - 2019",
       "details": "El proyecto final consistió en simular el consumo de energía para la calefacción de un Módulo de Vivienda Experimental ubicado a 4500 msnm. Las predicciones de temperatura se comparan con las temperaturas interiores registradas, para validar el modelo. A continuación, se calcula la temperatura interior objetivo. Finalmente, se calcula la energía necesaria para mantener una temperatura interior neutra."
     }
@@ -36,21 +36,47 @@
   "experience": [
     {
       "role": "Jr. Data Engineer",
-      "company": "Konexa - WOM [Chile] [Telecomunicaciones, B2C/B2B]",
+      "company": "Konexa - WOM \u2022 Chile (Remoto) \u2022 Telecomunicaciones, B2C/B2B",
       "dates": "Febrero 2025 - Actualidad",
-      "description": "- Diseñé infraestructura de datos en GCP con Terraform y JSON.\n- Automatizé stored procedures y DAGs en Airflow, reduciendo tiempos de carga en 40 %.\n- Gestioné reprocesos de Oracle a BigQuery con 100 % de consistencia.\n- Desarrollé pipelines en AWS con PySpark para generar tablas finales escalables.\n- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.\n- Implementé arquitectura modular de ML (CLIP, OCR, segmentación, validación) alcanzando 90 % de precisión."
+      "description": [
+        "LOGROS CLAVE:",
+        "- Reduje tiempos de carga de datos históricos en 40 % en la migración de Oracle a BigQuery, con la automatización de pipelines ETL/ELT mediante la orquestación de DAGs en Apache Airflow.",
+        "- Migré datos históricos de Oracle a BigQuery manteniendo 100% de integridad.",
+        "- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.",
+        "- Desarrollé solución modular de Machine Learning (SAM, CLIP, OCR, AWS Textract) para procesamiento de vouchers con 90 % de precisión.",
+        "",
+        "RESPONSABILIDADES:",
+        "- Documenté mapeo completo del linaje de datos desde fuentes en Oracle/SandBox/BigQuery hasta reportes finales, documentando trazabilidad para auditorías de compliance.",
+        "- Configuré infraestructura de datos en GCP definiendo esquemas BigQuery en JSON y configuraciones Terraform (tfvars), automatizando despliegue mediante CI/CD en GitLab.",
+        "- Entregué productos de datos finales: vistas SQL, reportes de compliance, documentación técnica y RFCs usando Confluence, con CI/CD en GitLab y seguimiento en Jira.",
+        "- Desarrollé y probé pipelines ETL/ELT en AWS (S3, EC2, PySpark) con Jupyter Notebooks para desarrollo interactivo y traducción de SQL complejas a código PySpark escalable.",
+        "- Orquesté jobs distribuidos de PySpark en AWS EMR mediante DAGs de Apache Airflow, asegurando ejecuciones programadas, reintentos y monitoreo de estado."
+      ]
     },
     {
       "role": "Investigador de Producción",
-      "company": "Productora De Alimentos Uno S.A.C. [Ate-Lima-Perú] [Alimentos Procesados, B2B]",
+      "company": "Productora De Alimentos Uno S.A.C. \u2022 Ate-Lima-Perú \u2022 Alimentos Procesados, B2B",
       "dates": "Mayo 2024 - Enero 2025",
-      "description": "- Implementé KPIs de OEE para medir eficiencia en cuatro líneas de envasado.\n- Apliqué Cp y Cpk para evaluar variabilidad y estabilidad de procesos.\n- Transformé indicadores de planta en datasets estructurados (ETL, SQL Server).\n- Realicé la calibración de tanques y sensores, asegurando trazabilidad metrológica.\n- Definí límites de reproceso para optimizar fermentación y reducir mermas."
+      "description": [
+        "- Implementé sistema de KPIs de OEE junto al equipo de Producción y Excelencia Operacional, estableciendo la primera medición de eficiencia operacional.",
+        "- Establecí metodología de control estadístico con índices Cp y Cpk en coordinación con el equipo de Calidad, creando el primer sistema de monitoreo de capacidad de procesos.",
+        "- Apoyé en la carga y estructuración de datos operativos en SQL Server, para reportes de KPIs de producción.",
+        "- Realicé la calibración de tanques y equipos, asegurando trazabilidad metrológica.",
+        "- Definí límites de reproceso para optimizar tiempos de fermentación y reducir mermas."
+      ]
     },
     {
       "role": "Asistente de Calibraciones",
-      "company": "Factio Qualitas S.A.C. [Surco-Lima-Perú] [Consultora Farmacéutica, B2B/B2C]",
+      "company": "Factio Qualitas S.A.C. \u2022 Surco-Lima-Perú \u2022 Consultora Farmacéutica, B2B/B2C",
       "dates": "Junio 2023 - Enero 2024",
-      "description": "- Definí e implementé una solución estratégica de gestión, que centralizó clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo de atención en 60 %.\n- Analicé resultados aplicando decisiones basadas en datos (data-driven).\n- Coordiné con proveedores externos para calibración en campo.\n- Colaboré con QA/QC en la mejora del sistema de gestión del laboratorio.\n- Apoyé en documentación para acreditación ISO/IEC 17025."
+      "description": [
+        "- Supervisé y mentoré a un colaborador, reduciendo tiempo de rampa en un 50 % y mejorando la consistencia de sus entregas a 80 %.",
+        "- Implementé un sistema centralizado de gestión de clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo del servicio en 60 %.",
+        "- Apliqué enfoque data-driven para análisis de resultados y toma de decisiones.",
+        "- Coordiné con proveedores externos para la calibración en campo, asegurando el cumplimiento técnico, normativo y de cronogramas.",
+        "- Colaboré con QA/QC en la mejora continua del sistema de gestión del laboratorio.",
+        "- Apoyé en documentación para acreditación ISO/IEC 17025."
+      ]
     }
   ],
   "projects": [
@@ -107,12 +133,12 @@
         "level": 100
       },
       {
-        "name": "Contenedores y Virtualización: Docker, Docker Compose",
+        "name": "Contenedores y Virtualización: Docker, Docker Compose, VirtualBox",
         "level": 80
       },
       {
-        "name": "Base de datos: PostgreSQL (Docker)",
-        "level": 80
+        "name": "Base de datos: PostgreSQL (OLTP), BigQuery (OLAP)",
+        "level": 100
       }
     ],
     "concepts": [
@@ -132,7 +158,7 @@
       { "name": "Data Warehousing", "level": 100 },
       { "name": "ETL Processes", "level": 100 },
       { "name": "Data Modeling", "level": 100 },
-      { "name": "Analytics & Big Data", "level": 80 },
+      { "name": "Analytics & Big Data", "level": 100 },
       { "name": "Cloud Computing (AWS/GCP)", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]

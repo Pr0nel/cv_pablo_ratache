@@ -5,7 +5,7 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient solutions. With a solid foundation in data warehousing, ETL processes, and programming concepts, I'm eager to contribute to innovative projects and continue to grow professionally. My key skills include Python, SQL, PySpark, and cloud platforms such as Google Cloud and AWS.",
-    "professionalProfile": "As a Data Engineer, I have demonstrated key skills with experience in the design and development of ETL/ELT pipelines using technologies such as GCP, AWS, and Airflow, achieving significant reductions in load times (up to 40%) and automating delta and full-load ingestions. Additionally, I have deployed containers for ETL web scraping, which has reduced latency by 60%. As a Software Developer, I have implemented Machine Learning and Optical Character Recognition (OCR) solutions, achieving 90% accuracy in segmentation (SAM) and text extraction (AWS Textract) tasks. My experience includes the application of agile methodologies such as Scrum and the use of efficiency and stability metrics such as OEE, Cp, and Cpk in industrial environments and advanced analytics processes, including quality management (QA/QC) under ISO/IEC 17025 and INACAL standards.",
+    "professionalProfile": "+1 year of experience designing ETL/ELT pipelines in cloud environments (GCP/AWS), using Apache Airflow, reducing data loading times by 40%. Proven experience developing ML/OCR solutions with 90% accuracy, agile methodologies, quality compliance, web development, and independent projects. Physics Engineering background provides skills in systematic problem decomposition and complex systems modeling for designing scalable data architectures and efficiently solving technical challenges in production environments.",
     "image": "assets/profile.webp"
   },
   "contact": {
@@ -15,7 +15,7 @@
   "education": [
     {
       "degree": "B.Sc. with a major in Physical Engineering",
-      "institution": "Universidad Nacional de Ingenieria, Rimac - Lima - Peru",
+      "institution": "Universidad Nacional de Ingenieria \u2022 Rimac - Lima - Peru",
       "dates": "2010 - 2019",
       "details": "Final project involved simulating energy consumption for heating an Experimental Housing Module located at 4500 masl. The temperature predictions are compared with recorded indoor temperatures to validate the model. The target indoor temperature is then calculated. Finally, the energy required to maintain a neutral indoor temperature is calculated."
     }
@@ -36,21 +36,47 @@
   "experience": [
     {
       "role": "Jr. Data Engineer",
-      "company": "Konexa - WOM [Chile] [Telecom, B2B/B2C]",
+      "company": "Konexa - WOM \u2022 Chile (Remote) \u2022 Telecom, B2B/B2C",
       "dates": "February 2025 - Present",
-      "description": "- I designed data infrastructure on GCP using Terraform and JSON.\n- I automated stored procedures and DAGs in Airflow, reducing load times by 40%.\n- I managed reprocessing from Oracle to BigQuery with 100% consistency.\n- I developed pipelines on AWS with PySpark to generate scalable final tables.\n- I deployed a Docker container (Linux + PostgreSQL) for ETL web scraping, normalizing logs and reducing latency by 60%.\n- I implemented modular ML architecture (CLIP, OCR, segmentation, validation) with 90% accuracy."
+      "description": [
+        "KEY ACCOMPLISHMENTS:",
+        "- Reduced historical data loading times by 40% in Oracle to BigQuery migration through ETL/ELT pipeline automation using Apache Airflow DAG orchestration.",
+        "- Migrated historical data from Oracle to BigQuery maintaining 100% data integrity.",
+        "- Deployed a Docker container (Linux + PostgreSQL) for web-scraping ETL, normalizing records and reducing latency by 60%.",
+        "- Developed modular Machine Learning solution (SAM, CLIP, OCR, AWS Textract) for voucher processing with 90% accuracy.",
+        "",
+        "RESPONSIBILITIES:",
+        "- Documented complete data lineage mapping from Oracle/SandBox/BigQuery sources to final reports, documenting traceability for compliance audits.",
+        "- Configured data infrastructure in GCP by defining BigQuery schemas in JSON and Terraform configurations (tfvars), automating deployment through CI/CD in GitLab.",
+        "- Delivered final data products, including SQL views, compliance reports, technical documentation, and RFCs using Confluence, with CI/CD in GitLab and tracking in Jira.",
+        "- Developed and tested ETL/ELT pipelines on AWS (S3, EC2, PySpark) with Jupyter Notebooks for interactive development and complex SQL to scalable PySpark code translation.",
+        "- Orchestrated distributed PySpark jobs on AWS EMR through Apache Airflow DAGs, ensuring scheduled executions, retries, and status monitoring."
+      ]
     },
     {
-      "role": "Production Researcher",
-      "company": "Productora De Alimentos Uno S.A.C. [Ate-Lima-Peru] [Food Processing, B2B]",
+      "role": "Production Researcher | Process Engineer",
+      "company": "Productora De Alimentos Uno S.A.C. \u2022 Ate-Lima-Peru \u2022 Food Processing, B2B",
       "dates": "May 2024 - January 2025",
-      "description": "- I implemented OEE KPIs to measure efficiency on four packaging lines.\n- I applied CP and CPK to assess process variability and stability.\n- I transformed plant indicators into structured datasets (ETL, SQL Server).\n- I calibrated tanks and sensors, ensuring metrological traceability.\n- I defined reprocessing limits to optimize fermentation and reduce waste."
+      "description": [
+        "- Implemented OEE KPI system alongside Production and Operational Excellence teams, establishing the first operational efficiency measurement.",
+        "- Established statistical control methodology with Cp and Cpk indices in coordination with Quality team, creating the first process capability monitoring system.",
+        "- Supported operational data loading and structuring in SQL Server for production KPI reporting.",
+        "- Performed tank and equipment calibration, ensuring metrological traceability.",
+        "- Defined reprocessing limits to optimize fermentation times and reduce waste."
+      ]
     },
     {
-      "role": "Calibration Wizard",
-      "company": "Factio Qualitas S.A.C. [Surco-Lima-Peru] [Pharmaceutical Consulting, B2B/B2C]",
+      "role": "Calibration Assistant",
+      "company": "Factio Qualitas S.A.C. \u2022 Surco-Lima-Peru \u2022 Pharmaceutical Consulting, B2B/B2C",
       "dates": "June 2023 - January 2024",
-      "description": "- I defined and implemented a strategic solution management that centralizes clients, equipment, and certificates, with cloud storage and data governance, reducing service time by 60%.\n- I analyzed results using data-driven decisions.\n- I coordinated external field calibration providers.\n- I collaborated with QA/QC to improve the laboratory's management system.\n- I supported documentation for ISO/IEC 17025 accreditation."
+      "description": [
+        "- Supervised and mentored a collaborator, reducing ramp-up time by 50% and improving delivery consistency to 80%.",
+        "- Implemented centralized client, equipment, and certificate management system with cloud storage and data governance, reducing service time by 60%.",
+        "- Applied data-driven approach for results analysis and decision-making.",
+        "- Coordinated with external suppliers for field calibration, ensuring technical, regulatory, and schedule compliance.",
+        "- Collaborated with QA/QC on continuous improvement of laboratory management system.",
+        "- Supported documentation for ISO/IEC 17025 accreditation."
+      ]
     }
   ],
   "projects": [
@@ -107,12 +133,12 @@
         "level": 100
       },
       {
-        "name": "Containers & virtualization: Docker, Docker Compose",
+        "name": "Containers & virtualization: Docker, Docker Compose, VirtualBox",
         "level": 80
       },
       {
-        "name": "Database: PostgreSQL (Docker)",
-        "level": 80
+        "name": "Database: PostgreSQL (OLTP), BigQuery (OLAP)",
+        "level": 100
       }
     ],
     "concepts": [
@@ -132,7 +158,7 @@
       { "name": "Data Warehousing", "level": 100 },
       { "name": "ETL Processes", "level": 100 },
       { "name": "Data Modeling", "level": 100 },
-      { "name": "Analytics & Big Data", "level": 80 },
+      { "name": "Analytics & Big Data", "level": 100 },
       { "name": "Cloud Computing (AWS/GCP)", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]

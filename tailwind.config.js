@@ -3,7 +3,8 @@
 module.exports = {
   content: [
     "./index.html",
-    "./script.js",
+    "./js/**/*.js",
+    //"./script.js",
     "./data/*.json"
   ],
   theme: {
