@@ -62,7 +62,7 @@ const DOMRenderer = {
         this.setTextContent("name", "");
         this.setTextContent("title", "");
         this.setTextContent("summary", "Cargando contenido...");
-        this.setImageAttributes("profile-image", "", "Cargando imagen de perfil", true);
+        this.setImageAttributes("profile-image", "", "Cargando imagen de perfil", false);
         const elementsToRemove = ["github-profile-link", "copy-email-button", "contact-links-container"];
         elementsToRemove.forEach(id => {
             const element = document.getElementById(id);
@@ -122,7 +122,7 @@ const DOMRenderer = {
             }
         }
         this.setTextContent("professional-profile", data.about.professionalProfile);
-        this.setImageAttributes("profile-image", data.about.image, "", true);
+        this.setImageAttributes("profile-image", data.about.image, "", false);
     } else {
         this.setTextContent("summary", "La sección 'Acerca de mí' no está disponible para este idioma.");
         this.setImageAttributes("profile-image", "assets/profile_placeholder.webp", "Imagen de perfil no disponible", true);

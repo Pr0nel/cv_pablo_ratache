@@ -37,28 +37,19 @@
 
         <!-- Grupo extremo izquierdo: hamburguesa + título -->
         <div class="flex items-center space-x-4 flex-shrink-0">
-          <button id="hamburger-button" 
-                  class="btn-hover text-2xl focus:outline-none focus:ring-2 focus:ring-[#197fe5] rounded"
-                  aria-expanded="false" 
-                  aria-controls="side-menu"
-                  type="button">
+          <button id="hamburger-button" class="btn-hover text-2xl focus:outline-none focus:ring-2 focus:ring-[#197fe5] rounded" aria-expanded="false" aria-controls="side-menu" type="button">
             &#9776;
           </button>
           <a href="#" class="text-2xl font-bold text-white">Pablo's Portfolio</a>
         </div>
 
         <!-- Grupo extremo derecho: idioma + print CV -->
-        <div class="flex items-center space-x-4 flex-shrink-0 
-                    max-[400px]:flex-col max-[400px]:items-center max-[400px]:space-x-0 max-[400px]:space-y-2 max-[400px]:w-full">
-          
-          <select id="language-switcher" 
-                  class="bg-[#0a1016] text-slate-300 border border-slate-700 rounded-md px-3 py-2 focus:ring-[#197fe5] focus:border-[#197fe5] transition-colors min-w-[120px]">
+        <div class="flex items-center space-x-4 flex-shrink-0 max-[400px]:flex-col max-[400px]:items-center max-[400px]:space-x-0 max-[400px]:space-y-2 max-[400px]:w-full">
+          <select id="language-switcher" class="bg-[#0a1016] text-slate-300 border border-slate-700 rounded-md px-3 py-2 focus:ring-[#197fe5] focus:border-[#197fe5] transition-colors min-w-[120px]">
             <option value="es">Español</option>
             <option value="en">English</option>
           </select>
-
-          <button id="print-cv-button" 
-                  class="btn-hover h-10 min-w-[120px] max-w-[180px] px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center">
+          <button id="print-cv-button" class="btn-hover h-10 min-w-[120px] max-w-[180px] px-5 bg-gradient-to-r from-[#10b981] to-[#34d399] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center">
             Print CV
           </button>
         </div>
