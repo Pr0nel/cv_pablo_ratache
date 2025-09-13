@@ -1,5 +1,4 @@
 // js/utils/utils.js
-
 // Utility Functions
 export const Utils = {
   // Debounce: evita que una función se ejecute demasiado, frecuentemente
@@ -16,7 +15,6 @@ export const Utils = {
       if (callNow) func.apply(this, args);
     };
   },
-  
   // Throttle: limita la ejecución a máximo una vez cada X ms
   throttle(func, limit) {
     let inThrottle;

@@ -1,3 +1,14 @@
+/*
+  ./js/main.js: A coordinator for the personal portfolio webpage.
+  Copyright 2025 Pablo Ronel Ratache Rojas
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+*/
+
 // js/main.js
 import EventManager from './modules/EventManager.js';
 import DataManager from './modules/DataManager.js';
@@ -36,7 +47,6 @@ class PortfolioApp {
             LazyLoader.refresh();
         };
         // 3. Inicializar módulos pasando dependencias necesarias
-        //DOMRenderer.init(this.eventManager);
         LanguageManager.init(EventManager, handleLanguageChange);
         PrintManager.init(this.eventManager);
         // 4. Configurar Event Listeners básicos
@@ -223,8 +233,10 @@ class PortfolioApp {
   }
 
   /**
-   * Renderiza todas las secciones del portfolio
-   */
+  * Renderiza todas las secciones del CV basado en los datos
+  * @param {Object} data - Datos del resume
+  * @param {Object} texts - Textos traducidos
+  */
   renderAllSections(data, texts) {
     DOMRenderer.populateAbout(data);
     DOMRenderer.populateContactActions(data, texts);
@@ -292,7 +304,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (typeof window !== 'undefined') { window.PortfolioApp = app; }
   } catch (error) {
     Logger.error('Error crítico al inicializar la aplicación:', error);
-    // Opcional: Mostrar mensaje amigable al usuario
+    // Mostrar mensaje amigable al usuario
     document.body.innerHTML = `
       <div style="text-align:center; padding:40px; color:#d32f2f; font-family:system-ui">
         <h2>❌ Error al cargar el portafolio</h2>
