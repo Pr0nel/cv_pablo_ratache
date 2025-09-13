@@ -8,7 +8,11 @@
     "build-css": "tailwindcss -i ./src/input.css -o ./css/output.css",
     "watch-css": "tailwindcss -i ./src/input.css -o ./css/output.css --watch",
     "dev": "concurrently \"pnpm run watch-css\" \"serve .\"",
-    "build-css:prod": "NODE_ENV=production tailwindcss -i ./src/input.css -o ./css/output.css --minify"
+    "lh:mobile": "lighthouse https://pr0nel.github.io/cv_pablo_ratache/ --view --chrome-flags=\"--incognito\" --emulated-form-factor=mobile --throttling-method=simulate",
+    "lh:desktop": "lighthouse https://pr0nel.github.io/cv_pablo_ratache/ --view --chrome-flags=\"--incognito\" --emulated-form-factor=desktop --throttling-method=simulate",
+    "build-css:prod": "NODE_ENV=production tailwindcss -i ./src/input.css -o ./css/output.css --minify",
+    "lh:mobilejson": "lighthouse https://pr0nel.github.io/cv_pablo_ratache/ --chrome-flags=\"--incognito\" --emulated-form-factor=mobile --throttling-method=simulate --output=json --output-path=./reports/lh_mobile-report-$(date +%Y%m%d).json",
+    "lh:desktopjson": "lighthouse https://pr0nel.github.io/cv_pablo_ratache/ --chrome-flags=\"--incognito\" --emulated-form-factor=desktop --throttling-method=simulate --output=json --output-path=./reports/lh_desktop-report-$(date +%Y%m%d).json"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.1",
+    "lighthouse": "12.8.2",
     "postcss": "^8.5.4",
     "serve": "^14.2.5",
     "tailwindcss": "^3.4.17"
