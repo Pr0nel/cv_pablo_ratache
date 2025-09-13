@@ -45,8 +45,7 @@ The site showcases skills, professional experience, projects, and education.
 ```pnpm build-css:prod```
 
 ### Performance Monitoring
-```pnpm lh:mobile```
-```pnpm lh:desktop```
+```pnpm lh:mobile && pnpm lh:desktop```
 
 ## 📂 Descripción General / Overview
 
