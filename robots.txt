@@ -1,0 +1,24 @@
+# robots.txt para portfolio de Pablo Ratache
+# https://pr0nel.github.io/cv_pablo_ratache/
+
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Archivos y carpetas que NO deben indexarse
+Disallow: /src/
+Disallow: /package.json
+Disallow: /pnpm-lock.yaml
+Disallow: /.gitignore
+Disallow: /.npmrc
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Permitir explícitamente recursos importantes
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /data/
+
+# Sitemap
+Sitemap: https://pr0nel.github.io/cv_pablo_ratache/sitemap.xml
