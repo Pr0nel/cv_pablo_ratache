@@ -35,7 +35,7 @@
   ],
   "experience": [
     {
-      "role": "Jr. Data Engineer",
+      "role": "Data Engineer",
       "company": "Konexa - WOM \u2022 Chile (Remoto) \u2022 Telecomunicaciones, B2C/B2B",
       "dates": "Febrero 2025 - Actualidad",
       "description": [
@@ -66,16 +66,13 @@
       ]
     },
     {
-      "role": "Asistente de Calibraciones",
-      "company": "Factio Qualitas S.A.C. \u2022 Surco-Lima-Perú \u2022 Consultora Farmacéutica, B2B/B2C",
-      "dates": "Junio 2023 - Enero 2024",
+      "role": "Data Engineer",
+      "company": "Others Projects (BCP-Yape) \u2022 Perú (Remoto) \u2022 Fintech, B2B/B2C",
+      "dates": "Febrero 2024 - Abril 2024",
       "description": [
-        "- Supervisé y mentoré a un colaborador, reduciendo tiempo de rampa en un 50 % y mejorando la consistencia de sus entregas a 80 %.",
-        "- Implementé un sistema centralizado de gestión de clientes, equipos y certificados, con cloud storage y data governance, reduciendo el tiempo del servicio en 60 %.",
-        "- Apliqué enfoque data-driven para análisis de resultados y toma de decisiones.",
-        "- Coordiné con proveedores externos para la calibración en campo, asegurando el cumplimiento técnico, normativo y de cronogramas.",
-        "- Colaboré con QA/QC en la mejora continua del sistema de gestión del laboratorio.",
-        "- Apoyé en documentación para acreditación ISO/IEC 17025."
+        "- Creé Cloud Functions para ejecutar funciones serverless que responden a eventos de datos en tiempo real.",
+        "- Desarrollé scripts personalizados en Python para la validación de datos y limpieza masiva.",
+        "- Automatizé tareas repetitivas en Excel con fórmulas avanzadas y macros, aumentando la eficiencia operativa en los procesos de control de calidad."
       ]
     }
   ],
@@ -121,7 +118,7 @@
         "level": 100
       },
       {
-        "name": "Cloud, CI/CD y Orquestación: GCP, AWS, Apache Airflow, Terraform (IaC)",
+        "name": "Plataformas Cloud, CI/CD y Infraestructura como Código: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
         "level": 80
       },
       {
@@ -137,7 +134,7 @@
         "level": 80
       },
       {
-        "name": "Base de datos: PostgreSQL (OLTP), BigQuery (OLAP)",
+        "name": "Base de datos: OLTP (PostgreSQL), Analytical / OLAP workloads (BigQuery, Snowflake)",
         "level": 100
       }
     ],
@@ -152,14 +149,13 @@
       { "name": "Resolución de problemas", "level": 100 },
       { "name": "Gestión del tiempo", "level": 100 },
       { "name": "Gestión del cambio", "level": 100 },
-      { "name": "Gestión de proyectos y metodologías ágiles: Scrum, Kanban, Design Thinking, enfoque Lean, PMBOK", "level": 100 },
-      { "name": "Métricas de calidad y eficiencia: OEE, Cp, Cpk", "level": 100 },
-      { "name": "QA/QC y Normativas: ISO/IEC 17025, INACAL", "level": 100 },
-      { "name": "Data Warehousing", "level": 100 },
-      { "name": "ETL Processes", "level": 100 },
-      { "name": "Data Modeling", "level": 100 },
-      { "name": "Analytics & Big Data", "level": 100 },
-      { "name": "Cloud Computing (AWS/GCP)", "level": 80 },
+      { "name": "Gestión de proyectos y metodologías ágiles: PMBOK, 5S, Scrum, Kanban, Design Thinking, enfoque Lean", "level": 100 },
+      { "name": "Métricas de calidad y eficiencia: Data Completeness, Data Consistency, OEE, Cp, Cpk", "level": 100 },
+      { "name": "Data Warehousing: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
+      { "name": "ETL y Orquestación: Databricks, Apache Airflow", "level": 100 },
+      { "name": "Modelamiento de datos: dbt - Data Build Tool", "level": 100 },
+      { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
+      { "name": "Cloud Computing: AWS, GCP", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }  
