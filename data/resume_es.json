@@ -1,11 +1,11 @@
 {
   "name": "Pablo Ratache Rojas",
-  "title": "Data Engineer & Software Developer",
+  "title": "Data Engineer",
   "portfolioUrl": "linkedin.com/in/pablo-ratache-rojas-9a9602140/ \u2022 pr0nel.github.io/cv_pablo_ratache/",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
-    "summary": "con formación en Ingeniería Física especializado en construir soluciones escalables y eficientes. Con una base sólida en almacenamiento de datos, procesos ETL y conceptos de programación, estoy deseando contribuir a proyectos innovadores y seguir creciendo profesionalmente. Mis habilidades clave incluyen Python, SQL, Pyspark, y plataformas en la nube como GCP y AWS.",
-    "professionalProfile": "+1 año de experiencia en diseño de pipelines ETL/ELT en entornos cloud (GCP / AWS), usando Apache Airflow, reduciendo tiempos de carga en 40 %. Tengo experiencia en desarrollo de soluciones ML/OCR con 90 % de precisión, metodologías ágiles y cumplimiento de estándares de calidad, desarrollo web y proyectos independientes. Background en Ingeniería Física me aporta habilidades como la descomposición sistemática de problemas y la modelización de sistemas complejos, para el diseño de arquitecturas de datos escalables y la resolución eficiente de desafíos técnicos en entornos productivos.",
+    "summary": "con formación en Ingeniería Física, me especializo en la creación de soluciones de datos escalables y eficientes. Con una sólida experiencia en almacenamiento de datos, procesos ETL/ELT y desarrollo en la nube, busco contribuir a proyectos innovadores que aprovechen Python, SQL, PySpark, dbt y plataformas como GCP, AWS, Airflow, Databricks y Snowflake.",
+    "professionalProfile": "Diseñé pipelines ETL/ELT en entornos de nube (GCP/AWS) con Apache Airflow, lo que redujo los tiempos de carga de datos en un 40 %. Implementé soluciones de OCR basadas en ML para el procesamiento de cupones con una precisión del 90 %. Mi formación en Ingeniería Física me permite abordar problemas multidisciplinarios complejos y diseñar arquitecturas de datos escalables y eficientes.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -42,7 +42,6 @@
         "LOGROS CLAVE:",
         "- Reduje tiempos de carga de datos históricos en 40 % en la migración de Oracle a BigQuery, con la automatización de pipelines ETL/ELT mediante la orquestación de DAGs en Apache Airflow.",
         "- Migré datos históricos de Oracle a BigQuery manteniendo 100% de integridad.",
-        "- Desplegué contenedor Docker (Linux + PostgreSQL) para ETL web-scraping, normalizando registros y reduciendo latencia en 60 %.",
         "- Desarrollé solución modular de Machine Learning (SAM, CLIP, OCR, AWS Textract) para procesamiento de vouchers con 90 % de precisión.",
         "",
         "RESPONSABILIDADES:",
@@ -99,14 +98,16 @@
   "skills": {
     "languages": [
       { "name": "C/C++", "level": 100 },
-      { "name": "Python", "level": 90 },
-      { "name": "SQL", "level": 90 },
-      { "name": "PySpark", "level": 80 },
+      { "name": "Python", "level": 100 },
+      { "name": "SQL", "level": 100 },
+      { "name": "PySpark", "level": 100 },
       { "name": "Bash", "level": 80 },
+      { "name": "PowerShell", "level": 80 },
       { "name": "Java", "level": 70 },
-      { "name": "HTML", "level": 65 },
-      { "name": "CSS", "level": 65 },
-      { "name": "JavaScript", "level": 65 }
+      { "name": "MATLAB", "level": 70 },
+      { "name": "HTML", "level": 70 },
+      { "name": "CSS", "level": 70 },
+      { "name": "JavaScript", "level": 70 }
     ],
     "tools": [
       {
@@ -114,28 +115,24 @@
         "level": 100
       },
       {
+        "name": "Base de datos: OLTP (PostgreSQL), Analytical / OLAP workloads (BigQuery, Snowflake)",
+        "level": 100
+      },
+      {
+        "name": "Plataformas en la nube, CI/CD y Infraestructura como Código: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
+        "level": 90
+      },
+      {
         "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket",
         "level": 100
       },
       {
-        "name": "Plataformas Cloud, CI/CD y Infraestructura como Código: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 80
-      },
-      {
         "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
-        "level": 70
-      },
-      {
-        "name": "Sistemas operativos: Linux, Windows",
-        "level": 100
-      },
-      {
-        "name": "Contenedores y Virtualización: Docker, Docker Compose, VirtualBox",
         "level": 80
       },
       {
-        "name": "Base de datos: OLTP (PostgreSQL), Analytical / OLAP workloads (BigQuery, Snowflake)",
-        "level": 100
+        "name": "Contenedores, virtualización y sistemas operativos: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
+        "level": 80
       }
     ],
     "concepts": [
@@ -149,11 +146,11 @@
       { "name": "Resolución de problemas", "level": 100 },
       { "name": "Gestión del tiempo", "level": 100 },
       { "name": "Gestión del cambio", "level": 100 },
-      { "name": "Gestión de proyectos y metodologías ágiles: PMBOK, 5S, Scrum, Kanban, Design Thinking, enfoque Lean", "level": 100 },
+      { "name": "Gestión de proyectos y metodologías ágiles: PMBOK, 5S, Scrum, Kanban, Design Thinking, Enfoque Lean", "level": 100 },
       { "name": "Métricas de calidad y eficiencia: Data Completeness, Data Consistency, OEE, Cp, Cpk", "level": 100 },
-      { "name": "Data Warehousing: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
+      { "name": "Almacenamiento de datos: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
       { "name": "ETL y Orquestación: Databricks, Apache Airflow", "level": 100 },
-      { "name": "Modelamiento de datos: dbt - Data Build Tool", "level": 100 },
+      { "name": "Modelamiento de datos: dbt", "level": 100 },
       { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
       { "name": "Cloud Computing: AWS, GCP", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }

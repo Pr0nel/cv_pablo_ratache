@@ -1,11 +1,11 @@
 {
   "name": "Pablo Ratache Rojas",
-  "title": "Data Engineer & Software Developer",
+  "title": "Data Engineer",
   "portfolioUrl": "linkedin.com/in/pablo-ratache-rojas-9a9602140/ \u2022 pr0nel.github.io/cv_pablo_ratache/",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
-    "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient solutions. With a solid foundation in data warehousing, ETL processes, and programming concepts, I'm eager to contribute to innovative projects and continue to grow professionally. My key skills include Python, SQL, PySpark, and cloud platforms such as Google Cloud and AWS.",
-    "professionalProfile": "+1 year of experience designing ETL/ELT pipelines in cloud environments (GCP/AWS), using Apache Airflow, reducing data loading times by 40%. Proven experience developing ML/OCR solutions with 90% accuracy, agile methodologies, quality compliance, web development, and independent projects. Physics Engineering background provides skills in systematic problem decomposition and complex systems modeling for designing scalable data architectures and efficiently solving technical challenges in production environments.",
+    "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient data solutions. With solid experience in data warehousing, ETL/ELT processes, and cloud development, I seek to contribute to innovative projects leveraging Python, SQL, PySpark, dbt and platforms like GCP, AWS, Airflow, Databricks, and Snowflake.",
+    "professionalProfile": "I designed ETL/ELT pipelines in cloud environments (GCP/AWS) with Apache Airflow, reducing data load times by 40%. I implemented ML-based OCR solutions for voucher processing with 90% accuracy. My background in Physical Engineering allows me to tackle complex multidisciplinary problems and design scalable, efficient data architectures.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -99,14 +99,16 @@
   "skills": {
     "languages": [
       { "name": "C/C++", "level": 100 },
-      { "name": "Python", "level": 90 },
-      { "name": "SQL", "level": 90 },
-      { "name": "PySpark", "level": 80 },
+      { "name": "Python", "level": 100 },
+      { "name": "SQL", "level": 100 },
+      { "name": "PySpark", "level": 100 },
       { "name": "Bash", "level": 80 },
+      { "name": "PowerShell", "level": 80 },
       { "name": "Java", "level": 70 },
-      { "name": "HTML", "level": 65 },
-      { "name": "CSS", "level": 65 },
-      { "name": "JavaScript", "level": 65 }
+      { "name": "MATLAB", "level": 70 },
+      { "name": "HTML", "level": 70 },
+      { "name": "CSS", "level": 70 },
+      { "name": "JavaScript", "level": 70 }
     ],
     "tools": [
       {
@@ -114,28 +116,24 @@
         "level": 100
       },
       {
-        "name": "Version control: Git, GitHub, GitLab, Bitbucket",
+        "name": "Database: OLTP (PostgreSQL), Analytical / OLAP workloads (BigQuery, Snowflake)",
         "level": 100
       },
       {
         "name": "Cloud Platforms, CI/CD & Infrastructure as Code: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 80
+        "level": 90
+      },
+      {
+        "name": "Version control: Git, GitHub, GitLab, Bitbucket",
+        "level": 100
       },
       {
         "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
-        "level": 70
-      },
-      {
-        "name": "Operating systems: Linux, Windows",
-        "level": 100
-      },
-      {
-        "name": "Containers & virtualization: Docker, Docker Compose, VirtualBox",
         "level": 80
       },
       {
-        "name": "Database: OLTP (PostgreSQL), Analytical / OLAP workloads (BigQuery, Snowflake)",
-        "level": 100
+        "name": "Containers, virtualization & operating systems: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
+        "level": 80
       }
     ],
     "concepts": [
@@ -153,7 +151,7 @@
       { "name": "Quality & efficiency metrics: Data Completeness, Data Consistency, OEE, Cp, Cpk", "level": 100 },
       { "name": "Data Warehousing: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
       { "name": "ETL & Orchestration: Databricks, Airflow", "level": 100 },
-      { "name": "Data Modeling: dbt - Data Build Tool", "level": 100 },
+      { "name": "Data Modeling: dbt", "level": 100 },
       { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
       { "name": "Cloud Computing: AWS, GCP", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
