@@ -67,7 +67,7 @@
     },
     {
       "role": "Data Engineer",
-      "company": "Others Projects (BCP-Yape) \u2022 Peru (Remote) \u2022 Fintech, B2B/B2C",
+      "company": "BCP - Yape \u2022 Peru (Remote) \u2022 Fintech, B2B/B2C",
       "dates": "February 2024 - April 2024",
       "description": [
         "- Created Cloud Functions to execute serverless functions that respond to real-time data events.",
@@ -90,8 +90,8 @@
       "repositoryUrl": "https://github.com/Pr0nel/weather_data"
     },
     {
-      "title": "ETL/ELT Pipeline: Web Data Ingestion and Normalization",
-      "description": "I developed an ETL/ELT pipeline for web data ingestion (web scraping), optimizing the extraction and normalization process. I used technologies such as Python and PostgreSQL for data logic and Docker for containerization and deployment in a Linux environment. The project managed to normalize daily logs and reduce processing latency by 60%.",
+      "title": "ETL/ELT Pipeline: Medallion Architecture in Snowflake",
+      "description": "End-to-end data pipeline implementing Medallion Architecture in Snowflake that transforms retail orders from unstandardized Excel files into business-ready analytical views. This includes automated ingestion, quality validation, key metrics and modular configuration via YAML for scalability.",
       "image": "assets/project3.webp",
       "repositoryUrl": "https://github.com/Pr0nel/snippf-poc"
     }
