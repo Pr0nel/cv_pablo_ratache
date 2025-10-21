@@ -5,7 +5,7 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient data solutions. With solid experience in data warehousing, ETL/ELT processes, and cloud development, I seek to contribute to innovative projects leveraging Python, SQL, PySpark, dbt and platforms like GCP, AWS, Airflow, Databricks, and Snowflake.",
-    "professionalProfile": "I designed ETL/ELT pipelines in cloud environments (GCP/AWS) with Apache Airflow, reducing data load times by 40%. I implemented ML-based OCR solutions for voucher processing with 90% accuracy. My background in Physical Engineering allows me to tackle complex multidisciplinary problems and design scalable, efficient data architectures.",
+    "professionalProfile": "I designed ETL/ELT pipelines in cloud environments (GCP/AWS) with Apache Airflow, with a focus on Data Governance and cost reduction. I implemented ML-based OCR solutions for voucher processing with 90% accuracy. My background in Physical Engineering allows me to tackle complex multidisciplinary problems and design scalable, efficient data architectures.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -40,17 +40,22 @@
       "dates": "February 2025 - Present",
       "description": [
         "KEY ACCOMPLISHMENTS:",
-        "- Reduced historical data loading times by 40% in Oracle to BigQuery migration through ETL/ELT pipeline automation using Apache Airflow DAG orchestration.",
+        "- Reduced historical data loading times by 40% in Oracle to BigQuery migration.",
         "- Migrated historical data from Oracle to BigQuery maintaining 100% data integrity.",
-        "- Deployed a Docker container (Linux + PostgreSQL) for web-scraping ETL, normalizing records and reducing latency by 60%.",
-        "- Developed modular Machine Learning solution (SAM, CLIP, OCR, AWS Textract) for voucher processing with 90% accuracy.",
+        "- Developed modular Machine Learning solution for voucher processing with 90% accuracy.",
         "",
         "RESPONSIBILITIES:",
-        "- Documented complete data lineage mapping from Oracle/SandBox/BigQuery sources to final reports, documenting traceability for compliance audits.",
-        "- Configured data infrastructure in GCP by defining BigQuery schemas in JSON and Terraform configurations (tfvars), automating deployment through CI/CD in GitLab.",
-        "- Delivered final data products, including SQL views, compliance reports, technical documentation, and RFCs using Confluence, with CI/CD in GitLab and tracking in Jira.",
-        "- Developed and tested ETL/ELT pipelines on AWS (S3, EC2, PySpark) with Jupyter Notebooks for interactive development and complex SQL to scalable PySpark code translation.",
-        "- Orchestrated distributed PySpark jobs on AWS EMR through Apache Airflow DAGs, ensuring scheduled executions, retries, and status monitoring."
+        "- Documented data lineage mapping from Oracle/SandBox/BigQuery sources to final reports, ensuring traceability for compliance audits.",
+        "- Designed and developed ETL/ELT pipelines to migrate historical data from Oracle to BigQuery on GCP, with automated pipeline orchestration and health monitoring using Cloud Composer.",
+        "- Implemented a scalable GCP architecture using a layered model to ensure governance and scalability; established a Data Lake in Cloud Storage for raw data and a Data Warehouse in BigQuery for transformed data storage, with Stored Procedures for optimized querying.",
+        "- Rewrote and optimized PL/SQL transformation logic (migrated from Oracle) in BigQuery, implementing robust validations to ensure Data Completeness.",
+        "- Collaborated with data analytics teams to develop dashboards using Power BI and Looker Studio, delivering SQL views, compliance reports, and technical documentation.",
+        "- Applied data governance and security best practices, ensuring all data access complied with information protection policies and access controls.",
+        "- Applied partitioning and clustering across the Data Warehouse to optimize query performance, resulting in reduced compute slot costs and increased operational efficiency.",
+        "- Configured data infrastructure in GCP by defining BigQuery schemas in JSON and Terraform configurations (tfvars), automating deployment through CI/CD pipelines in GitLab.",
+        "- Delivered final data products, including SQL views, compliance reports, and technical documentation using Confluence, with task tracking in Jira.",
+        "- Developed and tested ETL/ELT pipelines in AWS (S3, EC2, PySpark) using Jupyter Notebooks for interactive development, translating complex SQL queries into scalable PySpark code.",
+        "- Developed and orchestrated distributed PySpark jobs on AWS EMR, using Apache Airflow DAGs."
       ]
     },
     {
@@ -60,8 +65,7 @@
       "description": [
         "- Implemented OEE KPI system alongside Production and Operational Excellence teams, establishing the first operational efficiency measurement.",
         "- Established statistical control methodology with Cp and Cpk indices in coordination with Quality team, creating the first process capability monitoring system.",
-        "- Supported operational data loading and structuring in SQL Server for production KPI reporting.",
-        "- Performed tank and equipment calibration, ensuring metrological traceability.",
+        "- Supported operational data loading and structuring in SQL Server for KPI reporting.",
         "- Defined reprocessing limits to optimize fermentation times and reduce waste."
       ]
     },
@@ -70,7 +74,7 @@
       "company": "BCP - Yape \u2022 Peru (Remote) \u2022 Fintech, B2B/B2C",
       "dates": "February 2024 - April 2024",
       "description": [
-        "- Created Cloud Functions to execute serverless functions that respond to real-time data events.",
+        "- Implemented serverless functions with Cloud Functions for real-time data processing.",
         "- Developed custom Python scripts for data validation and bulk cleansing.",
         "- Automated repetitive tasks in Excel with advanced formulas and macros, increasing operational efficiency in quality control processes."
       ]
@@ -116,20 +120,20 @@
         "level": 100
       },
       {
-        "name": "Database: OLTP (PostgreSQL), OLAP workloads (BigQuery, Snowflake, Amazon Redshift)",
-        "level": 100
-      },
-      {
-        "name": "Cloud Platforms, CI/CD & Infrastructure as Code: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 90
+        "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
+        "level": 80
       },
       {
         "name": "Version control: Git, GitHub, GitLab, Bitbucket",
         "level": 100
       },
       {
-        "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
-        "level": 80
+        "name": "Database: OLTP (PostgreSQL), OLAP workloads (BigQuery, Snowflake, Amazon Redshift)",
+        "level": 100
+      },
+      {
+        "name": "CI/CD & Infrastructure as Code: GitHub Actions, GitLab, Terraform (IaC)",
+        "level": 90
       },
       {
         "name": "Containers, virtualization & operating systems: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
@@ -153,7 +157,7 @@
       { "name": "ETL & Orchestration: Databricks, Airflow", "level": 100 },
       { "name": "Data Modeling: dbt", "level": 100 },
       { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
-      { "name": "Cloud Computing: AWS, GCP", "level": 80 },
+      { "name": "Cloud Platforms: Amazon Web Services, Google Cloud Platform", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }

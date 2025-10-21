@@ -5,7 +5,7 @@
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
     "summary": "con formación en Ingeniería Física, me especializo en la creación de soluciones de datos escalables y eficientes. Con una sólida experiencia en almacenamiento de datos, procesos ETL/ELT y desarrollo en la nube, busco contribuir a proyectos innovadores que aprovechen Python, SQL, PySpark, dbt y plataformas como GCP, AWS, Airflow, Databricks y Snowflake.",
-    "professionalProfile": "Diseñé pipelines ETL/ELT en entornos de nube (GCP/AWS) con Apache Airflow, lo que redujo los tiempos de carga de datos en un 40 %. Implementé soluciones de OCR basadas en ML para el procesamiento de cupones con una precisión del 90 %. Mi formación en Ingeniería Física me permite abordar problemas multidisciplinarios complejos y diseñar arquitecturas de datos escalables y eficientes.",
+    "professionalProfile": "Diseñé pipelines ETL/ELT en entornos de nube (GCP/AWS) con Apache Airflow, con foco en Gobernaza de Datos y reducción de costos. Implementé soluciones de OCR basadas en ML para el procesamiento de cupones con una precisión del 90 %. Mi formación en Ingeniería Física me permite abordar problemas multidisciplinarios complejos y diseñar arquitecturas de datos escalables y eficientes.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -40,16 +40,22 @@
       "dates": "Febrero 2025 - Actualidad",
       "description": [
         "LOGROS CLAVE:",
-        "- Reduje tiempos de carga de datos históricos en 40 % en la migración de Oracle a BigQuery, con la automatización de pipelines ETL/ELT mediante la orquestación de DAGs en Apache Airflow.",
-        "- Migré datos históricos de Oracle a BigQuery manteniendo 100% de integridad.",
-        "- Desarrollé solución modular de Machine Learning (SAM, CLIP, OCR, AWS Textract) para procesamiento de vouchers con 90 % de precisión.",
+        "- Reduje tiempos de carga de datos históricos en 40 % en la migración de Oracle a BigQuery.",
+        "- 100% de integridad en la migración de datos históricos de Oracle a BigQuery.",
+        "- 90 % de precisión en el desarrollo de una solución modular de ML para el procesamiento de vouchers.",
         "",
         "RESPONSABILIDADES:",
-        "- Documenté mapeo completo del linaje de datos desde fuentes en Oracle/SandBox/BigQuery hasta reportes finales, documentando trazabilidad para auditorías de compliance.",
+        "- Documenté mapeo del linaje de datos desde fuentes en Oracle/SandBox/BigQuery hasta reportes finales, documentando trazabilidad para auditorías de compliance.",
+        "- Diseñé y desarrollé pipelines ETL/ELT para migrar datos históricos desde Oracle a BigQuery en GCP, con orquestación automatizada de pipelines y monitoreo de estado con Cloud Composer.",
+        "- Implementé una arquitectura en GCP aplicando un modelo de capas para garantizar gobernanza y escalabilidad; con Data Lake en Cloud Storage como fuente de datos crudos, y Data Warehouse en BigQuery como destino para el almacenamiento de datos transformados y Stored Procedures.",
+        "- Reescribí y optimicé lógica de transformación PL/SQL (proveniente de Oracle) en BigQuery, implementando validaciones robustas para garantizar la Data Completeness.",
+        "- Colaboré con equipos de análisis de datos para desarrollar dashboards con Power BI y Looker Studio, entregando vistas SQL, reportes de compliance y documentación técnica.",
+        "- Apliqué prácticas de Data Governance y seguridad, asegurando que todos los accesos a datos cumplan con políticas de acceso y protección de información.",
+        "- Apliqué partitioning y clustering en el Data Warehouse para optimizar el rendimiento de las consultas, reduciendo así los costos de slots de cómputo y un aumento de la eficiencia operativa.",
         "- Configuré infraestructura de datos en GCP definiendo esquemas BigQuery en JSON y configuraciones Terraform (tfvars), automatizando despliegue mediante CI/CD en GitLab.",
-        "- Entregué productos de datos finales: vistas SQL, reportes de compliance, documentación técnica y RFCs usando Confluence, con CI/CD en GitLab y seguimiento en Jira.",
-        "- Desarrollé y probé pipelines ETL/ELT en AWS (S3, EC2, PySpark) con Jupyter Notebooks para desarrollo interactivo y traducción de SQL complejas a código PySpark escalable.",
-        "- Orquesté jobs distribuidos de PySpark en AWS EMR mediante DAGs de Apache Airflow, asegurando ejecuciones programadas, reintentos y monitoreo de estado."
+        "- Entregué vistas SQL y reportes de compliance utilizando Confluence para documentación técnica y seguimiento en Jira.",
+        "- Desarrollé y probé pipelines de ETL/ELT en AWS (S3, EC2, PySpark) utilizando Jupyter Notebooks para desarrollo interactivo, traduciendo SQL complejas a código PySpark escalable.",
+        "- Desarrollé y orquesté jobs distribuidos de PySpark en AWS EMR, mediante DAGs de Apache Airflow."
       ]
     },
     {
@@ -59,8 +65,7 @@
       "description": [
         "- Implementé sistema de KPIs de OEE junto al equipo de Producción y Excelencia Operacional, estableciendo la primera medición de eficiencia operacional.",
         "- Establecí metodología de control estadístico con índices Cp y Cpk en coordinación con el equipo de Calidad, creando el primer sistema de monitoreo de capacidad de procesos.",
-        "- Apoyé en la carga y estructuración de datos operativos en SQL Server, para reportes de KPIs de producción.",
-        "- Realicé la calibración de tanques y equipos, asegurando trazabilidad metrológica.",
+        "- Apoyé en la carga y estructuración de datos operativos en SQL Server, para reportes de KPIs.",
         "- Definí límites de reproceso para optimizar tiempos de fermentación y reducir mermas."
       ]
     },
@@ -69,7 +74,7 @@
       "company": "BCP - Yape \u2022 Perú (Remoto) \u2022 Fintech, B2B/B2C",
       "dates": "Febrero 2024 - Abril 2024",
       "description": [
-        "- Creé Cloud Functions para ejecutar funciones serverless que responden a eventos de datos en tiempo real.",
+        "- Implementé funciones serverless con Cloud Functions para el procesamiento de datos en tiempo real.",
         "- Desarrollé scripts personalizados en Python para la validación de datos y limpieza masiva.",
         "- Automatizé tareas repetitivas en Excel con fórmulas avanzadas y macros, aumentando la eficiencia operativa en los procesos de control de calidad."
       ]
@@ -115,20 +120,20 @@
         "level": 100
       },
       {
-        "name": "Base de datos: OLTP (PostgreSQL), OLAP workloads (BigQuery, Snowflake, Amazon Redshift)",
-        "level": 100
-      },
-      {
-        "name": "Plataformas en la nube, CI/CD y Infraestructura como Código: GCP, AWS, GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 90
+        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
+        "level": 80
       },
       {
         "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket",
         "level": 100
       },
       {
-        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
-        "level": 80
+        "name": "Base de datos: OLTP (PostgreSQL), OLAP workloads (BigQuery, Snowflake, Amazon Redshift)",
+        "level": 100
+      },
+      {
+        "name": "CI/CD y Infraestructura como Código: GitHub Actions, GitLab, Terraform (IaC)",
+        "level": 90
       },
       {
         "name": "Contenedores, virtualización y sistemas operativos: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
@@ -152,7 +157,7 @@
       { "name": "ETL y Orquestación: Databricks, Apache Airflow", "level": 100 },
       { "name": "Modelamiento de datos: dbt", "level": 100 },
       { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
-      { "name": "Cloud Computing: AWS, GCP", "level": 80 },
+      { "name": "Cloud Platforms: Amazon Web Services, Google Cloud Platform", "level": 80 },
       { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }  
