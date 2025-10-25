@@ -128,7 +128,7 @@
         "level": 100
       },
       {
-        "name": "Database: OLTP (PostgreSQL), OLAP workloads (BigQuery, Snowflake, Amazon Redshift)",
+        "name": "Database: OLTP (PostgreSQL), OLAP (BigQuery, Snowflake, Amazon Redshift)",
         "level": 100
       },
       {
