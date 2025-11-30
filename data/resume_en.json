@@ -37,7 +37,7 @@
     {
       "role": "Data Engineer",
       "company": "Konexa - WOM \u2022 Chile (Remote) \u2022 Telecom, B2B/B2C",
-      "dates": "February 2025 - Present",
+      "dates": "February 2025 - October 2025",
       "description": [
         "KEY ACCOMPLISHMENTS:",
         "- Reduced historical data loading times by 40% in Oracle to BigQuery migration.",
@@ -97,7 +97,7 @@
       "title": "ETL/ELT Pipeline: Medallion Architecture in Snowflake",
       "description": "End-to-end data pipeline implementing Medallion Architecture in Snowflake that transforms retail orders from unstandardized Excel files into business-ready analytical views. This includes automated ingestion, quality validation, key metrics and modular configuration via YAML for scalability.",
       "image": "assets/project3.webp",
-      "repositoryUrl": "https://github.com/Pr0nel/snippf-poc"
+      "repositoryUrl": "https://github.com/Pr0nel/snowflake-poc"
     }
   ],
   "skills": {
