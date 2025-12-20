@@ -35,16 +35,21 @@
   ],
   "experience": [
     {
+      "role": "Ingeniero de Datos",
+      "company": "Atlantic City Casino & Sports \u2022 Perú (Híbrido) \u2022 Entretenimiento, B2C",
+      "dates": "Diciembre 2025 - Presente",
+      "description": [
+        "- Mapeé SLIs/SLOs utilizando metadatos nativos, eliminando costos asociados a métricas externas y reduciendo el gasto en monitoreo.",
+        "- Desarrollé una Query Maestra Unificada que binariza el cumplimiento de los SLOs, reduciendo el tiempo de análisis.",
+        "- Diseñé un SLO Scorecard en Looker Studio con semáforos, utilizado por equipos para monitorear el cumplimiento de SLAs en tiempo real.",
+        "- Configuré gráficos de tendencia para identificar cuellos de botella y uso de recursos, reduciendo el tiempo promedio de respuesta operativa."
+      ]
+    },
+    {
       "role": "Data Engineer",
       "company": "Konexa - WOM \u2022 Chile (Remoto) \u2022 Telecomunicaciones, B2C/B2B",
       "dates": "Febrero 2025 - Octubre 2025",
       "description": [
-        "LOGROS CLAVE:",
-        "- Reduje tiempos de carga de datos históricos en 40 % en la migración de Oracle a BigQuery.",
-        "- 100% de integridad en la migración de datos históricos de Oracle a BigQuery.",
-        "- 90 % de precisión en el desarrollo de una solución modular de ML para el procesamiento de vouchers.",
-        "",
-        "RESPONSABILIDADES:",
         "- Documenté mapeo del linaje de datos desde fuentes en Oracle/SandBox/BigQuery hasta reportes finales, documentando trazabilidad para auditorías de compliance.",
         "- Diseñé y desarrollé pipelines ETL/ELT para migrar datos históricos desde Oracle a BigQuery en GCP, con orquestación automatizada de pipelines y monitoreo de estado con Cloud Composer.",
         "- Implementé una arquitectura en GCP aplicando un modelo de capas para garantizar gobernanza y escalabilidad; con Data Lake en Cloud Storage como fuente de datos crudos, y Data Warehouse en BigQuery como destino para el almacenamiento de datos transformados y Stored Procedures.",
@@ -67,16 +72,6 @@
         "- Establecí metodología de control estadístico con índices Cp y Cpk en coordinación con el equipo de Calidad, creando el primer sistema de monitoreo de capacidad de procesos.",
         "- Apoyé en la carga y estructuración de datos operativos en SQL Server, para reportes de KPIs.",
         "- Definí límites de reproceso para optimizar tiempos de fermentación y reducir mermas."
-      ]
-    },
-    {
-      "role": "Data Engineer",
-      "company": "BCP - Yape \u2022 Perú (Remoto) \u2022 Fintech, B2B/B2C",
-      "dates": "Febrero 2024 - Abril 2024",
-      "description": [
-        "- Implementé funciones serverless con Cloud Functions para el procesamiento de datos en tiempo real.",
-        "- Desarrollé scripts personalizados en Python para la validación de datos y limpieza masiva.",
-        "- Automatizé tareas repetitivas en Excel con fórmulas avanzadas y macros, aumentando la eficiencia operativa en los procesos de control de calidad."
       ]
     }
   ],

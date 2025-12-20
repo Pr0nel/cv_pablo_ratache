@@ -36,15 +36,20 @@
   "experience": [
     {
       "role": "Data Engineer",
+      "company": "Atlantic City Casino & Sports \u2022 Peru (Hybrid) \u2022 Entertainment, B2C",
+      "dates": "December 2025 - Present",
+      "description": [
+        "- Mapped SLIs/SLOs using native BigQuery metadata, eliminating external monitoring costs and reducing observability spend.",
+        "- Developed a Unified Master Query that binaryizes SLO compliance, cutting analysis time and enabling faster data-driven decisions.",
+        "- Designed an SLO Scorecard in Looker Studio with traffic-light indicators, adopted by cross-functional teams for real-time SLA compliance tracking.",
+        "- Configured trend charts for latency and slot utilization to proactively identify bottlenecks, reducing average operational response time."
+      ]
+    },
+    {
+      "role": "Data Engineer",
       "company": "Konexa - WOM \u2022 Chile (Remote) \u2022 Telecom, B2B/B2C",
       "dates": "February 2025 - October 2025",
       "description": [
-        "KEY ACCOMPLISHMENTS:",
-        "- Reduced historical data loading times by 40% in Oracle to BigQuery migration.",
-        "- Migrated historical data from Oracle to BigQuery maintaining 100% data integrity.",
-        "- Developed modular Machine Learning solution for voucher processing with 90% accuracy.",
-        "",
-        "RESPONSIBILITIES:",
         "- Documented data lineage mapping from Oracle/SandBox/BigQuery sources to final reports, ensuring traceability for compliance audits.",
         "- Designed and developed ETL/ELT pipelines to migrate historical data from Oracle to BigQuery on GCP, with automated pipeline orchestration and health monitoring using Cloud Composer.",
         "- Implemented a scalable GCP architecture using a layered model to ensure governance and scalability; established a Data Lake in Cloud Storage for raw data and a Data Warehouse in BigQuery for transformed data storage, with Stored Procedures for optimized querying.",
@@ -67,16 +72,6 @@
         "- Established statistical control methodology with Cp and Cpk indices in coordination with Quality team, creating the first process capability monitoring system.",
         "- Supported operational data loading and structuring in SQL Server for KPI reporting.",
         "- Defined reprocessing limits to optimize fermentation times and reduce waste."
-      ]
-    },
-    {
-      "role": "Data Engineer",
-      "company": "BCP - Yape \u2022 Peru (Remote) \u2022 Fintech, B2B/B2C",
-      "dates": "February 2024 - April 2024",
-      "description": [
-        "- Implemented serverless functions with Cloud Functions for real-time data processing.",
-        "- Developed custom Python scripts for data validation and bulk cleansing.",
-        "- Automated repetitive tasks in Excel with advanced formulas and macros, increasing operational efficiency in quality control processes."
       ]
     }
   ],
