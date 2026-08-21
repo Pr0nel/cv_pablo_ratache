@@ -1,6 +1,6 @@
 /*
   script.js: script principal para la funcionalidad del portafolio, incluyendo carga de datos y manipulación del DOM.
-  Copyright 2025 Pablo Ronel Ratache Rojas
+  Copyright 2026 Pablo Ronel Ratache Rojas
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.

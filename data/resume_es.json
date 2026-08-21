@@ -4,8 +4,8 @@
   "portfolioUrl": "linkedin.com/in/pablo-ratache-rojas-9a9602140/ \u2022 pr0nel.github.io/cv_pablo_ratache/",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
-    "summary": "con formación en Ingeniería Física, me especializo en la creación de soluciones de datos escalables y eficientes. Con una sólida experiencia en almacenamiento de datos, procesos ETL/ELT y desarrollo en la nube, busco contribuir a proyectos innovadores que aprovechen Python, SQL, PySpark, dbt y plataformas como GCP, AWS, Airflow, Databricks y Snowflake.",
-    "professionalProfile": "Diseñé pipelines ETL/ELT en entornos de nube (GCP/AWS) con Apache Airflow, con foco en Gobernaza de Datos y reducción de costos. Implementé soluciones de OCR basadas en ML para el procesamiento de cupones con una precisión del 90 %. Mi formación en Ingeniería Física me permite abordar problemas multidisciplinarios complejos y diseñar arquitecturas de datos escalables y eficientes.",
+    "summary": "con formación en Ingeniería Física, especializado en arquitecturas multi-nube que integran estratégicamente AWS (bases de datos), GCP (análisis) y Azure (CI/CD). Experiencia demostrada en la creación de pipelines ETL/ELT gobernados y optimizados en costes con Dataform y Terraform, implementando la observabilidad de extremo a extremo mediante SLI/SLO nativos. Dominio de Python, SQL y PySpark para diseñar soluciones de datos robustas (BigQuery, Snowflake) e impulsar el análisis a gran escala, incluyendo sistemas OCR basados ​​en aprendizaje automático con un 90 % de precisión para flujos de trabajo de cumplimiento automatizados.",
+    "professionalProfile": "Ingeniero de datos con experiencia en arquitecturas multi-nube que aprovechan estratégicamente AWS (bases de datos), GCP (análisis) y Azure (CI/CD) para resolver desafíos complejos de datos. Experto en el diseño de pipelines ETL/ELT optimizados en costos utilizando Terraform para infraestructura como código y en la creación de sistemas integrados en plataformas en la nube. Anteriormente, diseñé pipelines de Apache Airflow para proyectos de migración de datos e implementé soluciones OCR basadas en aprendizaje automático con un 90 % de precisión para flujos de trabajo de cumplimiento automatizados. Combinando el rigor analítico de la ingeniería física con prácticas modernas de ingeniería de datos para ofrecer soluciones mantenibles, escalables y eficientes.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -39,10 +39,15 @@
       "company": "Atlantic City Casino & Sports \u2022 Perú (Híbrido) \u2022 Entretenimiento, B2C",
       "dates": "Diciembre 2025 - Presente",
       "description": [
-        "- Mapeé SLIs/SLOs utilizando metadatos nativos, eliminando costos asociados a métricas externas y reduciendo el gasto en monitoreo.",
-        "- Desarrollé una Query Maestra Unificada que binariza el cumplimiento de los SLOs, reduciendo el tiempo de análisis.",
-        "- Diseñé un SLO Scorecard en Looker Studio con semáforos, utilizado por equipos para monitorear el cumplimiento de SLAs en tiempo real.",
-        "- Configuré gráficos de tendencia para identificar cuellos de botella y uso de recursos, reduciendo el tiempo promedio de respuesta operativa."
+        "- Participé en la creación de la Célula de Datos de Invitados, una iniciativa multifuncional para reconstruir la tabla maestra de invitados a partir de fuentes locales fragmentadas y convertirla en un registro maestro unificado y nativo de la nube en GCP. Ofrecí una fuente única y confiable de información veraz para la identidad de los huéspedes, el cumplimiento normativo y el análisis omnicanal, a pesar de los plazos cambiantes y las prioridades comerciales variables.",
+        "- Colaboré con científicos de datos, analistas y partes interesadas del negocio para definir reglas de deduplicación, modelos dimensionales y lógica transaccional en los canales de casino en línea y físicos, garantizando la coherencia en todos los puntos de contacto con el cliente.",
+        "- Diseñé e implementé la lógica central de ingesta y transformación utilizando una arquitectura Medallion en BigQuery y Dataform, filtrando duplicados en origen y aplicando la calidad de los datos mediante comprobaciones automatizadas (valores nulos, unicidad, integridad referencial).",
+        "- Migré las querys/pipelines SQL heredadas de los equipos de ciencia de datos a flujos de trabajo Dataform modulares y con control de versiones mediante CI/CD, refactoricé uniones complejas en componentes reutilizables, optimicé el rendimiento de las consultas y reduje el tiempo de ejecución en aproximadamente un 40 %.",
+        "- Diseñé pipelines ETL entre nubes desde AWS (SQL Server) a GCP BigQuery utilizando Cloud Functions y microprocesamiento por lotes con Parquet a través de Cloud Storage, garantizando una replicación de datos confiable y rentable.",
+        "- Optimizé entrega de datos de alta velocidad a Firestore mediante el diseño de flujos de trabajo de inserción basados ​​en Avro con estrategias de fusión delta dinámicas, lo que permite el manejo sin problemas de conjuntos de datos de alto volumen y en constante cambio.",
+        "- Desarrollé un sistema de monitoreo resiliente para las ejecuciones diarias de Dataproc y Workflow (3 veces al día), enviando alertas para acelerar la detección y resolución de fallas.",
+        "- Implementé la observabilidad de extremo a extremo mapeando SLI/SLO usando metadatos nativos de BigQuery (INFORMATION_SCHEMA, __TABLES__), eliminando herramientas de monitoreo externas y reduciendo los costos de observabilidad.",
+        "- Creé una consulta maestra unificada que binariza el cumplimiento de SLO en estado de aprobado/reprobado, reduciendo el tiempo de análisis en aproximadamente un 30 % y permitiendo decisiones operativas más rápidas."
       ]
     },
     {
@@ -50,28 +55,15 @@
       "company": "Konexa - WOM \u2022 Chile (Remoto) \u2022 Telecomunicaciones, B2C/B2B",
       "dates": "Febrero 2025 - Octubre 2025",
       "description": [
-        "- Documenté mapeo del linaje de datos desde fuentes en Oracle/SandBox/BigQuery hasta reportes finales, documentando trazabilidad para auditorías de compliance.",
-        "- Diseñé y desarrollé pipelines ETL/ELT para migrar datos históricos desde Oracle a BigQuery en GCP, con orquestación automatizada de pipelines y monitoreo de estado con Cloud Composer.",
-        "- Implementé una arquitectura en GCP aplicando un modelo de capas para garantizar gobernanza y escalabilidad; con Data Lake en Cloud Storage como fuente de datos crudos, y Data Warehouse en BigQuery como destino para el almacenamiento de datos transformados y Stored Procedures.",
-        "- Reescribí y optimicé lógica de transformación PL/SQL (proveniente de Oracle) en BigQuery, implementando validaciones robustas para garantizar la Data Completeness.",
-        "- Colaboré con equipos de análisis de datos para desarrollar dashboards con Power BI y Looker Studio, entregando vistas SQL, reportes de compliance y documentación técnica.",
-        "- Apliqué prácticas de Data Governance y seguridad, asegurando que todos los accesos a datos cumplan con políticas de acceso y protección de información.",
-        "- Apliqué partitioning y clustering en el Data Warehouse para optimizar el rendimiento de las consultas, reduciendo así los costos de slots de cómputo y un aumento de la eficiencia operativa.",
-        "- Configuré infraestructura de datos en GCP definiendo esquemas BigQuery en JSON y configuraciones Terraform (tfvars), automatizando despliegue mediante CI/CD en GitLab.",
-        "- Entregué vistas SQL y reportes de compliance utilizando Confluence para documentación técnica y seguimiento en Jira.",
-        "- Desarrollé y probé pipelines de ETL/ELT en AWS (S3, EC2, PySpark) utilizando Jupyter Notebooks para desarrollo interactivo, traduciendo SQL complejas a código PySpark escalable.",
-        "- Desarrollé y orquesté jobs distribuidos de PySpark en AWS EMR, mediante DAGs de Apache Airflow."
-      ]
-    },
-    {
-      "role": "Investigador de Producción",
-      "company": "Productora De Alimentos Uno S.A.C. \u2022 Ate-Lima-Perú \u2022 Alimentos Procesados, B2B",
-      "dates": "Mayo 2024 - Enero 2025",
-      "description": [
-        "- Implementé sistema de KPIs de OEE junto al equipo de Producción y Excelencia Operacional, estableciendo la primera medición de eficiencia operacional.",
-        "- Establecí metodología de control estadístico con índices Cp y Cpk en coordinación con el equipo de Calidad, creando el primer sistema de monitoreo de capacidad de procesos.",
-        "- Apoyé en la carga y estructuración de datos operativos en SQL Server, para reportes de KPIs.",
-        "- Definí límites de reproceso para optimizar tiempos de fermentación y reducir mermas."
+        "- Documenté el linaje de datos de extremo a extremo desde las fuentes de Oracle/Sandbox/BigQuery hasta los informes finales, garantizando la trazabilidad completa para las auditorías de cumplimiento.",
+        "- Diseñé pipelines ETL/ELT para migrar datos históricos de Oracle a BigQuery en GCP, con orquestación y monitorización del estado mediante Cloud Composer (Apache Airflow).",
+        "- Implementé una arquitectura escalable por capas en GCP: datos sin procesar en Cloud Storage (Data Lake) y datos transformados en BigQuery (Data Warehouse), con procedimientos almacenados para optimizar las consultas.",
+        "- Tradujé la lógica de transformación PL/SQL heredada a SQL estándar de BigQuery, implementando validaciones sólidas para garantizar la integridad y precisión de los datos.",
+        "- Optimizé el rendimiento de BigQuery mediante particionamiento y agrupación estratégicos, reduciendo el consumo de ranuras y los costes de computación.",
+        "- Automatizé el aprovisionamiento de infraestructura mediante Terraform (tfvars) y definiciones de esquema de BigQuery (JSON), implementadas mediante pipelines de CI/CD de GitLab.",
+        "- Colaboré ​​con los equipos de análisis para ofrecer vistas SQL y paneles (Power BI, Looker Studio), e informes de cumplimiento, respaldados por documentación técnica en Confluence y seguimiento en Jira.",
+        "- Desarrollé y orquesté trabajos ETL distribuidos de PySpark en AWS EMR (S3, EC2) utilizando DAGs de Apache Airflow, traduciendo SQL complejo a código PySpark escalable mediante Jupyter Notebooks.",
+        "- Implementé políticas de gobernanza y seguridad de datos, asegurando que todo acceso cumpliera con los estándares de protección de la información y los controles basados ​​en roles."
       ]
     }
   ],
@@ -100,60 +92,30 @@
       { "name": "C/C++", "level": 100 },
       { "name": "Python", "level": 100 },
       { "name": "SQL", "level": 100 },
-      { "name": "PySpark", "level": 100 },
-      { "name": "Bash", "level": 80 },
-      { "name": "PowerShell", "level": 80 },
-      { "name": "Java", "level": 70 },
-      { "name": "MATLAB", "level": 70 },
-      { "name": "HTML", "level": 70 },
-      { "name": "CSS", "level": 70 },
-      { "name": "JavaScript", "level": 70 }
+      { "name": "Bash", "level": 60 }
     ],
     "tools": [
       {
-        "name": "Herramientas de gestión de proyectos: Slack, Microsoft Teams, Trello, Jira, Confluence",
+        "name": "Herramientas Ingeniería de datos: Git, GitHub, GitLab, Bitbucket, Docker, Docker Compose, Jira, Confluence",
         "level": 100
       },
       {
-        "name": "Herramientas de análisis y visualización de datos: Microsoft Excel, Power BI, Looker Studio",
+        "name": "Base de datos: PostgreSQL, Microsoft SQL Server, MySQL, BigQuery, Snowflake, Redshift",
         "level": 80
       },
       {
-        "name": "Control de versiones: Git, GitHub, GitLab, Bitbucket",
-        "level": 100
-      },
-      {
-        "name": "Base de datos: OLTP (PostgreSQL), OLAP (BigQuery, Snowflake, Amazon Redshift)",
-        "level": 100
-      },
-      {
         "name": "CI/CD y Infraestructura como Código: GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 90
-      },
-      {
-        "name": "Contenedores, virtualización y sistemas operativos: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
         "level": 80
       }
     ],
     "concepts": [
-      { "name": "Aprendizaje rápido", "level": 100 },
-      { "name": "Planificación estratégica", "level": 100 },
-      { "name": "Trabajo en equipo", "level": 100 },
-      { "name": "Adaptabilidad", "level": 100 },
-      { "name": "Pensamiento pragmático", "level": 100 },
-      { "name": "Pensamiento abstracto", "level": 100 },
-      { "name": "Escucha activa", "level": 100 },
-      { "name": "Resolución de problemas", "level": 100 },
-      { "name": "Gestión del tiempo", "level": 100 },
-      { "name": "Gestión del cambio", "level": 100 },
-      { "name": "Gestión de proyectos y metodologías ágiles: PMBOK, 5S, Scrum, Kanban, Design Thinking, Enfoque Lean", "level": 100 },
-      { "name": "Métricas de calidad y eficiencia: Data Completeness, Data Consistency, OEE, Cp, Cpk", "level": 100 },
-      { "name": "Almacenamiento de datos: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
-      { "name": "ETL y Orquestación: Databricks, Apache Airflow", "level": 100 },
-      { "name": "Modelamiento de datos: dbt", "level": 100 },
-      { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
-      { "name": "Cloud Platforms: Amazon Web Services, Google Cloud Platform", "level": 80 },
-      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
+      { "name": "Calidad de datos: Data Completeness, Data Consistency, SLIs/SLOs", "level": 100 },
+      { "name": "Almacenamiento de datos: BigQuery, Snowflake, Amazon Redshift, Cloud Storage", "level": 100 },
+      { "name": "Orquestación: Cloud Composer, Dataform (scheduled jobs)", "level": 100 },
+      { "name": "Transformación: Dataform, dbt, SQL, PL/SQL", "level": 100 },
+      { "name": "Procesamiento de datos: PySpark, Dataproc", "level": 80 },
+      { "name": "Plataformas en la nube: Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure", "level": 80 },
+      { "name": "Aprendizaje Automático: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }  
 }

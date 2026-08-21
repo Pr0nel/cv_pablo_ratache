@@ -1,6 +1,6 @@
 /* 
   src/input.css: archivo principal de estilos CSS para el portafolio.
-  Copyright 2025 Pablo Ronel Ratache Rojas
+  Copyright 2026 Pablo Ronel Ratache Rojas
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -547,8 +547,6 @@ img {
 
   #skills {
     display: block;
-    page-break-before: auto;
-    page-break-after: auto;
     page-break-inside: auto;
     margin-bottom: 1.5em;
   }
@@ -570,26 +568,18 @@ img {
 
   /* Mostrar solo listas de texto para ATS */
   .print-only-skills-list {
-    display: block;
-    columns: 3;
-    column-gap: 1.5em;
-    column-fill: balance;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25em 1.5em;
     list-style: none;
     margin: 0;
     padding: 0;
-    page-break-inside: avoid;
   }
+
   .print-only-skills-list li {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 0.25em;
-    color: #000000;
-    font-size: 11pt;
-    line-height: 1.2;
     break-inside: avoid;
     page-break-inside: avoid;
   }
-
   /* Anular diseño grid para impresión */
   .grid,
   .lg\:grid-cols-3,

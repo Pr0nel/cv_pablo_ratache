@@ -4,8 +4,8 @@
   "portfolioUrl": "linkedin.com/in/pablo-ratache-rojas-9a9602140/ \u2022 pr0nel.github.io/cv_pablo_ratache/",
   "githubProfileUrl": "https://github.com/Pr0nel",
   "about": {
-    "summary": "with a background in Physical Engineering, I specialize in building scalable and efficient data solutions. With solid experience in data warehousing, ETL/ELT processes, and cloud development, I seek to contribute to innovative projects leveraging Python, SQL, PySpark, dbt and platforms like GCP, AWS, Airflow, Databricks, and Snowflake.",
-    "professionalProfile": "I designed ETL/ELT pipelines in cloud environments (GCP/AWS) with Apache Airflow, with a focus on Data Governance and cost reduction. I implemented ML-based OCR solutions for voucher processing with 90% accuracy. My background in Physical Engineering allows me to tackle complex multidisciplinary problems and design scalable, efficient data architectures.",
+    "summary": "with a background in Physical Engineering, specializing in multi-cloud architectures that strategically integrate AWS (databases), GCP (analytics), and Azure (CI/CD). Proven experience building governed, cost-optimized ETL/ELT pipelines with Dataform and Terraform, implementing end-to-end observability through native SLIs/SLOs. Skilled in Python, SQL, and PySpark to design robust data solutions (BigQuery, Snowflake) and drive analytics at scale, including ML-powered OCR systems with 90% accuracy for automated compliance workflows.",
+    "professionalProfile": "Data Engineer with experience in multi-cloud architectures that strategically leverage AWS (databases), GCP (analytics), and Azure (DevOps/CI-CD) to solve complex data challenges. Expertise in designing cost-optimized ETL/ELT pipelines using Terraform for infrastructure-as-code and building integrated systems across cloud platforms. Previously engineered Apache Airflow pipelines for data migration projects and implemented ML-powered OCR solutions with 90% accuracy for automated compliance workflows. Combines Physical Engineering analytical rigor with modern data engineering practices to deliver production-grade solutions.",
     "image": "./assets/profile.webp"
   },
   "contact": {
@@ -39,10 +39,15 @@
       "company": "Atlantic City Casino & Sports \u2022 Peru (Hybrid) \u2022 Entertainment, B2C",
       "dates": "December 2025 - Present",
       "description": [
-        "- Mapped SLIs/SLOs using native BigQuery metadata, eliminating external monitoring costs and reducing observability spend.",
-        "- Developed a Unified Master Query that binaryizes SLO compliance, cutting analysis time and enabling faster data-driven decisions.",
-        "- Designed an SLO Scorecard in Looker Studio with traffic-light indicators, adopted by cross-functional teams for real-time SLA compliance tracking.",
-        "- Configured trend charts for latency and slot utilization to proactively identify bottlenecks, reducing average operational response time."
+        "- Co-created the Guest Data Cell, a cross-functional initiative to rebuild the Master Guest table from fragmented on-premise sources into a unified, cloud-native golden record in GCP. Delivered a trusted single source of truth for guest identity, compliance, and omnichannel analytics — despite evolving timelines and shifting business priorities.",
+        "- Collaborated with data scientists, analysts, and business stakeholders to define deduplication rules, dimensional models, and transactional logic across online and physical casino channels, ensuring consistency across all customer touchpoints.",
+        "- Designed and implemented core ingestion and transformation logic using a Medallion architecture in BigQuery and Dataform, filtering duplicates at source and enforcing data quality through automated checks (nulls, uniqueness, referential integrity).",
+        "- Migrated legacy SQL pipelines from data science teams into modular, version-controlled Dataform workflows with CI/CD, refactored complex joins into reusable components, optimized query performance, and reduced pipeline runtime by ~40%.",
+        "- Architected cross-cloud ETL pipelines from AWS (SQL Server) to GCP BigQuery using Cloud Functions and micro-batching with Parquet via Cloud Storage, ensuring reliable and cost-efficient data replication.",
+        "- Optimized high-velocity data delivery to Firestore by designing Avro-based insertion workflows with dynamic Delta Merge strategies, enabling seamless handling of rapidly changing, high-volume datasets.",
+        "- Developed a resilient monitoring system for daily Dataproc and Workflow executions (3x/day), sending alerts to accelerate failure detection and resolution.",
+        "- Implemented end-to-end observability by mapping SLIs/SLOs using native BigQuery metadata (INFORMATION_SCHEMA, __TABLES__), eliminating external monitoring tools and reducing observability costs.",
+        "- Built a Unified Master Query that binaryizes SLO compliance into pass/fail status, cutting analysis time by ~30% and enabling faster operational decisions."
       ]
     },
     {
@@ -50,28 +55,15 @@
       "company": "Konexa - WOM \u2022 Chile (Remote) \u2022 Telecom, B2B/B2C",
       "dates": "February 2025 - October 2025",
       "description": [
-        "- Documented data lineage mapping from Oracle/SandBox/BigQuery sources to final reports, ensuring traceability for compliance audits.",
-        "- Designed and developed ETL/ELT pipelines to migrate historical data from Oracle to BigQuery on GCP, with automated pipeline orchestration and health monitoring using Cloud Composer.",
-        "- Implemented a scalable GCP architecture using a layered model to ensure governance and scalability; established a Data Lake in Cloud Storage for raw data and a Data Warehouse in BigQuery for transformed data storage, with Stored Procedures for optimized querying.",
-        "- Rewrote and optimized PL/SQL transformation logic (migrated from Oracle) in BigQuery, implementing robust validations to ensure Data Completeness.",
-        "- Collaborated with data analytics teams to develop dashboards using Power BI and Looker Studio, delivering SQL views, compliance reports, and technical documentation.",
-        "- Applied data governance and security best practices, ensuring all data access complied with information protection policies and access controls.",
-        "- Applied partitioning and clustering across the Data Warehouse to optimize query performance, resulting in reduced compute slot costs and increased operational efficiency.",
-        "- Configured data infrastructure in GCP by defining BigQuery schemas in JSON and Terraform configurations (tfvars), automating deployment through CI/CD pipelines in GitLab.",
-        "- Delivered final data products, including SQL views, compliance reports, and technical documentation using Confluence, with task tracking in Jira.",
-        "- Developed and tested ETL/ELT pipelines in AWS (S3, EC2, PySpark) using Jupyter Notebooks for interactive development, translating complex SQL queries into scalable PySpark code.",
-        "- Developed and orchestrated distributed PySpark jobs on AWS EMR, using Apache Airflow DAGs."
-      ]
-    },
-    {
-      "role": "Production Researcher | Process Engineer",
-      "company": "Productora De Alimentos Uno S.A.C. \u2022 Ate-Lima-Peru \u2022 Food Processing, B2B",
-      "dates": "May 2024 - January 2025",
-      "description": [
-        "- Implemented OEE KPI system alongside Production and Operational Excellence teams, establishing the first operational efficiency measurement.",
-        "- Established statistical control methodology with Cp and Cpk indices in coordination with Quality team, creating the first process capability monitoring system.",
-        "- Supported operational data loading and structuring in SQL Server for KPI reporting.",
-        "- Defined reprocessing limits to optimize fermentation times and reduce waste."
+        "- Documented end-to-end data lineage from Oracle/Sandbox/BigQuery sources to final reports.",
+        "- Engineered ETL/ELT pipelines to migrate historical data from Oracle to BigQuery on GCP, with orchestration and health monitoring via Cloud Composer (Apache Airflow).",
+        "- Implemented a scalable layered architecture in GCP: raw data in Cloud Storage (Data Lake) and transformed data in BigQuery (Data Warehouse), with Stored Procedures for optimized querying.",
+        "- Translated legacy PL/SQL transformation logic to BigQuery Standard SQL, implemented robust data quality validations.",
+        "- Optimized BigQuery performance through strategic partitioning and clustering, reducing slot consumption and lowering compute costs.",
+        "- Automated infrastructure provisioning using Terraform (tfvars) and BigQuery schema definitions (JSON), deployed via GitLab CI/CD pipelines.",
+        "- Collaborated with analytics teams to deliver SQL views, dashboards (Power BI, Looker Studio), and compliance reports.",
+        "- Developed and orchestrated distributed PySpark ETL jobs on AWS EMR (S3, EC2) using Apache Airflow DAGs, translating complex SQL into scalable PySpark code via Jupyter Notebooks.",
+        "- Enforced data governance and security policies, ensuring all access complied with information protection standards and role-based controls."
       ]
     }
   ],
@@ -100,60 +92,30 @@
       { "name": "C/C++", "level": 100 },
       { "name": "Python", "level": 100 },
       { "name": "SQL", "level": 100 },
-      { "name": "PySpark", "level": 100 },
-      { "name": "Bash", "level": 80 },
-      { "name": "PowerShell", "level": 80 },
-      { "name": "Java", "level": 70 },
-      { "name": "MATLAB", "level": 70 },
-      { "name": "HTML", "level": 70 },
-      { "name": "CSS", "level": 70 },
-      { "name": "JavaScript", "level": 70 }
+      { "name": "Bash", "level": 60 }
     ],
     "tools": [
       {
-        "name": "Project management tools: Slack, Microsoft Teams, Trello, Jira, Confluence",
+        "name": "Data Engineering Tools: Git, GitHub, GitLab, Bitbucket, Docker, Docker Compose, Jira, Confluence",
         "level": 100
       },
       {
-        "name": "Data analysis & visualization tools: Microsoft Excel, Power BI, Looker Studio",
+        "name": "Databases: PostgreSQL, Microsoft SQL Server, MySQL, BigQuery, Snowflake, Redshift",
         "level": 80
       },
       {
-        "name": "Version control: Git, GitHub, GitLab, Bitbucket",
-        "level": 100
-      },
-      {
-        "name": "Database: OLTP (PostgreSQL), OLAP (BigQuery, Snowflake, Amazon Redshift)",
-        "level": 100
-      },
-      {
-        "name": "CI/CD & Infrastructure as Code: GitHub Actions, GitLab, Terraform (IaC)",
-        "level": 90
-      },
-      {
-        "name": "Containers, virtualization & operating systems: Docker, Docker Compose, VirtualBox, VMware, Linux, Windows",
+        "name": "CI/CD & Infrastructure as Code: Azure DevOps, GitLab, Terraform (IaC)",
         "level": 80
       }
     ],
     "concepts": [
-      { "name": "Fast learner", "level": 100 },
-      { "name": "Strategic planning", "level": 100 },
-      { "name": "Team player", "level": 100 },
-      { "name": "Adaptability", "level": 100 },
-      { "name": "Pragmatic thinking", "level": 100 },
-      { "name": "Abstract thinking", "level": 100 },
-      { "name": "Active listening", "level": 100 },
-      { "name": "Problem solving", "level": 100 },
-      { "name": "Time management", "level": 100 },
-      { "name": "Change management", "level": 100 },
-      { "name": "Project management and agile methodologies: PMBOK, 5S, Scrum, Kanban, Design Thinking, Lean mindset", "level": 100 },
-      { "name": "Quality & efficiency metrics: Data Completeness, Data Consistency, OEE, Cp, Cpk", "level": 100 },
-      { "name": "Data Warehousing: BigQuery, Snowflake, Amazon Redshift", "level": 100 },
-      { "name": "ETL & Orchestration: Databricks, Airflow", "level": 100 },
-      { "name": "Data Modeling: dbt", "level": 100 },
-      { "name": "Big Data & Analytics: Apache Spark", "level": 80 },
-      { "name": "Cloud Platforms: Amazon Web Services, Google Cloud Platform", "level": 80 },
-      { "name": "Machine Learning & Computer Vision: CLIP, SAM, AWS Textract, OCR", "level": 80 }
+      { "name": "Data Quality: Data Completeness, Data Consistency, SLIs/SLOs", "level": 100 },
+      { "name": "Data Warehousing: BigQuery, Snowflake, Amazon Redshift, Cloud Storage", "level": 100 },
+      { "name": "Orchestration: Cloud Composer, Dataform (scheduled jobs)", "level": 100 },
+      { "name": "Transformation: Dataform, dbt, SQL, PL/SQL", "level": 100 },
+      { "name": "Data Processing: PySpark, Dataproc", "level": 80 },
+      { "name": "Cloud Platforms: Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure", "level": 80 },
+      { "name": "Machine Learning: CLIP, SAM, AWS Textract, OCR", "level": 80 }
     ]
   }
 }
